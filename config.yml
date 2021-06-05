@@ -1,5 +1,5 @@
-baseURL: "https://examplesite.com/"
-title: ExampleSite
+baseURL: "https://upendra1997.github.io/"
+title: Blog | Upendra Upadhyay
 paginate: 5
 theme: PaperMod
 
@@ -16,10 +16,10 @@ minify:
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    title: ExampleSite
-    description: "ExampleSite description"
+    title: Upendra - Blog
+    description: "Personal Blog"
     keywords: [Blog, Portfolio, PaperMod]
-    author: Me
+    author: Upendra Upadhyay
     # author: ["Me", "You"] # multiple authors
     images: ["<link or path of image for opengraph, twitter-cards>"]
     DateFormat: "January 2, 2006"
@@ -30,10 +30,10 @@ params:
     ShowShareButtons: true
     ShowPostNavLinks: true
     ShowBreadCrumbs: true
-    ShowCodeCopyButtons: false
+    ShowCodeCopyButtons: true
     disableSpecial1stPost: false
     disableScrollToTop: false
-    comments: false
+    comments: true
     hidemeta: false
     hideSummary: false
     showtoc: false
@@ -55,18 +55,20 @@ params:
 
     # profile-mode
     profileMode:
-        enabled: false # needs to be explicitly set
-        title: ExampleSite
-        subtitle: "This is subtitle"
-        imageUrl: "<img location>"
+        enabled: true # needs to be explicitly set
+        title: Upendra Upadhyay
+        subtitle: "Welcome"
+        imageUrl: "https://s.gravatar.com/avatar/242925530ed1bc0f579be4ae131abc1d?s=1000"
         imageWidth: 120
         imageHeight: 120
-        imageTitle: my image
+        imageTitle: Upendra Upadhyay
         buttons:
             - name: Posts
               url: posts
             - name: Tags
               url: tags
+            - name: Resume
+              url: resume
 
     # home-info mode
     homeInfoParams:
@@ -79,11 +81,11 @@ params:
         - name: stackoverflow
           url: "https://stackoverflow.com"
         - name: github
-          url: "https://github.com/"
+          url: "https://github.com/upendra1997"
 
     analytics:
         google:
-            SiteVerificationTag: "XYZabc"
+            SiteVerificationTag: "G-10K1DEGGW1"
         bing:
             SiteVerificationTag: "XYZabc"
         yandex:
@@ -93,9 +95,10 @@ params:
         hidden: true # hide everywhere but not in structured data
         hiddenInList: true # hide on list pages and home
         hiddenInSingle: true # hide on single page
+        linkFullImages: true
 
     editPost:
-        URL: "https://github.com/<path_to_repo>/content"
+        URL: "https://github.com/upendra1997.github.io/content"
         Text: "Suggest Changes" # edit text
         appendFilePath: true # to append file path to Edit link
 
@@ -119,9 +122,9 @@ menu:
           name: tags
           url: /tags/
           weight: 20
-        - identifier: example
-          name: example.org
-          url: https://example.org
+        - identifier: resume
+          name: resume
+          url: /resume/
           weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
@@ -132,3 +135,9 @@ menu:
 #         guessSyntax: true
 #         lineNos: true
 #         style: monokai
+disqusShortname: "disqus_SsSJ4Uus8b"
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
