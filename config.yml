@@ -50,7 +50,7 @@ params:
 
     label:
         text: "Home"
-        icon: /apple-touch-icon.png
+        # icon: /apple-touch-icon.png
         iconHeight: 35
 
     # profile-mode
@@ -63,10 +63,12 @@ params:
         imageHeight: 120
         imageTitle: Upendra Upadhyay
         buttons:
-            - name: Posts
-              url: posts
-            - name: Tags
-              url: tags
+            # - name: Posts
+            #   url: posts
+            # - name: Tags
+            #   url: tags
+            # - name: Archives
+            #   url: archives
             - name: Resume
               url: resume
 
@@ -114,18 +116,30 @@ params:
         keys: ["title", "permalink", "summary", "content"]
 menu:
     main:
-        - identifier: categories
-          name: categories
-          url: /categories/
-          weight: 10
+        - identifier: posts
+          name: posts
+          url: /posts/
+          weight: 1
+        - identifier: Archive
+          name: archives
+          url: archives
+          weight: 2
+        - identifier: Search
+          name: search
+          url: search/
+          weight: 3
         - identifier: tags
           name: tags
           url: /tags/
-          weight: 20
+          weight: 4
+        - identifier: categories
+          name: categories
+          url: /categories/
+          weight: 5
         - identifier: resume
           name: resume
           url: /resume/
-          weight: 30
+          weight: 6
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
 # markup:
