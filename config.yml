@@ -57,7 +57,9 @@ params:
     profileMode:
         enabled: true # needs to be explicitly set
         title: Upendra Upadhyay
-        subtitle: "Welcome"
+        subtitle: |
+          I am Software Engineer who likes problem solving, programming languages, databases, AI and learning new things in general. I like to dabble in solving problems in Haskell, Rust and read books like SICP, DDIA, clean code, etc. 
+          Few of my guilty pleasures are reading books(Academic/LightNovels/Wuxia/Manga), watching Anime, TV-Shows, and just browsing YouTube.
         imageUrl: "https://s.gravatar.com/avatar/242925530ed1bc0f579be4ae131abc1d?s=1000"
         imageWidth: 120
         imageHeight: 120
@@ -78,12 +80,22 @@ params:
         Content: Welcome to my blog
 
     socialIcons:
+        - name: linkedin
+          url: "https://www.linkedin.com/in/upendra-upadhyay/"
+        - name: facebook
+          url: "https://www.facebook.com/upendra.upadhyay.97"
         - name: twitter
-          url: "https://twitter.com/"
-        - name: stackoverflow
-          url: "https://stackoverflow.com"
+          url: "https://twitter.com/hdggxin"
         - name: github
           url: "https://github.com/upendra1997"
+        - name: codepen
+          url: "https://codepen.io/hdggxin/"
+        - name: youtube
+          url: "https://www.youtube.com/channel/UCGbSuHBYqbBAlK3gxU2AT0g"
+        - name: "instagram"
+          url: "https://www.instagram.com/upendra.upadhyay.97/"
+        - name: stackoverflow
+          url: "https://stackoverflow.com/users/8502345/upendra-upadhyay"
 
     analytics:
         google:
