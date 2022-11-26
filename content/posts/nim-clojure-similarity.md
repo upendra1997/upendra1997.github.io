@@ -1,7 +1,11 @@
 ---
 title: "Nim Clojure Similarity"
 date: 2022-11-26T11:13:56+05:30
+tags: ["haskell", "rust", "clojure", "nim"]
 draft: false
+comments: true
+categories: ["Programming Languages"]
+description: "How Nim can help learn Systems Programming"
 ---
 
 Hello world, I am Upendra Upadhyay. This is my first post and I have been trying to write for a long time. I think there is no better time than now.
