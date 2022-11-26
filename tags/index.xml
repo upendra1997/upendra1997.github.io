@@ -8,6 +8,43 @@
       <url>https://upendra1997.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://upendra1997.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://upendra1997.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 26 Nov 2022 11:13:56 +0530</lastBuildDate><atom:link href="https://upendra1997.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>clojure</title>
+      <link>https://upendra1997.github.io/tags/clojure/</link>
+      <pubDate>Sat, 26 Nov 2022 11:13:56 +0530</pubDate>
+      
+      <guid>https://upendra1997.github.io/tags/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>haskell</title>
+      <link>https://upendra1997.github.io/tags/haskell/</link>
+      <pubDate>Sat, 26 Nov 2022 11:13:56 +0530</pubDate>
+      
+      <guid>https://upendra1997.github.io/tags/haskell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nim</title>
+      <link>https://upendra1997.github.io/tags/nim/</link>
+      <pubDate>Sat, 26 Nov 2022 11:13:56 +0530</pubDate>
+      
+      <guid>https://upendra1997.github.io/tags/nim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rust</title>
+      <link>https://upendra1997.github.io/tags/rust/</link>
+      <pubDate>Sat, 26 Nov 2022 11:13:56 +0530</pubDate>
+      
+      <guid>https://upendra1997.github.io/tags/rust/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
