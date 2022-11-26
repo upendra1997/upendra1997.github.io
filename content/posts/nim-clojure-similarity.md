@@ -35,6 +35,6 @@ ghci> take 10 prime
 All things considered, I was never able to be productive in Haskell, But I got opportunity to work in [Clojure](https://clojure.org/); which allowed me to write functional code and interop with Java/Javascript. It created a bridge to Haskell, which have great ideas with steep learning curve.
 
 
-Similar case is with [Rust](https://www.rust-lang.org/), I am still trying to solve [Xorcism](https://exercism.org/tracks/rust/exercises/xorcism) , never seem to be getting closer to solution. I think Rust have great ideas but also a bit of learning curve. This where I think [Nim](https://nim-lang.org/) can become similar bridge like Haskell for Rust like Clojure. It allows system programming and interop with C, C++, Javascript.
+Similar case is with [Rust](https://www.rust-lang.org/), I am still trying to solve [Xorcism](https://exercism.org/tracks/rust/exercises/xorcism) , never seem to be getting closer to solution. I think Rust have great ideas but also a bit of learning curve. This where I think [Nim](https://nim-lang.org/) can become similar bridge like Clojure for Rust. It allows system programming and interop with C, C++, Javascript.
 
 which makes me curious to learn Nim.
