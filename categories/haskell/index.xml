@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Blog | Upendra Upadhyay</title>
-    <link>https://upendra1997.github.io/posts/</link>
-    <description>Recent content in Posts on Blog | Upendra Upadhyay</description>
+    <title>Haskell on Blog | Upendra Upadhyay</title>
+    <link>https://upendra1997.github.io/categories/haskell/</link>
+    <description>Recent content in Haskell on Blog | Upendra Upadhyay</description>
     <image>
       <url>https://upendra1997.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://upendra1997.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 29 Nov 2022 11:14:10 +0530</lastBuildDate><atom:link href="https://upendra1997.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Nov 2022 11:14:10 +0530</lastBuildDate><atom:link href="https://upendra1997.github.io/categories/haskell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Haskell Sudoku</title>
       <link>https://upendra1997.github.io/posts/haskell-sudoku/</link>
@@ -17,15 +17,6 @@
       
       <guid>https://upendra1997.github.io/posts/haskell-sudoku/</guid>
       <description>Desc Text.</description>
-    </item>
-    
-    <item>
-      <title>Nim Clojure Similarity</title>
-      <link>https://upendra1997.github.io/posts/nim-clojure-similarity/</link>
-      <pubDate>Sat, 26 Nov 2022 11:13:56 +0530</pubDate>
-      
-      <guid>https://upendra1997.github.io/posts/nim-clojure-similarity/</guid>
-      <description>How Nim can help learn Systems Programming</description>
     </item>
     
   </channel>
