@@ -370,7 +370,13 @@ crossProduct []             = []
 crossProduct [a]            = [[x] | x <- a]
 crossProduct (array : rest) = (:) <$> array <*> crossProduct rest
 ```
-
+we could also use the sequence function from Prelude, which does the same thing.
+```haskell
+ghci> :t sequence
+sequence :: (Traversable t, Monad m) => t (m a) -> m (t a)
+ghci> sequence [[1,2,3], [4,5], [6]]
+[[1,4,6],[1,5,6],[2,4,6],[2,5,6],[3,4,6],[3,5,6]]
+```
 So by getting a cross-product of each possibility we will get all solutions available.
 
 ```haskell
