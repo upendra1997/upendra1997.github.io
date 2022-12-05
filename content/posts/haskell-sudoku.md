@@ -11,7 +11,7 @@ TocOpen: true
 draft: false
 hidemeta: false
 comments: true
-description: "Desc Text."
+description: "A sudoku solver in Haskell."
 canonicalURL: "https://canonical.url/to/page"
 disableHLJS: true # to disable highlightjs
 disableShare: false
