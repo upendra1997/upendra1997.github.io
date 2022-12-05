@@ -199,7 +199,7 @@ if we look at the type of replicateM in the `stack repl`, we will see that:
 ghci> :t replicateM
 replicateM :: Applicative m => Int -> m a -> m [a]
 ```
-so here `(Int -> m a) -> m [a]` means that it will collect `a` from `m` computations and will return a new computation `m [a]` where all the `a` have been gathered.
+so here `(Int -> m a) -> m [a]` means that it will collect `a` from `m` type of computation and will return a new computation `m [a]` where all the `a` have been gathered from different computations.
 i.e.
 so here `(9 -> readRow)` replicateM needs a number `9` and a computation to replicate which is `readRow`, and it will return `IO [Row]` which is basically a sudoku.
 
@@ -213,129 +213,102 @@ mapM :: (Traversable t, Monad m) => (a -> m b) -> t a -> m (t b)
 ghci> :t mapM_
 mapM_ :: (Foldable t, Monad m) => (a -> m b) -> t a -> m ()
 ```
-## Sudoku Solutions
 
-### getting solutions wihout context
+## Validate Sudokus
 
-```haskell
--- src/Lib.hs
+for a sudoku to be valid, each row and columns must contain number from 1 to 9 exactly once; and also there are 9 grids of size `3x3` in a `9x9` sudoku, where no number must repeat.
 
-possibilities :: Cell -> [Cell]
-possibilities 0 = [1 .. 9]
-possibilities n = [n]
-
-crossProduct :: [[a]] -> [[a]]
-crossProduct []             = []
-crossProduct [a]            = [[x] | x <- a]
-crossProduct (array : rest) = (:) <$> array <*> crossProduct rest
-
-
-getSolutions :: Sudoku -> [Sudoku]
-getSolutions sudoku = filter valid allSudokus
-  where
-    allSudokus = crossProduct (crossProduct . fmap possibilities <$> sudoku)
-
-```
-
-
-so for this kind of solution we have around these many possibilities:
+### get all rows
 
 ```haskell
-ghci> product $ fmap product $ fmap (length . possibilities) <$> sudoku
-8599843895832833305
-```
-
-### getting solutions based on context
-### generating solutions based on context
-
-
-`Lib.hs`
-```haskell
-module Lib
-  ( Cell,
-    Row,
-    Sudoku,
-    sudokuSize,
-    getSolutions,
-    showSudoku,
-    generateSudoku
-  )
-where
-
-import           Control.Monad (guard)
-import           Data.List     (nub, sort, transpose, (\\))
-
-type Cell = Int
-
-type SudokuSize = Int
-
-sudokuSize :: SudokuSize
-sudokuSize = 9
-
-blockSize :: Int
-blockSize = 3
-
-showRow :: Show a => [a] -> String
-showRow row = unwords $ show <$> row
-
-showSudoku :: Show a => [[a]] -> String
-showSudoku sudoku = unlines $ showRow <$> sudoku
-
-type Row = [Int]
-
-type X = Int
-
-type Y = Int
-
-type Coord = (X, Y)
-
-type Sudoku = [Row]
-
-possibilities :: Cell -> [Cell]
-possibilities 0 = [1 .. 9]
-possibilities n = [n]
-
-crossProduct :: [[a]] -> [[a]]
-crossProduct []             = []
-crossProduct [a]            = [[x] | x <- a]
-crossProduct (array : rest) = (:) <$> array <*> crossProduct rest
-
--- similar function exist called sequence which is:
--- sequence :: Monad m => [m a] -> m [a]
--- sequence = foldr mcons (return [])
-
--- mcons :: Monad m => m t -> m [t] -> m [t]
--- mcons p q = do
---   x <- p
---   y <- q
---   return (x:y)
+-- src/lib.hs
 
 rows :: [[a]] -> [[[a]]]
 rows = fmap (replicate sudokuSize)
+```
+
+### get all columns
+
+```haskell
+-- src/lib.hs
 
 columns :: [[a]] -> [[[a]]]
 columns = transpose . rows . transpose
+```
+### get all grid blocks
+
+to get all grid blocks we need to know which grid each element of sudoku belongs to, every grid have a start and end position which can be represented by `Coord` type.
+
+
+Coordinates of all elements in sudoku:
+```haskell
+-- src/lib.hs
 
 coordinates :: [[Coord]]
 coordinates = [[(r, c) | c <- [0 .. sudokuSize - 1]] | r <- [0 .. sudokuSize - 1]]
+```
+
+block coordinate will give us start and end position pair of all sudoku elements.
+
+
+```haskell
+-- src/lib.hs
 
 blockCoordinates :: [[(Coord, Coord)]]
 blockCoordinates = (fmap . fmap) (\(x, y) -> (start x y, end x y)) coordinates
   where
     start x' y' = (3 * (x' `div` blockSize), 3 * (y' `div` blockSize))
     end x' y' = (\(x'', y'') -> (x'' + blockSize, y'' + blockSize)) $ start x' y'
+```
+
+if Sudoku type was parametrized like:
+```haskell
+type Sudoku a = [[a]]
+```
+then we could have represented `blockCoordinates` as:
+```haskell
+type area = (Coord, Coord) -- (start, end)
+blockCoordinates :: [[area]]
+```
+
+to get values from block coordinates we need few helper functions like `slice` and `slice2D`
+
+```haskell
+-- src/lib.hs
 
 slice :: Int -> Int -> [a] -> [a]
 slice start end = drop start . take end
+```
+
+```haskell
+-- src/lib.hs
 
 slice2D :: [[a]] -> Int -> Int -> Int -> Int -> [[a]]
 slice2D sudoku startRow endRow startCol endCol = slice startRow endRow $ slice startCol endCol <$> sudoku
+```
 
+and finally our function to get blocks at each coordinates:
+
+```
+-- src/lib.hs
 blocks :: Sudoku -> [[[[Int]]]]
 blocks sudoku = (fmap . fmap) block blockCoordinates
   where
     getSlice = slice2D sudoku
     block ((startRow, startCol), (endRow, endCol)) = getSlice startRow endRow startCol endCol
+```
+
+to understand it better, lets take our previous case where Sudoku was parametrized, which would give us
+
+```haskell
+blocks :: Sudoku -> Sudoku (Sudoku Int)
+```
+here blocks is like a sudoku of sudokus, where inner sudoku is a `3x3` grid.
+
+finally we merge all the values of the rows, column and grid values at each coordnate of grid and we get:
+
+```haskell
+-- src/lib.hs
 
 getAllValues :: Sudoku -> [[[Cell]]]
 getAllValues sudoku = (fmap . fmap) (sort . nub) all'
@@ -345,91 +318,171 @@ getAllValues sudoku = (fmap . fmap) (sort . nub) all'
     rows' = rows sudoku
     cols' = columns sudoku
     blocks' = fmap concat <$> blocks sudoku
+```
+and alternate way would be to use if `Suodku` was parametrized
+```haskell
+getAllValues :: Sudoku -> Sudoku [Int]
+``` 
+this tells us that each sudoku element is an array of integers.
+
+and by this scenerio we can easily validate sudoku if all the elements of sudoku contains exactly 9 values
+```haskell
+-- src/lib.hs
 
 valid :: Sudoku -> Bool
 valid sudoku = (all . all) (== 9) (fmap length <$> getAllValues sudoku)
+```
 
+## Sudoku Solutions
+
+### getting solutions wihout context
+
+Easiest solution would be to try 1 to 9 values for each 0 in the sudoku.
+the time complexity of this would be `9^n` where n is the number of 0 in the sudoku.
+We already know that this solution is very slow, and we will never get any answer. 
+But lets see how it would be implemented in haskell.
+
+
+first we need a helper function that would give us all possible value for each element:
+```haskell
+-- src/Lib.hs
+
+possibilities :: Cell -> [Cell]
+possibilities 0 = [1 .. 9]
+possibilities n = [n]
+```
+
+then we need a way to cross product each possibilities.
+Here crossProduct is same as cross product of set in mathematics.
+
+```haskell
+ghci> crossProduct [[1, 2, 3], [4, 5], [6]]
+[[1,4,6],[1,5,6],[2,4,6],[2,5,6],[3,4,6],[3,5,6]]
+```
+
+and here is its implementation:
+```haskell
+-- src/Lib.hs
+
+crossProduct :: [[a]] -> [[a]]
+crossProduct []             = []
+crossProduct [a]            = [[x] | x <- a]
+crossProduct (array : rest) = (:) <$> array <*> crossProduct rest
+```
+
+So by getting crossProduct of each possibilities we will get all soultion available.
+
+```haskell
+-- src/Lib.hs
+
+getSolutions :: Sudoku -> [Sudoku]
+getSolutions sudoku = filter valid allSudokus
+  where
+    allSudokus = crossProduct (crossProduct . fmap possibilities <$> sudoku)
+```
+
+so for this kind of solution we have around these many possibilities:
+
+```haskell
+ghci> product $ fmap product $ fmap (length . possibilities) <$> sudoku
+8599843895832833305
+```
+Which is allot....
+
+### getting solutions based on context
+
+now, we can be smarter about this and only generate possibilities which are not already present in row, column and grid block.
+
+```haskell
+-- src/Lib.hs
 
 possibilitiesWithContext :: Sudoku -> Coord -> [Cell]
 possibilitiesWithContext sudoku coord = if currentValue == 0 then possibleValues else [currentValue]
   where (x, y) = coord
-        currentValue = head $ concat $ slice2D sudoku x (x + 1) y (y + 1)
+        currentValue = head $ concat $ slice2D sudoku x (x + 1) y (y + 1)                          -- sudoku !! x !! y
         allValues' = getAllValues sudoku
         allValues = concatMap concat $ slice2D allValues' x (x + 1) y (y + 1)
-        possibleValues = [0..sudokuSize] \\ allValues
+        possibleValues = [0..sudokuSize] \\ allValues                                              -- subtract a from b | `a` \\ `b`
+```
+and will be plugging it in getSolutions approach.
 
--- getSolutions :: Sudoku -> [Sudoku]
--- getSolutions sudoku = filter valid allSudokus
---   where
---     allSudokus = crossProduct (crossProduct . fmap possibilities <$> sudoku)
-
--- ghci> product $ fmap product $ fmap (length . possibilities) <$> sudoku
--- 8599843895832833305
+```haskell
+-- src/Lib.hs
 
 getSolutions :: Sudoku -> [Sudoku]
 getSolutions sudoku = filter valid allSudokus
   where
     possibilities' = possibilitiesWithContext sudoku
     allSudokus = crossProduct (crossProduct . fmap possibilities' <$> coordinates)
+```
 
--- ghci> product $ fmap product $ fmap (length . possibilities') <$> coordinates
--- 2972033482752
--- almost 1000000 times fewer searches have to be done for this
+```haskell
+ghci> product $ fmap product $ fmap (length . possibilities') <$> coordinates
+2972033482752
+```
 
--- sudoku :: Sudoku
--- sudoku = [[9, 2, 6, 3, 4, 0, 7, 0, 1],
---           [0, 5, 0, 0, 2, 6, 4, 0, 9],
---           [0, 7, 0, 8, 0, 1, 0, 0, 0],
---           [0, 0, 0, 9, 0, 0, 2, 0, 7],
---           [3, 4, 2, 0, 0, 0, 0, 0, 5],
---           [1, 0, 0, 0, 0, 0, 8, 0, 0],
---           [6, 8, 5, 4, 0, 0, 0, 1, 2],
---           [0, 0, 4, 0, 0, 2, 9, 0, 0],
---           [0, 1, 0, 5, 3, 8, 0, 7, 0]]
+for this solution, almost 1000000 times fewer searches have to be done for this; but still slow for our computer.
 
--- sudoku2 :: Sudoku
--- sudoku2 = [[2, 9, 5, 7, 4, 3, 8, 6, 1],
---            [4, 3, 1, 8, 6, 5, 9, 0, 0],
---            [8, 7, 6, 1, 9, 2, 5, 4, 3],
---            [3, 8, 7, 4, 5, 9, 2, 1, 6],
---            [6, 1, 2, 3, 8, 7, 4, 9, 5],
---            [5, 4, 9, 2, 1, 6, 7, 3, 8],
---            [7, 6, 3, 5, 2, 4, 1, 8, 9],
---            [9, 2, 8, 6, 7, 1, 3, 5, 4],
---            [1, 5, 4, 9, 3, 8, 6, 0, 0]]
+### generating solutions based on context
 
--- emptySudoku :: Sudoku
--- emptySudoku = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
---                [0, 0, 0, 0, 0, 0, 0, 0, 0],
---                [0, 0, 0, 0, 0, 0, 0, 0, 0],
---                [0, 0, 0, 0, 0, 0, 0, 0, 0],
---                [0, 0, 0, 0, 0, 0, 0, 0, 0],
---                [0, 0, 0, 0, 0, 0, 0, 0, 0],
---                [0, 0, 0, 0, 0, 0, 0, 0, 0],
---                [0, 0, 0, 0, 0, 0, 0, 0, 0],
---                [0, 0, 0, 0, 0, 0, 0, 0, 0]]
+We can have faster solution if for each coordinate with `0` we take one possible number and try to genraterate possibilities for other holes in the sudoku, if at some point we reach at a hole in sudoku where there is no possible number, then we **backtrack** to previous hole and try next possibility, once we are done will all the holes in the sudoku, we return our solution.
 
+for this approach we would need a helper functionality that would replace our sudoku with give coordinates and a new value.
 
-replaceAt :: Int -> (a -> a) -> [a] -> [a]
+```
+-- src/Lib.hs
+
+replaceAt :: Int -> (a -> a) -> [a] -> [a]                -- works for 1D array
 replaceAt index f array = left ++ (f current : right')
   where (left, right) = splitAt index array
         current = head right
         right' = tail right
+```
 
-generateSudoku :: Sudoku -> [Sudoku]
-generateSudoku sudoku = f coords' sudoku
-  where coords' = concatMap (fmap filter id ifValid) coordinates -- concat $ (fmap.fmap filter id) ifValid coordinates
-        ifValid (x, y) = 0 == (sudoku !! x !! y)
-        f [] sudoku' = do
+and so finally our solution
+
+```haskell
+-- src/Lib.hs
+
+generateSudoku :: [Coord] -> Sudoku -> [Sudoku]
+generateSudoku [] sudoku' = do
           guard (valid sudoku')
           return sudoku'
-        f (coord: coords) sudoku' =  do
-          let (x, y) = coord
-          let values = possibilitiesWithContext sudoku' coord
-          guard $ (not . null) values
-          -- traceM ("(x, y, values) \r" ++ show (coord, values))
-          val <- values
-          let sudoku'' = replaceAt x (replaceAt y (const val)) sudoku'
-          -- traceM ("sudoku \r" ++ showSudoku sudoku'')
-          f coords sudoku''
+generateSudoku (coord: coords) sudoku' =  do
+  let (x, y) = coord
+  let values = possibilitiesWithContext sudoku' coord
+  guard $ (not . null) values
+  val <- values
+  let sudoku'' = replaceAt x (replaceAt y (const val)) sudoku'
+  generateSudoku coords sudoku''
 ```
+
+Lets break it down.
+`coords` is list of coordinates where we have holes = `0`.
+`generateSudoku` is a function that will try to replace coord with a possibilty and will backtrack if no possibility is present at some point usinf `guard`.
+
+and lets plug it in our solution
+
+```haskell
+-- src/Lib.hs
+
+getSolutions :: Sudoku -> [Sudoku]
+getSolutions sudoku = generateSudoku coords' sudoku
+  where coords' = concatMap (fmap filter id ifValid) coordinates -- concat $ (fmap.fmap filter id) ifValid coordinates
+        ifValid (x, y) = 0 == (sudoku !! x !! y)
+```
+
+## Printing all solutions
+
+so finally our main funciton looks like:
+```haskell
+-- app/Main.hs
+
+main :: IO ()
+main = do
+    sudoku <- replicateM sudokuSize readRow
+    mapM_ (putStrLn . showSudoku) $ getSolutions sudoku
+```
+
+
+***
