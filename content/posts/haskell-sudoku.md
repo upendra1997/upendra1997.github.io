@@ -3,7 +3,7 @@ title: "Haskell Sudoku"
 date: 2022-11-29T11:14:10+05:30
 # weight: 1
 # aliases: ["/first"]
-tags: ["first"]
+tags: ["haskell"]
 categories: ["Haskell"]
 author: "Upendra Upadhyay"
 showToc: true
