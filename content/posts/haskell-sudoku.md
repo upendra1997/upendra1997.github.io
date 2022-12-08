@@ -506,3 +506,7 @@ and our solution is
 ```
 
 ***
+
+Github Repository: [https://github.com/upendra1997/sudoku-haskell](https://github.com/upendra1997/sudoku-haskell)
+
+***
