@@ -9,7 +9,16 @@
       <link>https://upendra1997.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 29 Nov 2022 11:14:10 +0530</lastBuildDate><atom:link href="https://upendra1997.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Feb 2023 13:36:56 +0530</lastBuildDate><atom:link href="https://upendra1997.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>design pattern</title>
+      <link>https://upendra1997.github.io/categories/design-pattern/</link>
+      <pubDate>Sat, 11 Feb 2023 13:36:56 +0530</pubDate>
+      
+      <guid>https://upendra1997.github.io/categories/design-pattern/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Haskell</title>
       <link>https://upendra1997.github.io/categories/haskell/</link>

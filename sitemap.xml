@@ -3,10 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://upendra1997.github.io/</loc>
-    <lastmod>2022-11-29T11:14:10+05:30</lastmod>
+    <lastmod>2023-02-11T13:36:56+05:30</lastmod>
   </url><url>
     <loc>https://upendra1997.github.io/categories/</loc>
-    <lastmod>2022-11-29T11:14:10+05:30</lastmod>
+    <lastmod>2023-02-11T13:36:56+05:30</lastmod>
+  </url><url>
+    <loc>https://upendra1997.github.io/tags/design-pattern/</loc>
+    <lastmod>2023-02-11T13:36:56+05:30</lastmod>
+  </url><url>
+    <loc>https://upendra1997.github.io/categories/design-pattern/</loc>
+    <lastmod>2023-02-11T13:36:56+05:30</lastmod>
+  </url><url>
+    <loc>https://upendra1997.github.io/posts/</loc>
+    <lastmod>2023-02-11T13:36:56+05:30</lastmod>
+  </url><url>
+    <loc>https://upendra1997.github.io/tags/</loc>
+    <lastmod>2023-02-11T13:36:56+05:30</lastmod>
+  </url><url>
+    <loc>https://upendra1997.github.io/posts/visitor-pattern/</loc>
+    <lastmod>2023-02-11T13:36:56+05:30</lastmod>
   </url><url>
     <loc>https://upendra1997.github.io/tags/haskell/</loc>
     <lastmod>2022-11-29T11:14:10+05:30</lastmod>
@@ -15,12 +30,6 @@
     <lastmod>2022-11-29T11:14:10+05:30</lastmod>
   </url><url>
     <loc>https://upendra1997.github.io/posts/haskell-sudoku/</loc>
-    <lastmod>2022-11-29T11:14:10+05:30</lastmod>
-  </url><url>
-    <loc>https://upendra1997.github.io/posts/</loc>
-    <lastmod>2022-11-29T11:14:10+05:30</lastmod>
-  </url><url>
-    <loc>https://upendra1997.github.io/tags/</loc>
     <lastmod>2022-11-29T11:14:10+05:30</lastmod>
   </url><url>
     <loc>https://upendra1997.github.io/tags/clojure/</loc>
