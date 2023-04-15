@@ -1,0 +1,33 @@
+  <link rel="stylesheet" type="text/css" href="../../../data/asciinema-player.css" />
+  <div id="asciicast">
+    <script src="../../../data/asciinema-player.min.js"></script>
+    <audio id="audio" controls>
+      <source src = "{{ index .Params 1 }}" type="{{ index .Params 2 }}"> 
+    Your browser does not support the audio element.
+    </audio> 
+    <script type="text/javascript">
+      console.log("hello world");
+      const player = AsciinemaPlayer.create("{{ index .Params 0 }}", document.getElementById('asciicast'));
+      const audio = document.getElementById('audio');
+      audio.addEventListener('play', () => {
+        player.play();
+      })
+      audio.addEventListener('pause', () => {
+        player.pause();
+      })
+      audio.addEventListener('seeked', () => {
+        player.seek(audio.currentTime);
+      })
+      player.addEventListener('play', (obj) => {
+        audio.play();
+      })
+    </script>
+    <style>
+      #audio {
+        width: 100%;
+      }
+      .control-bar {
+                  display: none;
+      }
+    </style>
+  </div>
