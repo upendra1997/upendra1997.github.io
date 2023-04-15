@@ -3,8 +3,8 @@ title: "Rust Refactoring and function closures"
 date: 2023-04-15T18:03:11+05:30
 # weight: 1
 # aliases: ["/first"]
-tags: ["first"]
-categories: ["category"]
+tags: ["Refactoring"]
+categories: ["Rust"]
 author: "Upendra Upadhyay"
 # author: ["Me", "You"] # multiple authors
 showToc: true
