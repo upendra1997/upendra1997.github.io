@@ -35,7 +35,8 @@ editPost:
 ---
 I was recently watching [Jon Gjengset](https://www.youtube.com/watch?v=gboGyccRVXI)'s Video on solving fly.io distributed system [challanges](https://fly.io/dist-sys/) 
 and I always liked doing these kind of things, and it was a good excuse for me test my rust skills. I started doing these exercises in rust [here](https://github.com/upendra1997/maelstorm_rust). 
-I was able to solve [echo](https://fly.io/dist-sys/1/) and [unique-id](https://fly.io/dist-sys/2/) generator challanges, but the decisions I took while doing them was becoming issues for multiple handlers.
-will be issue in the next [challange](https://fly.io/dist-sys/3a/).
+I was able to solve [echo](https://fly.io/dist-sys/1/) and [unique-id](https://fly.io/dist-sys/2/) generator challanges, but the decisions I took 
+while doing them was becoming difficult to work with
+for the next [challange](https://fly.io/dist-sys/3a/).
 so below is me working on refactoring some code to support multiple handlers, I am not sure if it is a good decision, but here we go:
 {{< asciinema "../../../data/adding-request-handler.cast" "../../../data/rust-cast.m4a" "audio/x-m4a" >}}
