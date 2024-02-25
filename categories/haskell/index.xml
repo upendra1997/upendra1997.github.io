@@ -5,20 +5,20 @@
     <link>https://upendra1997.github.io/categories/haskell/</link>
     <description>Recent content in Haskell on Blog | Upendra Upadhyay</description>
     <image>
+      <title>Blog | Upendra Upadhyay</title>
       <url>https://upendra1997.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://upendra1997.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 29 Nov 2022 11:14:10 +0530</lastBuildDate><atom:link href="https://upendra1997.github.io/categories/haskell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Nov 2022 11:14:10 +0530</lastBuildDate>
+    <atom:link href="https://upendra1997.github.io/categories/haskell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Haskell Sudoku</title>
       <link>https://upendra1997.github.io/posts/haskell-sudoku/</link>
       <pubDate>Tue, 29 Nov 2022 11:14:10 +0530</pubDate>
-      
       <guid>https://upendra1997.github.io/posts/haskell-sudoku/</guid>
       <description>A sudoku solver in Haskell.</description>
     </item>
-    
   </channel>
 </rss>

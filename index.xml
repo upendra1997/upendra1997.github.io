@@ -5,49 +5,41 @@
     <link>https://upendra1997.github.io/</link>
     <description>Recent content on Blog | Upendra Upadhyay</description>
     <image>
+      <title>Blog | Upendra Upadhyay</title>
       <url>https://upendra1997.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://upendra1997.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 25 Feb 2024 10:34:57 +0530</lastBuildDate><atom:link href="https://upendra1997.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Apr 2023 18:03:11 +0530</lastBuildDate>
+    <atom:link href="https://upendra1997.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rust Refactoring and function closures</title>
       <link>https://upendra1997.github.io/posts/rust-function-closures/</link>
       <pubDate>Sat, 15 Apr 2023 18:03:11 +0530</pubDate>
-      
       <guid>https://upendra1997.github.io/posts/rust-function-closures/</guid>
       <description>Me refactoring some rust code</description>
     </item>
-    
     <item>
       <title>Visitor Pattern</title>
       <link>https://upendra1997.github.io/posts/visitor-pattern/</link>
       <pubDate>Sat, 11 Feb 2023 13:36:56 +0530</pubDate>
-      
       <guid>https://upendra1997.github.io/posts/visitor-pattern/</guid>
       <description>Video explaining visitor pattern.</description>
     </item>
-    
     <item>
       <title>Haskell Sudoku</title>
       <link>https://upendra1997.github.io/posts/haskell-sudoku/</link>
       <pubDate>Tue, 29 Nov 2022 11:14:10 +0530</pubDate>
-      
       <guid>https://upendra1997.github.io/posts/haskell-sudoku/</guid>
       <description>A sudoku solver in Haskell.</description>
     </item>
-    
     <item>
       <title>Nim Clojure Similarity</title>
       <link>https://upendra1997.github.io/posts/nim-clojure-similarity/</link>
       <pubDate>Sat, 26 Nov 2022 11:13:56 +0530</pubDate>
-      
       <guid>https://upendra1997.github.io/posts/nim-clojure-similarity/</guid>
       <description>How Nim can help learn Systems Programming</description>
     </item>
-    
-    
-    
   </channel>
 </rss>

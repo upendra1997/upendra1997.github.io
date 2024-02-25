@@ -5,47 +5,41 @@
     <link>https://upendra1997.github.io/categories/</link>
     <description>Recent content in Categories on Blog | Upendra Upadhyay</description>
     <image>
+      <title>Blog | Upendra Upadhyay</title>
       <url>https://upendra1997.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://upendra1997.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 15 Apr 2023 18:03:11 +0530</lastBuildDate><atom:link href="https://upendra1997.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Apr 2023 18:03:11 +0530</lastBuildDate>
+    <atom:link href="https://upendra1997.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rust</title>
       <link>https://upendra1997.github.io/categories/rust/</link>
       <pubDate>Sat, 15 Apr 2023 18:03:11 +0530</pubDate>
-      
       <guid>https://upendra1997.github.io/categories/rust/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Design Pattern</title>
       <link>https://upendra1997.github.io/categories/design-pattern/</link>
       <pubDate>Sat, 11 Feb 2023 13:36:56 +0530</pubDate>
-      
       <guid>https://upendra1997.github.io/categories/design-pattern/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Haskell</title>
       <link>https://upendra1997.github.io/categories/haskell/</link>
       <pubDate>Tue, 29 Nov 2022 11:14:10 +0530</pubDate>
-      
       <guid>https://upendra1997.github.io/categories/haskell/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Programming Languages</title>
       <link>https://upendra1997.github.io/categories/programming-languages/</link>
       <pubDate>Sat, 26 Nov 2022 11:13:56 +0530</pubDate>
-      
       <guid>https://upendra1997.github.io/categories/programming-languages/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

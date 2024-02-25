@@ -5,65 +5,55 @@
     <link>https://upendra1997.github.io/tags/</link>
     <description>Recent content in Tags on Blog | Upendra Upadhyay</description>
     <image>
+      <title>Blog | Upendra Upadhyay</title>
       <url>https://upendra1997.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://upendra1997.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 15 Apr 2023 18:03:11 +0530</lastBuildDate><atom:link href="https://upendra1997.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Apr 2023 18:03:11 +0530</lastBuildDate>
+    <atom:link href="https://upendra1997.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Refactoring</title>
       <link>https://upendra1997.github.io/tags/refactoring/</link>
       <pubDate>Sat, 15 Apr 2023 18:03:11 +0530</pubDate>
-      
       <guid>https://upendra1997.github.io/tags/refactoring/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Design Pattern</title>
       <link>https://upendra1997.github.io/tags/design-pattern/</link>
       <pubDate>Sat, 11 Feb 2023 13:36:56 +0530</pubDate>
-      
       <guid>https://upendra1997.github.io/tags/design-pattern/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Haskell</title>
       <link>https://upendra1997.github.io/tags/haskell/</link>
       <pubDate>Tue, 29 Nov 2022 11:14:10 +0530</pubDate>
-      
       <guid>https://upendra1997.github.io/tags/haskell/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Clojure</title>
       <link>https://upendra1997.github.io/tags/clojure/</link>
       <pubDate>Sat, 26 Nov 2022 11:13:56 +0530</pubDate>
-      
       <guid>https://upendra1997.github.io/tags/clojure/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Nim</title>
       <link>https://upendra1997.github.io/tags/nim/</link>
       <pubDate>Sat, 26 Nov 2022 11:13:56 +0530</pubDate>
-      
       <guid>https://upendra1997.github.io/tags/nim/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Rust</title>
       <link>https://upendra1997.github.io/tags/rust/</link>
       <pubDate>Sat, 26 Nov 2022 11:13:56 +0530</pubDate>
-      
       <guid>https://upendra1997.github.io/tags/rust/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>
