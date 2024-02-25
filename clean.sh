@@ -1,0 +1,1 @@
+sudo rm -rf assets/ bkp/ public/ resources/ .hugo_build.lock hugo_stats.json
