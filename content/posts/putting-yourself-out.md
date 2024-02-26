@@ -6,7 +6,7 @@ categories: ["life"]
 author: "Upendra Upadhyay"
 showToc: true
 TocOpen: true
-draft: true
+draft: false
 hidemeta: false
 comments: true
 description: "putting myself out on internet"
@@ -31,7 +31,7 @@ editPost:
     appendFilePath: true # to append file path to Edit link
 ---
 
-I have never been consistent with my writing and I wish to become better at writing; and Internet is a place where we can express ourself. so this is me being accountable and putting myself out.
+I have never been consistent with my writing and I wish to change it to become better at writing; and Internet is a place where we can express ourself. so this is me being accountable and putting myself out.
 
 
 Now, I will be trying to write about:
