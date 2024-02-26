@@ -11,14 +11,371 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 29 Nov 2022 11:14:10 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 26 Feb 2024 15:12:36 +0530</lastBuildDate>
     <atom:link href="https://upendra1997.github.io/tags/haskell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advent of Code 2023 Day 1</title>
+      <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-1/</link>
+      <pubDate>Mon, 26 Feb 2024 15:12:36 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/advent-of-code-2023-day-1/</guid>
+      <description>advent of code 2023 day 1</description>
+      <content:encoded><![CDATA[<h1 id="aoc-2023-1-trebuchet">AOC-2023-1 Trebuchet?!</h1>
+<p>I have tried solving advent of code 2023 challenges in haskell, and this was my attempt to solve day 1.
+In this problem we have to find the first and last digits in a line and sum them.</p>
+<p>problem link: <a href="https://adventofcode.com/2023/day/1">https://adventofcode.com/2023/day/1</a></p>
+<h2 id="part-1">Part 1</h2>
+<p>First part is very simple as it is just a parsing problem, and we can use my favourite library for parsing: <a href="https://hackage.haskell.org/package/parsec">parsec</a> to solve it.</p>
+<h2 id="part-2">Part 2</h2>
+<p>Second part have a variation that say the digits may be spelled out like <code>one</code> instead of <code>1</code>. which seems to be easy to solve as we can just change our parsing logic to consider both <code>1</code> and <code>one</code> as <code>1</code>. But when I treid to solve it using that approach, I was getting the wrong result.</p>
+<p>so I thought that I am missing an edge case; i.e.: <code>twone</code>, which should return <code>21</code>.
+There are two issues here that needs to be solved:</p>
+<ol>
+<li>We don&rsquo;t want to consume the input stream event though we have found the matching token.</li>
+<li>We want our parser to be greedy for searching the first digit and lazy for searching the last digit.</li>
+</ol>
+<p>To understand the issues, we need to understad how parsec works.</p>
+<p>paresc consumes the input stream and at each returns the token found and rest of the input stream, so for our example it would be:</p>
+<figure class="align-center ">
+    <img loading="lazy" src="images/parsec.svg#center"/> 
+</figure>
+
+<p>one way to solve the issue is to run the parser at every character and collect the result, like so:</p>
+<figure class="align-center ">
+    <img loading="lazy" src="images/parsec-2.svg#center"/> 
+</figure>
+
+<p>but that seemed to be very complicated, so I decided to reverse the string and run the parser with a switch to reverse the string.</p>
+<p>you can check the code at: <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day1/day1.hs">https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day1/day1.hs</a></p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Haskell Sudoku</title>
       <link>https://upendra1997.github.io/posts/haskell-sudoku/</link>
       <pubDate>Tue, 29 Nov 2022 11:14:10 +0530</pubDate>
       <guid>https://upendra1997.github.io/posts/haskell-sudoku/</guid>
       <description>A sudoku solver in Haskell.</description>
+      <content:encoded><![CDATA[<p>Last time, I mentioned that I tried to write sudoku solver in haskell and it was using too much memory and time. So I tried to solve it again and this time I was able to do it, I guess I just needed more motivation.</p>
+<p>We will be using this file format as input to our suodku program:</p>
+<pre tabindex="0"><code>92634.7.1
+.5..264.9
+.7.8.1...
+...9..2.7
+342.....5
+1.....8..
+6854...12
+..4..29..
+.1.538.7.
+</code></pre><p>and it will be represented as an array of numbers and <code>.</code> will be represented as <code>0</code>, so for our repl, the sudoku will be <code>[[Int]]</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>[[<span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">9</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">7</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">0</span>]]
+</span></span></code></pre></div><p>above sudoku only have one solution, but there could be sudokus with multiple solutions also, like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>[[<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">1</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>],  <span style="color:#75715e">-- 2 7</span>
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">3</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">6</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">5</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">8</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">4</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>]]  <span style="color:#75715e">-- 7 2</span>
+</span></span></code></pre></div><p>or we could have empty sudoku, which will give us all the valid sudokus possible in the world:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>[[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>]]
+</span></span></code></pre></div><h2 id="project-structure">Project Structure</h2>
+<p>This is created by using <code>stack new suokdu</code></p>
+<pre tabindex="0"><code>.
+├── CHANGELOG.md
+├── LICENSE
+├── README.md
+├── Setup.hs
+├── app
+│   └── Main.hs
+├── emptySudoku.txt   -- empty sudoku input file.
+├── package.yaml
+├── src
+│   └── Lib.hs
+├── stack.yaml
+├── stack.yaml.lock
+├── sudoku.cabal
+├── sudoku.txt        -- only one solution sudoku file.
+└── test
+    └── Spec.hs
+</code></pre><h2 id="defining-types">Defining Types</h2>
+<p>here we will be defining a few of the types which will be used in our program, all of them are type aliases <code>type</code> instead of <code>newtype</code> as I wanted to use these types interchangeably with generic functions like <code>crossProduct</code>, which we will see later.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/Lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#66d9ef">Cell</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Int</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#66d9ef">SudokuSize</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Int</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#66d9ef">Row</span> <span style="color:#f92672">=</span> [<span style="color:#66d9ef">Int</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#66d9ef">X</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Int</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#66d9ef">Y</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Int</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#66d9ef">Coord</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">X</span>, <span style="color:#66d9ef">Y</span>) <span style="color:#75715e">-- Coordinates</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#66d9ef">Sudoku</span> <span style="color:#f92672">=</span> [<span style="color:#66d9ef">Row</span>]
+</span></span></code></pre></div><h2 id="config">Config</h2>
+<p>We will be storing some configs like <code>sudokuSize</code> and the <code>gridSize</code> in the Sudoku in the <code>Lib.hs</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/Lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sudokuSize</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">SudokuSize</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sudokuSize</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">blockSize</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Int</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">blockSize</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span></code></pre></div><h2 id="parsing-and-printing-sudoku">Parsing and printing Sudoku</h2>
+<p>We need to pretty print our sudoku in the terminal, so for that, we will be defining <code>showSudoku</code> function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/Lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">showRow</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Show</span> a <span style="color:#f92672">=&gt;</span> [a] <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">String</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">showRow</span> row <span style="color:#f92672">=</span> unwords <span style="color:#f92672">$</span> show <span style="color:#f92672">&lt;$&gt;</span> row
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">showSudoku</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Show</span> a <span style="color:#f92672">=&gt;</span> [[a]] <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">String</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">showSudoku</span> sudoku <span style="color:#f92672">=</span> unlines <span style="color:#f92672">$</span> showRow <span style="color:#f92672">&lt;$&gt;</span> sudoku
+</span></span></code></pre></div><p>and to parse our sudoku from the file we will define below the functions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- app/main.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">module</span> Main (<span style="color:#a6e22e">main</span>) <span style="color:#66d9ef">where</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> Data.Char (<span style="color:#a6e22e">digitToInt</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> Control.Monad (<span style="color:#a6e22e">replicateM</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> Lib (<span style="color:#66d9ef">Cell</span>, <span style="color:#66d9ef">Row</span>, <span style="color:#a6e22e">sudokuSize</span>, <span style="color:#a6e22e">showSudoku</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">parseChar</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Char</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Cell</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">parseChar</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">parseChar</span> x <span style="color:#f92672">=</span> digitToInt x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">parseString</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Row</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">parseString</span> <span style="color:#f92672">=</span> map parseChar
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">readRow</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">IO</span> <span style="color:#66d9ef">Row</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">readRow</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  row <span style="color:#f92672">&lt;-</span> parseString <span style="color:#f92672">&lt;$&gt;</span> getLine
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> length row <span style="color:#f92672">/=</span> sudokuSize
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">then</span> <span style="color:#a6e22e">error</span> <span style="color:#e6db74">&#34;row does not have the correct number of cells&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> return row
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">main</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">IO</span> ()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">main</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    sudoku <span style="color:#f92672">&lt;-</span> replicateM sudokuSize readRow
+</span></span><span style="display:flex;"><span>    mapM_ (putStrLn <span style="color:#f92672">.</span> showSudoku) [sudoku]
+</span></span></code></pre></div><p>We have defined a function <code>readRow</code> which will read from <code>stdin</code> and try to parse it as a <code>Row</code>, and since <code>readRow</code> is an <code>IO</code>, i.e. it reads from the terminal, we can use <code>replicateM</code> to repeat this operation and read multiple rows from the terminal.</p>
+<p>if we look at the type of replicateM in the <code>stack repl</code>, we will see that:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">ghci</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">:</span>t replicateM
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">replicateM</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Applicative</span> m <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">Int</span> <span style="color:#f92672">-&gt;</span> m a <span style="color:#f92672">-&gt;</span> m [a]
+</span></span></code></pre></div><p>so here <code>(Int -&gt; m a) -&gt; m [a]</code> means that it will collect <code>a</code> from <code>m</code> type of computation and will return a new computation <code>m [a]</code> where all the <code>a</code> have been gathered from different computations.
+i.e.
+so here <code>(9 -&gt; readRow)</code> replicateM needs a number <code>9</code> and a computation to replicate which is <code>readRow</code>, and it will return <code>IO [Row]</code> which is a sudoku.</p>
+<p>similarly in <code>MapM</code> function, where _ will ignore the result:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">ghci</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">:</span>t mapM
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">mapM</span> <span style="color:#f92672">::</span> (<span style="color:#66d9ef">Traversable</span> t, <span style="color:#66d9ef">Monad</span> m) <span style="color:#f92672">=&gt;</span> (a <span style="color:#f92672">-&gt;</span> m b) <span style="color:#f92672">-&gt;</span> t a <span style="color:#f92672">-&gt;</span> m (t b)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ghci</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">:</span>t mapM_
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">mapM_</span> <span style="color:#f92672">::</span> (<span style="color:#66d9ef">Foldable</span> t, <span style="color:#66d9ef">Monad</span> m) <span style="color:#f92672">=&gt;</span> (a <span style="color:#f92672">-&gt;</span> m b) <span style="color:#f92672">-&gt;</span> t a <span style="color:#f92672">-&gt;</span> m ()
+</span></span></code></pre></div><h2 id="validate-sudokus">Validate Sudokus</h2>
+<p>for a sudoku to be valid, each row and column must contain a number from 1 to 9 exactly once; and also there are 9 grids of size <code>3x3</code> in a <code>9x9</code> sudoku, where no number must repeat.</p>
+<h3 id="get-all-rows">get all rows</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">rows</span> <span style="color:#f92672">::</span> [[a]] <span style="color:#f92672">-&gt;</span> [[[a]]]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">rows</span> <span style="color:#f92672">=</span> fmap (replicate sudokuSize)
+</span></span></code></pre></div><h3 id="get-all-columns">get all columns</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">columns</span> <span style="color:#f92672">::</span> [[a]] <span style="color:#f92672">-&gt;</span> [[[a]]]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">columns</span> <span style="color:#f92672">=</span> transpose <span style="color:#f92672">.</span> rows <span style="color:#f92672">.</span> transpose
+</span></span></code></pre></div><h3 id="get-all-grid-blocks">get all grid blocks</h3>
+<p>to get all grid blocks we need to know which grid each element of sudoku belongs to, every grid has a start and end position which can be represented by <code>Coord</code> type.</p>
+<p>Coordinates of all elements in sudoku:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">coordinates</span> <span style="color:#f92672">::</span> [[<span style="color:#66d9ef">Coord</span>]]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">coordinates</span> <span style="color:#f92672">=</span> [[(r, c) <span style="color:#f92672">|</span> c <span style="color:#f92672">&lt;-</span> [<span style="color:#ae81ff">0</span> <span style="color:#f92672">..</span> sudokuSize <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]] <span style="color:#f92672">|</span> r <span style="color:#f92672">&lt;-</span> [<span style="color:#ae81ff">0</span> <span style="color:#f92672">..</span> sudokuSize <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]]
+</span></span></code></pre></div><p>block coordinate will give us the start and end position pairs of all sudoku elements.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">blockCoordinates</span> <span style="color:#f92672">::</span> [[(<span style="color:#66d9ef">Coord</span>, <span style="color:#66d9ef">Coord</span>)]]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">blockCoordinates</span> <span style="color:#f92672">=</span> (fmap <span style="color:#f92672">.</span> fmap) (<span style="color:#a6e22e">\</span>(x, y) <span style="color:#f92672">-&gt;</span> (start x y, end x y)) coordinates
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">where</span>
+</span></span><span style="display:flex;"><span>    start x&#39; y&#39; <span style="color:#f92672">=</span> (<span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> (x&#39; `div` blockSize), <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> (y&#39; `div` blockSize))
+</span></span><span style="display:flex;"><span>    end x&#39; y&#39; <span style="color:#f92672">=</span> (<span style="color:#a6e22e">\</span>(x&#39;&#39;, y&#39;&#39;) <span style="color:#f92672">-&gt;</span> (x&#39;&#39; <span style="color:#f92672">+</span> blockSize, y&#39;&#39; <span style="color:#f92672">+</span> blockSize)) <span style="color:#f92672">$</span> start x&#39; y&#39;
+</span></span></code></pre></div><p>if Sudoku type was parametrized like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#66d9ef">Sudoku</span> a <span style="color:#f92672">=</span> [[a]]
+</span></span></code></pre></div><p>then we could have represented <code>blockCoordinates</code> as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#66d9ef">Rectangle</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">Coord</span>, <span style="color:#66d9ef">Coord</span>) <span style="color:#75715e">-- (start, end)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">blockCoordinates</span> <span style="color:#f92672">::</span> [[<span style="color:#66d9ef">Rectangle</span>]]
+</span></span></code></pre></div><p>to get values from block coordinates we need a few helper functions like <code>slice</code> and <code>slice2D</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">slice</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Int</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Int</span> <span style="color:#f92672">-&gt;</span> [a] <span style="color:#f92672">-&gt;</span> [a]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">slice</span> start end <span style="color:#f92672">=</span> drop start <span style="color:#f92672">.</span> take end
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">slice2D</span> <span style="color:#f92672">::</span> [[a]] <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Int</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Int</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Int</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Int</span> <span style="color:#f92672">-&gt;</span> [[a]]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">slice2D</span> sudoku startRow endRow startCol endCol <span style="color:#f92672">=</span> slice startRow endRow <span style="color:#f92672">$</span> slice startCol endCol <span style="color:#f92672">&lt;$&gt;</span> sudoku
+</span></span></code></pre></div><p>and finally, our function to get blocks at each coordinate:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">blocks</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Sudoku</span> <span style="color:#f92672">-&gt;</span> [[[[<span style="color:#66d9ef">Int</span>]]]]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">blocks</span> sudoku <span style="color:#f92672">=</span> (fmap <span style="color:#f92672">.</span> fmap) block blockCoordinates
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">where</span>
+</span></span><span style="display:flex;"><span>    getSlice <span style="color:#f92672">=</span> slice2D sudoku
+</span></span><span style="display:flex;"><span>    block ((startRow, startCol), (endRow, endCol)) <span style="color:#f92672">=</span> getSlice startRow endRow startCol endCol
+</span></span></code></pre></div><p>to understand it better, lets take our previous case where Sudoku was parametrized, which would give us</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">blocks</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Sudoku</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Sudoku</span> (<span style="color:#66d9ef">Sudoku</span> <span style="color:#66d9ef">Int</span>)
+</span></span></code></pre></div><p>here blocks is like a sudoku of sudokus, where inner sudoku is a <code>3x3</code> grid.</p>
+<p>finally, we merge all the values of the rows, column and grid values at each coordinate of the grid and we get:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">getAllValues</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Sudoku</span> <span style="color:#f92672">-&gt;</span> [[[<span style="color:#66d9ef">Cell</span>]]]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">getAllValues</span> sudoku <span style="color:#f92672">=</span> (fmap <span style="color:#f92672">.</span> fmap) (sort <span style="color:#f92672">.</span> nub) all&#39;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">where</span>
+</span></span><span style="display:flex;"><span>    add&#39; <span style="color:#f92672">=</span> (zipWith <span style="color:#f92672">.</span> zipWith) (<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    all&#39; <span style="color:#f92672">=</span> add&#39; blocks&#39; <span style="color:#f92672">$</span> add&#39; rows&#39; cols&#39;
+</span></span><span style="display:flex;"><span>    rows&#39; <span style="color:#f92672">=</span> rows sudoku
+</span></span><span style="display:flex;"><span>    cols&#39; <span style="color:#f92672">=</span> columns sudoku
+</span></span><span style="display:flex;"><span>    blocks&#39; <span style="color:#f92672">=</span> fmap concat <span style="color:#f92672">&lt;$&gt;</span> blocks sudoku
+</span></span></code></pre></div><p>and alternate way would to see this would be if <code>Suodku</code> was parametrized</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">getAllValues</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Sudoku</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Sudoku</span> [<span style="color:#66d9ef">Int</span>]
+</span></span></code></pre></div><p>this tells us that each sudoku element is an array of integers.</p>
+<p>and by this scenario, we can easily validate sudoku if all the elements of sudoku contain exactly 9 values</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">valid</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Sudoku</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Bool</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">valid</span> sudoku <span style="color:#f92672">=</span> (all <span style="color:#f92672">.</span> all) (<span style="color:#f92672">==</span> <span style="color:#ae81ff">9</span>) (fmap length <span style="color:#f92672">&lt;$&gt;</span> getAllValues sudoku)
+</span></span></code></pre></div><h2 id="sudoku-solutions">Sudoku Solutions</h2>
+<h3 id="getting-solutions-without-context">getting solutions without context</h3>
+<p>The easiest solution would be to try 1 to 9 values for each 0 in the sudoku.
+the time complexity of this would be <code>9^n</code> where n is the number of 0 in the sudoku.
+We already know that this solution is very slow, and we will never get any answer.
+But let&rsquo;s see how it would be implemented in haskell.</p>
+<p>first, we need a helper function that would give us all possible values for each element:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/Lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">possibilities</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Cell</span> <span style="color:#f92672">-&gt;</span> [<span style="color:#66d9ef">Cell</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">possibilities</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span> <span style="color:#f92672">..</span> <span style="color:#ae81ff">9</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">possibilities</span> n <span style="color:#f92672">=</span> [n]
+</span></span></code></pre></div><p>then we need a way to cross-produce each possibility.
+Here cross-product is the same as the cross-product of a set in mathematics.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">ghci</span><span style="color:#f92672">&gt;</span> crossProduct [[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>], [<span style="color:#ae81ff">6</span>]]
+</span></span><span style="display:flex;"><span>[[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">6</span>],[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>],[<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">6</span>],[<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>],[<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">6</span>],[<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>]]
+</span></span></code></pre></div><p>and here is its implementation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/Lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">crossProduct</span> <span style="color:#f92672">::</span> [[a]] <span style="color:#f92672">-&gt;</span> [[a]]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">crossProduct</span> <span style="color:#66d9ef">[]</span>             <span style="color:#f92672">=</span> <span style="color:#66d9ef">[]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">crossProduct</span> [a]            <span style="color:#f92672">=</span> [[x] <span style="color:#f92672">|</span> x <span style="color:#f92672">&lt;-</span> a]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">crossProduct</span> (array <span style="color:#66d9ef">:</span> rest) <span style="color:#f92672">=</span> (<span style="color:#66d9ef">:</span>) <span style="color:#f92672">&lt;$&gt;</span> array <span style="color:#f92672">&lt;*&gt;</span> crossProduct rest
+</span></span></code></pre></div><p>we could also use the sequence function from Prelude, which does the same thing.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">ghci</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">:</span>t sequence
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sequence</span> <span style="color:#f92672">::</span> (<span style="color:#66d9ef">Traversable</span> t, <span style="color:#66d9ef">Monad</span> m) <span style="color:#f92672">=&gt;</span> t (m a) <span style="color:#f92672">-&gt;</span> m (t a)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ghci</span><span style="color:#f92672">&gt;</span> sequence [[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>], [<span style="color:#ae81ff">6</span>]]
+</span></span><span style="display:flex;"><span>[[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">6</span>],[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>],[<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">6</span>],[<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>],[<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">6</span>],[<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>]]
+</span></span></code></pre></div><p>So by getting a cross-product of each possibility we will get all solutions available.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/Lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">getSolutions</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Sudoku</span> <span style="color:#f92672">-&gt;</span> [<span style="color:#66d9ef">Sudoku</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">getSolutions</span> sudoku <span style="color:#f92672">=</span> filter valid allSudokus
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">where</span>
+</span></span><span style="display:flex;"><span>    allSudokus <span style="color:#f92672">=</span> crossProduct (crossProduct <span style="color:#f92672">.</span> fmap possibilities <span style="color:#f92672">&lt;$&gt;</span> sudoku)
+</span></span></code></pre></div><p>so for this kind of solution, we have these many possibilities:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">ghci</span><span style="color:#f92672">&gt;</span> product <span style="color:#f92672">$</span> fmap product <span style="color:#f92672">$</span> fmap (length <span style="color:#f92672">.</span> possibilities) <span style="color:#f92672">&lt;$&gt;</span> sudoku
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">8599843895832833305</span>
+</span></span></code></pre></div><p>Which is a lot&hellip;</p>
+<h3 id="getting-solutions-based-on-context">getting solutions based on context</h3>
+<p>now, we can be smarter about this and only generate possibilities which are not already present in the row, column and grid blocks.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/Lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">possibilitiesWithContext</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Sudoku</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Coord</span> <span style="color:#f92672">-&gt;</span> [<span style="color:#66d9ef">Cell</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">possibilitiesWithContext</span> sudoku coord <span style="color:#f92672">=</span> <span style="color:#66d9ef">if</span> currentValue <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">then</span> possibleValues <span style="color:#66d9ef">else</span> [currentValue]
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">where</span> (x, y) <span style="color:#f92672">=</span> coord
+</span></span><span style="display:flex;"><span>        currentValue <span style="color:#f92672">=</span> head <span style="color:#f92672">$</span> concat <span style="color:#f92672">$</span> slice2D sudoku x (x <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) y (y <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)                          <span style="color:#75715e">-- sudoku !! x !! y</span>
+</span></span><span style="display:flex;"><span>        allValues&#39; <span style="color:#f92672">=</span> getAllValues sudoku
+</span></span><span style="display:flex;"><span>        allValues <span style="color:#f92672">=</span> concatMap concat <span style="color:#f92672">$</span> slice2D allValues&#39; x (x <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) y (y <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        possibleValues <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span><span style="color:#f92672">..</span>sudokuSize] <span style="color:#f92672">\\</span> allValues                                              <span style="color:#75715e">-- subtract a from b | `a` \\ `b`</span>
+</span></span></code></pre></div><p>and will be plugging it in the getSolutions approach.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/Lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">getSolutions</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Sudoku</span> <span style="color:#f92672">-&gt;</span> [<span style="color:#66d9ef">Sudoku</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">getSolutions</span> sudoku <span style="color:#f92672">=</span> filter valid allSudokus
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">where</span>
+</span></span><span style="display:flex;"><span>    possibilities&#39; <span style="color:#f92672">=</span> possibilitiesWithContext sudoku
+</span></span><span style="display:flex;"><span>    allSudokus <span style="color:#f92672">=</span> crossProduct (crossProduct <span style="color:#f92672">.</span> fmap possibilities&#39; <span style="color:#f92672">&lt;$&gt;</span> coordinates)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">ghci</span><span style="color:#f92672">&gt;</span> product <span style="color:#f92672">$</span> fmap product <span style="color:#f92672">$</span> fmap (length <span style="color:#f92672">.</span> possibilities&#39;) <span style="color:#f92672">&lt;$&gt;</span> coordinates
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2972033482752</span>
+</span></span></code></pre></div><p>for this solution, almost 1000000 times fewer searches have to be done for this; but still slow for our computer.</p>
+<h3 id="generating-solutions-based-on-context">generating solutions based on context</h3>
+<p>We can have a faster solution if for each coordinate with <code>0</code> we take one possible number and try to generate possibilities for other holes in the sudoku, if at some point we reach a hole in the sudoku where there is no possible number, then we <strong>backtrack</strong> to the previous hole and try next possibility, once we are done will all the holes in the sudoku, we return our solution.</p>
+<p>for this approach, we would need a helper function that would replace our sudoku with given coordinates and a new value.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/Lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">replaceAt</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Int</span> <span style="color:#f92672">-&gt;</span> (a <span style="color:#f92672">-&gt;</span> a) <span style="color:#f92672">-&gt;</span> [a] <span style="color:#f92672">-&gt;</span> [a]                <span style="color:#75715e">-- works for 1D array</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">replaceAt</span> index f array <span style="color:#f92672">=</span> left <span style="color:#f92672">++</span> (f current <span style="color:#66d9ef">:</span> right&#39;)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">where</span> (left, right) <span style="color:#f92672">=</span> splitAt index array
+</span></span><span style="display:flex;"><span>        current <span style="color:#f92672">=</span> head right
+</span></span><span style="display:flex;"><span>        right&#39; <span style="color:#f92672">=</span> tail right
+</span></span></code></pre></div><p>and so finally our solution</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/Lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">generateSudoku</span> <span style="color:#f92672">::</span> [<span style="color:#66d9ef">Coord</span>] <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Sudoku</span> <span style="color:#f92672">-&gt;</span> [<span style="color:#66d9ef">Sudoku</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">generateSudoku</span> <span style="color:#66d9ef">[]</span> sudoku&#39; <span style="color:#f92672">=</span> <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>          guard (valid sudoku&#39;)
+</span></span><span style="display:flex;"><span>          return sudoku&#39;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">generateSudoku</span> (coord<span style="color:#66d9ef">:</span> coords) sudoku&#39; <span style="color:#f92672">=</span>  <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> (x, y) <span style="color:#f92672">=</span> coord
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> values <span style="color:#f92672">=</span> possibilitiesWithContext sudoku&#39; coord
+</span></span><span style="display:flex;"><span>  guard <span style="color:#f92672">$</span> (not <span style="color:#f92672">.</span> null) values
+</span></span><span style="display:flex;"><span>  val <span style="color:#f92672">&lt;-</span> values
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> sudoku&#39;&#39; <span style="color:#f92672">=</span> replaceAt x (replaceAt y (const val)) sudoku&#39;
+</span></span><span style="display:flex;"><span>  generateSudoku coords sudoku&#39;&#39;
+</span></span></code></pre></div><p>Let&rsquo;s break it down.
+<code>coords</code> is a list of coordinates where we have holes = <code>0</code>.
+<code>generateSudoku</code> is a function that will try to replace <code>coord</code> with a possibility and will backtrack if no possibility is present at some point using <code>guard</code>.</p>
+<p>and let&rsquo;s plug it into our solution</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- src/Lib.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">getSolutions</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Sudoku</span> <span style="color:#f92672">-&gt;</span> [<span style="color:#66d9ef">Sudoku</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">getSolutions</span> sudoku <span style="color:#f92672">=</span> generateSudoku coords&#39; sudoku
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">where</span> coords&#39; <span style="color:#f92672">=</span> concatMap (fmap filter id ifValid) coordinates <span style="color:#75715e">-- concat $ (fmap.fmap filter id) ifValid coordinates</span>
+</span></span><span style="display:flex;"><span>        ifValid (x, y) <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">==</span> (sudoku <span style="color:#f92672">!!</span> x <span style="color:#f92672">!!</span> y)
+</span></span></code></pre></div><h2 id="printing-all-solutions">Printing all solutions</h2>
+<p>so finally our main function looks like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#75715e">-- app/Main.hs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">main</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">IO</span> ()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">main</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    sudoku <span style="color:#f92672">&lt;-</span> replicateM sudokuSize readRow
+</span></span><span style="display:flex;"><span>    mapM_ (putStrLn <span style="color:#f92672">.</span> showSudoku) <span style="color:#f92672">$</span> getSolutions sudoku
+</span></span></code></pre></div><p>and our solution is</p>
+<pre tabindex="0"><code>9 2 6 3 4 5 7 8 1
+8 5 1 7 2 6 4 3 9
+4 7 3 8 9 1 5 2 6
+5 6 8 9 1 3 2 4 7
+3 4 2 6 8 7 1 9 5
+1 9 7 2 5 4 8 6 3
+6 8 5 4 7 9 3 1 2
+7 3 4 1 6 2 9 5 8
+2 1 9 5 3 8 6 7 4
+</code></pre><hr>
+<p>Github Repository: <a href="https://github.com/upendra1997/sudoku-haskell">https://github.com/upendra1997/sudoku-haskell</a></p>
+<hr>
+]]></content:encoded>
     </item>
     <item>
       <title>Nim Clojure Similarity</title>
@@ -26,6 +383,22 @@
       <pubDate>Sat, 26 Nov 2022 11:13:56 +0530</pubDate>
       <guid>https://upendra1997.github.io/posts/nim-clojure-similarity/</guid>
       <description>How Nim can help learn Systems Programming</description>
+      <content:encoded><![CDATA[<p>Hello world, I am Upendra Upadhyay. This is my first post and I have been trying to write for a long time. I think there is no better time than now.</p>
+<p>I have been trying to learn <a href="https://www.haskell.org/">Haskell</a> for past 3 years in my free time, but was never able to code anything useful; mostly did fibonacci, sieve of eratosthenes, and sudoku - which was taking lot of memory and time because of bad pruning.</p>
+<h3 id="fibonacci">Fibonacci</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">fib</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#66d9ef">:</span><span style="color:#ae81ff">1</span><span style="color:#66d9ef">:</span>zipWith (<span style="color:#f92672">+</span>) fib (tail fib)
+</span></span></code></pre></div><pre tabindex="0"><code>ghci&gt; take 10 fib
+[0,1,1,2,3,5,8,13,21,34]
+</code></pre><h3 id="sieve-of-eratosthenes">Sieve of eratosthenes</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">sieve</span> (p<span style="color:#66d9ef">:</span>ps) <span style="color:#f92672">=</span> p<span style="color:#66d9ef">:</span>sieve (filter (<span style="color:#a6e22e">\</span>x <span style="color:#f92672">-&gt;</span> x `mod` p <span style="color:#f92672">/=</span> <span style="color:#ae81ff">0</span>) ps)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">prime</span> <span style="color:#f92672">=</span> sieve [<span style="color:#ae81ff">2</span><span style="color:#f92672">..</span>]
+</span></span></code></pre></div><pre tabindex="0"><code>ghci&gt; take 10 prime
+[2,3,5,7,11,13,17,19,23,29]
+</code></pre><hr>
+<p>All things considered, I was never able to be productive in Haskell, But I got opportunity to work in <a href="https://clojure.org/">Clojure</a>; which allowed me to write functional code and interop with Java/Javascript. It created a bridge to Haskell, which have great ideas with steep learning curve.</p>
+<p>Similar case is with <a href="https://www.rust-lang.org/">Rust</a>, I am still trying to solve <a href="https://exercism.org/tracks/rust/exercises/xorcism">Xorcism</a> , never seem to be getting closer to solution. I think Rust have great ideas but also a bit of learning curve. This where I think <a href="https://nim-lang.org/">Nim</a> can become similar bridge like Clojure for Rust. It allows system programming and interop with C, C++, Javascript.</p>
+<p>which makes me curious to learn Nim.</p>
+]]></content:encoded>
     </item>
   </channel>
 </rss>

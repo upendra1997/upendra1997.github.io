@@ -19,6 +19,26 @@
       <pubDate>Sat, 11 Feb 2023 13:36:56 +0530</pubDate>
       <guid>https://upendra1997.github.io/posts/visitor-pattern/</guid>
       <description>Video explaining visitor pattern.</description>
+      <content:encoded><![CDATA[<p>I created a new video and google slide explaining visitor pattern:</p>
+<h2 id="youtube-video">Youtube Video:</h2>
+<center>
+  <iframe width="960" height="569" src="https://www.youtube.com/embed/VN73h0bJC3c" title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</center>
+<h2 id="google-slide">Google Slide:</h2>
+<center>
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT9uJ7QzUJ3xoLdCSjMVFejqgauCRu7mNHJ02DOvPnwQnyH2qBIP4BS_3wiRJbdhcm-cjnezbDJTqX0/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true"
+        mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</center>
+<h2 id="references">references:</h2>
+<ol>
+<li><a href="https://docs.google.com/presentation/d/1MIqN9BQSL_Wnsm4PmOwZEnP5Gj_07VoF7c802-pcP0E/edit?usp=sharing">Google Slide</a></li>
+<li>Gangs Of Four Book</li>
+<li>awesome blog about clojure design patterns: <a href="http://mishadoff.com/blog/clojure-design-patterns/#episode-4-visitor">http://mishadoff.com/blog/clojure-design-patterns/#episode-4-visitor</a></li>
+</ol>
+]]></content:encoded>
     </item>
   </channel>
 </rss>

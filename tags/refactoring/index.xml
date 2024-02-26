@@ -19,6 +19,46 @@
       <pubDate>Sat, 15 Apr 2023 18:03:11 +0530</pubDate>
       <guid>https://upendra1997.github.io/posts/rust-function-closures/</guid>
       <description>Me refactoring some rust code</description>
+      <content:encoded><![CDATA[<p>I was recently watching <a href="https://www.youtube.com/watch?v=gboGyccRVXI">Jon Gjengset</a>&rsquo;s Video on solving fly.io distributed system <a href="https://fly.io/dist-sys/">challanges</a>
+and I always liked doing these kind of things, and it was a good excuse for me test my rust skills. I started doing these exercises in rust <a href="https://github.com/upendra1997/maelstorm_rust">here</a>.
+I was able to solve <a href="https://fly.io/dist-sys/1/">echo</a> and <a href="https://fly.io/dist-sys/2/">unique-id</a> generator challanges, but the decisions I took
+while doing them was becoming difficult to work with
+for the next <a href="https://fly.io/dist-sys/3a/">challange</a>.
+so below is me working on refactoring some code to support multiple handlers, I am not sure if it is a good decision, but here we go:
+  <link rel="stylesheet" type="text/css" href="../../../data/asciinema-player.css" />
+  <div id="asciicast">
+    <script src="../../../data/asciinema-player.min.js"></script>
+    <audio id="audio" controls>
+      <source src = "../../../data/rust-cast.m4a" type="audio/x-m4a"> 
+    Your browser does not support the audio element.
+    </audio> 
+    <script type="text/javascript">
+      console.log("hello world");
+      const player = AsciinemaPlayer.create("..\/..\/..\/data\/adding-request-handler.cast", document.getElementById('asciicast'));
+      const audio = document.getElementById('audio');
+      audio.addEventListener('play', () => {
+        player.play();
+      })
+      audio.addEventListener('pause', () => {
+        player.pause();
+      })
+      audio.addEventListener('seeked', () => {
+        player.seek(audio.currentTime);
+      })
+      player.addEventListener('play', (obj) => {
+        audio.play();
+      })
+    </script>
+    <style>
+      #audio {
+        width: 100%;
+      }
+      .control-bar {
+                  display: none;
+      }
+    </style>
+  </div></p>
+]]></content:encoded>
     </item>
   </channel>
 </rss>

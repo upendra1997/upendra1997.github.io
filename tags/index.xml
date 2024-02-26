@@ -11,8 +11,22 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 15 Apr 2023 18:03:11 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 26 Feb 2024 15:12:36 +0530</lastBuildDate>
     <atom:link href="https://upendra1997.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Haskell</title>
+      <link>https://upendra1997.github.io/tags/haskell/</link>
+      <pubDate>Mon, 26 Feb 2024 15:12:36 +0530</pubDate>
+      <guid>https://upendra1997.github.io/tags/haskell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Daily Life</title>
+      <link>https://upendra1997.github.io/tags/daily-life/</link>
+      <pubDate>Sun, 25 Feb 2024 10:34:57 +0530</pubDate>
+      <guid>https://upendra1997.github.io/tags/daily-life/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Refactoring</title>
       <link>https://upendra1997.github.io/tags/refactoring/</link>
@@ -25,13 +39,6 @@
       <link>https://upendra1997.github.io/tags/design-pattern/</link>
       <pubDate>Sat, 11 Feb 2023 13:36:56 +0530</pubDate>
       <guid>https://upendra1997.github.io/tags/design-pattern/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Haskell</title>
-      <link>https://upendra1997.github.io/tags/haskell/</link>
-      <pubDate>Tue, 29 Nov 2022 11:14:10 +0530</pubDate>
-      <guid>https://upendra1997.github.io/tags/haskell/</guid>
       <description></description>
     </item>
     <item>

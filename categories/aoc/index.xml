@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Aoc on Blog | Upendra Upadhyay</title>
+    <link>https://upendra1997.github.io/categories/aoc/</link>
+    <description>Recent content in Aoc on Blog | Upendra Upadhyay</description>
+    <image>
+      <title>Blog | Upendra Upadhyay</title>
+      <url>https://upendra1997.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://upendra1997.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 26 Feb 2024 15:12:36 +0530</lastBuildDate>
+    <atom:link href="https://upendra1997.github.io/categories/aoc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advent of Code 2023 Day 1</title>
+      <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-1/</link>
+      <pubDate>Mon, 26 Feb 2024 15:12:36 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/advent-of-code-2023-day-1/</guid>
+      <description>advent of code 2023 day 1</description>
+      <content:encoded><![CDATA[<h1 id="aoc-2023-1-trebuchet">AOC-2023-1 Trebuchet?!</h1>
+<p>I have tried solving advent of code 2023 challenges in haskell, and this was my attempt to solve day 1.
+In this problem we have to find the first and last digits in a line and sum them.</p>
+<p>problem link: <a href="https://adventofcode.com/2023/day/1">https://adventofcode.com/2023/day/1</a></p>
+<h2 id="part-1">Part 1</h2>
+<p>First part is very simple as it is just a parsing problem, and we can use my favourite library for parsing: <a href="https://hackage.haskell.org/package/parsec">parsec</a> to solve it.</p>
+<h2 id="part-2">Part 2</h2>
+<p>Second part have a variation that say the digits may be spelled out like <code>one</code> instead of <code>1</code>. which seems to be easy to solve as we can just change our parsing logic to consider both <code>1</code> and <code>one</code> as <code>1</code>. But when I treid to solve it using that approach, I was getting the wrong result.</p>
+<p>so I thought that I am missing an edge case; i.e.: <code>twone</code>, which should return <code>21</code>.
+There are two issues here that needs to be solved:</p>
+<ol>
+<li>We don&rsquo;t want to consume the input stream event though we have found the matching token.</li>
+<li>We want our parser to be greedy for searching the first digit and lazy for searching the last digit.</li>
+</ol>
+<p>To understand the issues, we need to understad how parsec works.</p>
+<p>paresc consumes the input stream and at each returns the token found and rest of the input stream, so for our example it would be:</p>
+<figure class="align-center ">
+    <img loading="lazy" src="images/parsec.svg#center"/> 
+</figure>
+
+<p>one way to solve the issue is to run the parser at every character and collect the result, like so:</p>
+<figure class="align-center ">
+    <img loading="lazy" src="images/parsec-2.svg#center"/> 
+</figure>
+
+<p>but that seemed to be very complicated, so I decided to reverse the string and run the parser with a switch to reverse the string.</p>
+<p>you can check the code at: <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day1/day1.hs">https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day1/day1.hs</a></p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>
