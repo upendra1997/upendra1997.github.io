@@ -11,8 +11,19 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Feb 2024 15:12:36 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 27 Feb 2024 10:12:44 +0530</lastBuildDate>
     <atom:link href="https://upendra1997.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advent of Code 2023 Day 2</title>
+      <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-2/</link>
+      <pubDate>Tue, 27 Feb 2024 10:12:44 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/advent-of-code-2023-day-2/</guid>
+      <description>advent of code 2023 day 2</description>
+      <content:encoded><![CDATA[<h1 id="aoc-2023-2-cube-conundrum">AOC-2023-2 Cube Conundrum</h1>
+<p>In this <a href="https://adventofcode.com/2023/day/2">problem</a>, we have to parse the input text and compute the result; this problem was not particularly hard or tricky and just required correct parsing.</p>
+<p>code for day 2 is at: <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day2/day2.hs">https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day2/day2.hs</a></p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Advent of Code 2023 Day 1</title>
       <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-1/</link>
