@@ -11,8 +11,26 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Feb 2024 10:12:44 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 28 Feb 2024 10:08:34 +0530</lastBuildDate>
     <atom:link href="https://upendra1997.github.io/categories/aoc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advent of Code 2023 Day 3</title>
+      <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-3/</link>
+      <pubDate>Wed, 28 Feb 2024 10:08:34 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/advent-of-code-2023-day-3/</guid>
+      <description>advent of code 2023 day 3</description>
+      <content:encoded><![CDATA[<h1 id="aoc-2023-3-gear-ratios">AOC-2023-3 Gear Ratios</h1>
+<p>In this <a href="https://adventofcode.com/2023/day/3">problem</a>, we had to parse the input problem and find all the symbols like: <code>#</code>, <code>*</code>, <code>+</code> and <code>$</code>. All numbers that are adjacent to symbols are important for us, and we need to compute the result.</p>
+<h2 id="part-1">Part 1</h2>
+<p>In this part we had to compute the sum of numbers adjacent to the symbol decsribed above. To get the results I was going for the graph traversal algorithm, and to do that in haskell I used <a href="https://hackage.haskell.org/package/containers">containers</a> library to get <code>Data.Tree</code> and used State Monad from <a href="https://hackage.haskell.org/package/mtl">mtl</a> to keep track of visited nodes using <code>get</code> and <code>put</code>.</p>
+<p>To Debug the issue during the development, I used <code>drawForest</code> in the code using <code>Debug.Trace</code> and used the hardcoded input and running the <code>:main</code> in REPL again and again.</p>
+<h2 id="part-2">Part 2</h2>
+<p>In this part we had to find the pair of numbers around <code>*</code> and multiply them and sum all the results from that.</p>
+<hr>
+<p>So the solution is available at: <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day3/day3.hs">https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day3/day3.hs</a></p>
+<p>but please note that <code>helperFunction</code> and <code>main</code> are not that readable :(</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Advent of Code 2023 Day 2</title>
       <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-2/</link>
