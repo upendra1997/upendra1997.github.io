@@ -11,8 +11,24 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 28 Feb 2024 10:08:34 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 29 Feb 2024 09:41:09 +0530</lastBuildDate>
     <atom:link href="https://upendra1997.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advent of Code 2023 Day 4</title>
+      <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-4/</link>
+      <pubDate>Thu, 29 Feb 2024 09:41:09 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/advent-of-code-2023-day-4/</guid>
+      <description>advent of code 2023 day 4</description>
+      <content:encoded><![CDATA[<h1 id="aoc-2023-4-scratchcards">AOC-2023-4 Scratchcards</h1>
+<p>This <a href="https://adventofcode.com/2023/day/4">problem</a> was easy in the sense that it required just required correct parsing and following the rules to get the result in the problem.</p>
+<h2 id="part-1">Part 1</h2>
+<p>Part 1 just required correct parsing and computing the solution.</p>
+<h2 id="part-2">Part 2</h2>
+<p>Part 2, says that for each winning card with n numbers, we will get extra copies of next n cards, so to maintain the number of extra cards we used a state monad, to keep track of how may extra copies each card have. We use that information to multiply our score with that.</p>
+<hr>
+<p>Solution is available at: <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day4/day4.hs">https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day4/day4.hs</a></p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Advent of Code 2023 Day 3</title>
       <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-3/</link>
