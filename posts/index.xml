@@ -11,8 +11,38 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 29 Feb 2024 09:41:09 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 01 Mar 2024 09:11:31 +0530</lastBuildDate>
     <atom:link href="https://upendra1997.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advent of Code 2023 Day 5</title>
+      <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-5/</link>
+      <pubDate>Fri, 01 Mar 2024 09:11:31 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/advent-of-code-2023-day-5/</guid>
+      <description>advent of code 2023 day 5</description>
+      <content:encoded><![CDATA[<h1 id="aoc-2023-5-if-you-give-a-seed-a-fertilizer">AOC-2023-5 If You Give A Seed A Fertilizer</h1>
+<p>This <a href="https://adventofcode.com/2023/day/5">problem</a> was hardest yet and took longest to solve. so the problem asks us to create a map from seed to location such as:</p>
+<pre tabindex="0"><code>seed -&gt; soil -&gt; fertilizer -&gt; water -&gt; light -&gt; temprature -&gt; humidity -&gt; location
+</code></pre><p>where we are given certain mappings from one entity to another, eg: <code>seed 1</code> corresponds to <code>soil 10</code>
+and given this mapping and intial seed list we need to find the minimum location.</p>
+<h2 id="part-1">Part 1</h2>
+<p>In this part we are given list of intial seeds, and mapping, which we use to construct the <a href="https://hackage.haskell.org/package/containers-0.7/docs/Data-Map.html">Data.Map</a> and traverse it.</p>
+<p>An interesting choice was to handle entries which were not provided in the mapping, so basically if given key is not present in the map then we look into trasition map, which map over entities to functions(which map from entity to entity). eg: if <code>soil 12</code> was not found in the map then we look for <code>soil INT_MIN</code> in transition map, which will return a function that will take <code>soil 12</code> and returns <code>fertilizer 12</code>.</p>
+<p>check <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day5/day5.hs#L169"><code>toLocation</code></a> function to understand the approach mentioned above.</p>
+<h2 id="part-2">Part 2</h2>
+<p>In this part we are givent ranges of seeds intead of just few seeds. If we go with the previous approach, our Map will become very large since it cannot contains that many elements and we will reach out of memory very soon.</p>
+<p>Other approach to solve the issue is to not fit all of them into memory and consider ranges as an entity. We will represent seed 5 to 10 as <code>Seed(5, 10)</code> and we will find all the intersecting entities and we will keep doing until we reach the location entity.</p>
+<p>suppose that we had the mapping:</p>
+<pre tabindex="0"><code>Seed(2, 7) -&gt; Soil(10, 15)
+Seed(9, 15) -&gt; Soil(20, 26)
+</code></pre><p>then the intersections and ther mapping would be:</p>
+<pre tabindex="0"><code>intersection -&gt; mapping
+Seed(5, 7) -&gt; Soil(13, 15)
+Seed(9, 10) -&gt; Soil(20, 21)
+Seed(7, 9) -&gt; Soil(7, 9)
+</code></pre><p>To speed up solution and preventing code going into infintite recursion, we will be using the State Monad from <a href="https://hackage.haskell.org/package/mtl">mtl</a> to keep track of visited nodes and use <code>Data.Tree</code> from <a href="https://hackage.haskell.org/package/containers">containers</a> library to explore the search space.</p>
+<p>check <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day5/day5.hs#L195"><code>locationsFn</code></a> for the approach mentioned above. Please use the <code>drawForest</code> in code to visualize the search space and note that the code is not that readable :(</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Advent of Code 2023 Day 4</title>
       <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-4/</link>

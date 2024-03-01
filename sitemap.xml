@@ -2,25 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://upendra1997.github.io/posts/advent-of-code-2023-day-4/</loc>
-    <lastmod>2024-02-29T09:41:09+05:30</lastmod>
+    <loc>https://upendra1997.github.io/posts/advent-of-code-2023-day-5/</loc>
+    <lastmod>2024-03-01T09:11:31+05:30</lastmod>
   </url><url>
     <loc>https://upendra1997.github.io/categories/aoc/</loc>
-    <lastmod>2024-02-29T09:41:09+05:30</lastmod>
+    <lastmod>2024-03-01T09:11:31+05:30</lastmod>
   </url><url>
     <loc>https://upendra1997.github.io/</loc>
-    <lastmod>2024-02-29T09:41:09+05:30</lastmod>
+    <lastmod>2024-03-01T09:11:31+05:30</lastmod>
   </url><url>
     <loc>https://upendra1997.github.io/categories/</loc>
-    <lastmod>2024-02-29T09:41:09+05:30</lastmod>
+    <lastmod>2024-03-01T09:11:31+05:30</lastmod>
   </url><url>
     <loc>https://upendra1997.github.io/tags/haskell/</loc>
-    <lastmod>2024-02-29T09:41:09+05:30</lastmod>
+    <lastmod>2024-03-01T09:11:31+05:30</lastmod>
   </url><url>
     <loc>https://upendra1997.github.io/posts/</loc>
-    <lastmod>2024-02-29T09:41:09+05:30</lastmod>
+    <lastmod>2024-03-01T09:11:31+05:30</lastmod>
   </url><url>
     <loc>https://upendra1997.github.io/tags/</loc>
+    <lastmod>2024-03-01T09:11:31+05:30</lastmod>
+  </url><url>
+    <loc>https://upendra1997.github.io/posts/advent-of-code-2023-day-4/</loc>
     <lastmod>2024-02-29T09:41:09+05:30</lastmod>
   </url><url>
     <loc>https://upendra1997.github.io/posts/advent-of-code-2023-day-3/</loc>
