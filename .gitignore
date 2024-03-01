@@ -1,0 +1,9 @@
+/public
+package-lock.json
+.calva/
+.clj-kondo/
+.direnv/
+.hugo_build.lock
+.lsp/
+.nrepl-port
+.vscode/
