@@ -88,7 +88,8 @@ hi
 </span></span><span style="display:flex;"><span>    (println (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;%s:&#34;</span> file-name))
 </span></span><span style="display:flex;"><span>    (println content)
 </span></span><span style="display:flex;"><span>    (println <span style="color:#e6db74">&#34;---------------&#34;</span>)))
-</span></span></code></pre></div><p>This obviously solves the issue and we get the same output using the jar files also :)</p>
+</span></span></code></pre></div><h2 id="this-obviously-solves-the-issue-and-we-get-the-same-output-using-the-jar-files-also-">This obviously solves the issue and we get the same output using the jar files also :)</h2>
+<p>Please check the full code <a href="https://github.com/upendra1997/jar-resource-read">here</a>.</p>
 ]]></content:encoded>
     </item>
   </channel>
