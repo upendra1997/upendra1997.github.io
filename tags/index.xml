@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 01 Mar 2024 09:11:31 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 02 Mar 2024 14:46:06 +0530</lastBuildDate>
     <atom:link href="https://upendra1997.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clojure</title>
+      <link>https://upendra1997.github.io/tags/clojure/</link>
+      <pubDate>Sat, 02 Mar 2024 14:46:06 +0530</pubDate>
+      <guid>https://upendra1997.github.io/tags/clojure/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Haskell</title>
       <link>https://upendra1997.github.io/tags/haskell/</link>
@@ -39,13 +46,6 @@
       <link>https://upendra1997.github.io/tags/design-pattern/</link>
       <pubDate>Sat, 11 Feb 2023 13:36:56 +0530</pubDate>
       <guid>https://upendra1997.github.io/tags/design-pattern/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Clojure</title>
-      <link>https://upendra1997.github.io/tags/clojure/</link>
-      <pubDate>Sat, 26 Nov 2022 11:13:56 +0530</pubDate>
-      <guid>https://upendra1997.github.io/tags/clojure/</guid>
       <description></description>
     </item>
     <item>
