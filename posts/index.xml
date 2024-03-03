@@ -11,8 +11,200 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 02 Mar 2024 14:46:06 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2024 08:23:31 +0530</lastBuildDate>
     <atom:link href="https://upendra1997.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Benchmarking Clojure Application</title>
+      <link>https://upendra1997.github.io/posts/benchmarking-clojure-application/</link>
+      <pubDate>Sun, 03 Mar 2024 08:23:31 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/benchmarking-clojure-application/</guid>
+      <description>snippets to setup benchamrking tests in clojure</description>
+      <content:encoded><![CDATA[<p>This is a snippet for benchmarking clojure application which I have used quite often in clojure applications at my job.</p>
+<p>First an introduction to the tools:</p>
+<ol>
+<li><a href="https://clojure-goes-fast.com/kb/profiling/clj-async-profiler/">clj-asyc-profiler</a>: for flamegraphs and call graph.</li>
+<li><a href="https://github.com/hugoduncan/criterium/">criterion</a>: for statistically correct benchmarking.</li>
+<li><a href="https://github.com/taoensso/tufte">tufte</a>: application level profiling.</li>
+</ol>
+<p>from this we can keep both #1 and #2 in separate profile just for benchmarking and #3 must be included in the <code>:default</code> profile, otherwise it would defeat its purpose.</p>
+<p>below is the code snippet for having these libraries setup in project:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">defproject </span>clojure-benchmark <span style="color:#e6db74">&#34;0.1.0-SNAPSHOT&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">:description</span> <span style="color:#e6db74">&#34;snippets to setup benchamrking tests in clojure&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;http://example.com/FIXME&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">:license</span> {<span style="color:#e6db74">:name</span> <span style="color:#e6db74">&#34;EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;https://www.eclipse.org/legal/epl-2.0/&#34;</span>}
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">:test-selectors</span> {<span style="color:#e6db74">:default</span> (complement <span style="color:#e6db74">:bench</span>)
+</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">:not</span>     (<span style="color:#66d9ef">fn </span>[m s] (not (contains? m (keyword s))))
+</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">:bench</span>   <span style="color:#e6db74">:bench</span>}
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">:dependencies</span> [[org.clojure/clojure <span style="color:#e6db74">&#34;1.11.1&#34;</span>]
+</span></span><span style="display:flex;"><span>                 [com.taoensso/tufte <span style="color:#e6db74">&#34;2.4.5&#34;</span>]]
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">:profiles</span> {<span style="color:#e6db74">:test</span>    [{<span style="color:#e6db74">:dependencies</span> [[org.clojure/test.check <span style="color:#e6db74">&#34;1.1.1&#34;</span>]
+</span></span><span style="display:flex;"><span>                                      [criterium <span style="color:#e6db74">&#34;0.4.6&#34;</span>]]}]
+</span></span><span style="display:flex;"><span>             <span style="color:#e6db74">:bench</span>   [{<span style="color:#e6db74">:test-paths</span>   [<span style="color:#e6db74">&#34;bench&#34;</span>]
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">:global-vars</span>  {*assert* true}
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">:jvm-opts</span>     [<span style="color:#e6db74">&#34;-Djdk.attach.allowAttachSelf&#34;</span>
+</span></span><span style="display:flex;"><span>                                       <span style="color:#e6db74">&#34;-XX:+UnlockDiagnosticVMOptions&#34;</span>
+</span></span><span style="display:flex;"><span>                                       <span style="color:#e6db74">&#34;-XX:+DebugNonSafepoints&#34;</span>]
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">:dependencies</span> [[com.clojure-goes-fast/clj-async-profiler <span style="color:#e6db74">&#34;1.0.4&#34;</span>]]}
+</span></span><span style="display:flex;"><span>                       <span style="color:#e6db74">:test</span>]}
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">:repl-options</span> {<span style="color:#e6db74">:init-ns</span> clojure-benchmark.core})
+</span></span></code></pre></div><p>important points to note are:</p>
+<ol>
+<li>We have created a new source locaction called <code>bench</code>, this is added so that all of these overhead of benchmarking is not included in production code, and it can be isolated to run during local run or pipeline run.</li>
+<li>There are <code>:test-selectors</code> being added so that we can specifically mark some test to be benchmark tests and run only them using <code>lein with-profile +bench test :bench</code>.</li>
+</ol>
+<p>The overhead mentioned above will be due to including below functionlities in the code:</p>
+<ol>
+<li>Runnig flamgraph profiling for the whole duration of the benchmark run.</li>
+<li>Making sure that <code>tufte</code> check all the namespaces for gathering the application level metrics.</li>
+<li>Making sure that all benchmark are being written to a file.</li>
+</ol>
+<p>The code for above mentioned functionalities is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">ns </span>clojure-benchmark.bench
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">:require</span>
+</span></span><span style="display:flex;"><span>    [clojure.java.io <span style="color:#e6db74">:as</span> io]
+</span></span><span style="display:flex;"><span>    [clj-async-profiler.core <span style="color:#e6db74">:as</span> prof]
+</span></span><span style="display:flex;"><span>    [taoensso.tufte <span style="color:#e6db74">:as</span> tufte]))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; necessary to print it so that jvm know that we are using its result</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">def </span>prof-started (<span style="color:#66d9ef">let </span>[start (<span style="color:#a6e22e">atom</span> (<span style="color:#a6e22e">prof/start</span> {}))
+</span></span><span style="display:flex;"><span>                        _     (println <span style="color:#e6db74">&#34;profiling started.&#34;</span> (<span style="color:#a6e22e">prof/status</span>))]
+</span></span><span style="display:flex;"><span>                       <span style="color:#f92672">@</span>start))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">alter-var-root</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;tufte/*ns-filter*</span> (constantly <span style="color:#e6db74">&#34;*&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; accumulator for tufte result</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">def </span>stats-accumulator (<span style="color:#a6e22e">tufte/add-accumulating-handler!</span> {<span style="color:#e6db74">:ns-pattern</span> <span style="color:#e6db74">&#34;*&#34;</span>}))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; before exiting make sure that we are printing profiling result</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">System/setSecurityManager</span>
+</span></span><span style="display:flex;"><span>  (proxy [SecurityManager] []
+</span></span><span style="display:flex;"><span>         (<span style="color:#a6e22e">checkExit</span> [status]
+</span></span><span style="display:flex;"><span>                    (<span style="color:#66d9ef">let </span>[_         (println <span style="color:#e6db74">&#34;profiling ended.&#34;</span> (<span style="color:#a6e22e">prof/status</span>))
+</span></span><span style="display:flex;"><span>                          _         (<span style="color:#a6e22e">io/make-parents</span> <span style="color:#e6db74">&#34;profiling-result/random-file&#34;</span>)
+</span></span><span style="display:flex;"><span>                          result    (<span style="color:#a6e22e">prof/stop</span>)
+</span></span><span style="display:flex;"><span>                          file-name (<span style="color:#a6e22e">.getName</span> result)]
+</span></span><span style="display:flex;"><span>                      (<span style="color:#a6e22e">io/make-parents</span> (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;profiling-result/%s&#34;</span> file-name))
+</span></span><span style="display:flex;"><span>                      (<span style="color:#a6e22e">io/copy</span> result (<span style="color:#a6e22e">io/as-file</span> (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;profiling-result/%s&#34;</span> file-name)))
+</span></span><span style="display:flex;"><span>                         (with-open [writer (<span style="color:#a6e22e">io/writer</span> (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;profiling-result/tufte-prof-%d.txt&#34;</span> (<span style="color:#a6e22e">System/currentTimeMillis</span>)))]
+</span></span><span style="display:flex;"><span>                                    (<span style="color:#a6e22e">.write</span> writer (<span style="color:#a6e22e">tufte/format-grouped-pstats</span> <span style="color:#f92672">@</span>stats-accumulator)))))
+</span></span><span style="display:flex;"><span>         (<span style="color:#a6e22e">checkCreateClassLoader</span> [<span style="color:#f92672">&amp;</span> args]
+</span></span><span style="display:flex;"><span>                                 true)
+</span></span><span style="display:flex;"><span>         (<span style="color:#a6e22e">checkPermission</span> [<span style="color:#f92672">&amp;</span> args]
+</span></span><span style="display:flex;"><span>                          true)))
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">ns </span>clojure-benchmark.util
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">:require</span> [clojure.java.io <span style="color:#e6db74">:as</span> io]
+</span></span><span style="display:flex;"><span>            [clojure.test <span style="color:#e6db74">:refer</span> <span style="color:#e6db74">:all</span>]))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>write-to-file [file-name f <span style="color:#f92672">&amp;</span> args]
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">let </span>[file-name (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;profiling-result/%s&#34;</span> file-name)
+</span></span><span style="display:flex;"><span>        _         (<span style="color:#a6e22e">io/make-parents</span> file-name)]
+</span></span><span style="display:flex;"><span>    (with-open [file (<span style="color:#a6e22e">io/writer</span> file-name)]
+</span></span><span style="display:flex;"><span>      (binding [*out* file]
+</span></span><span style="display:flex;"><span>        (apply f args)))))
+</span></span></code></pre></div><p>Please check the sample test to understand how to use write the benchmark</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">ns </span>clojure-benchmark.core-test
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">:require</span> [clojure.test <span style="color:#e6db74">:refer</span> <span style="color:#e6db74">:all</span>]
+</span></span><span style="display:flex;"><span>            [taoensso.tufte <span style="color:#e6db74">:refer</span> <span style="color:#e6db74">:all</span>]
+</span></span><span style="display:flex;"><span>            [criterium.core <span style="color:#e6db74">:refer</span> [benchmark report-result]]
+</span></span><span style="display:flex;"><span>            [clojure-benchmark.util <span style="color:#e6db74">:refer</span> [write-to-file]]
+</span></span><span style="display:flex;"><span>            [clojure-benchmark.core <span style="color:#e6db74">:refer</span> <span style="color:#e6db74">:all</span>]))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>fib [n]
+</span></span><span style="display:flex;"><span>  (cond (&lt;= n <span style="color:#ae81ff">0</span>) <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        (= n <span style="color:#ae81ff">1</span>) <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">:else</span> (+ (<span style="color:#a6e22e">fib</span> (- n <span style="color:#ae81ff">1</span>)) (<span style="color:#a6e22e">fib</span> (- n <span style="color:#ae81ff">2</span>)))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>noob-fib [n] (<span style="color:#a6e22e">p</span> <span style="color:#e6db74">:pro</span> (<span style="color:#a6e22e">fib</span> n)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">def </span>lazy-fib (lazy-cat [<span style="color:#ae81ff">0</span> <span style="color:#ae81ff">1</span>] (map + lazy-fib (rest lazy-fib))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>pro-fib [n]
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">p</span> <span style="color:#e6db74">:pro</span> (nth lazy-fib n)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">deftest</span> a-test
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">testing</span> <span style="color:#e6db74">&#34;test&#34;</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">is</span> (= (<span style="color:#a6e22e">noob-fib</span> <span style="color:#ae81ff">10</span>) <span style="color:#ae81ff">55</span>))
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">is</span> (= (<span style="color:#a6e22e">noob-fib</span> <span style="color:#ae81ff">10</span>) <span style="color:#ae81ff">55</span>))
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">is</span> (= (<span style="color:#a6e22e">pro-fib</span> <span style="color:#ae81ff">13</span>) <span style="color:#ae81ff">233</span>))
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">is</span> (= (<span style="color:#a6e22e">pro-fib</span> <span style="color:#ae81ff">13</span>) <span style="color:#ae81ff">233</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">deftest</span> <span style="color:#f92672">^</span><span style="color:#e6db74">:bench</span> benchmark-fib
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">profile</span> {}
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">let </span>[input    [<span style="color:#ae81ff">10</span> <span style="color:#ae81ff">13</span>]
+</span></span><span style="display:flex;"><span>          noob-fib (<span style="color:#a6e22e">benchmark</span> (doseq [inp input] (<span style="color:#a6e22e">noob-fib</span> inp)) {<span style="color:#e6db74">:verbose</span> true <span style="color:#e6db74">:runtime</span> true})
+</span></span><span style="display:flex;"><span>          pro-fib  (<span style="color:#a6e22e">benchmark</span> (doseq [inp input] (<span style="color:#a6e22e">pro-fib</span> inp)) {<span style="color:#e6db74">:verbose</span> true <span style="color:#e6db74">:runtime</span> true})]
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">write-to-file</span> <span style="color:#e6db74">&#34;pro-fib.txt&#34;</span> report-result pro-fib <span style="color:#e6db74">:verbose</span> <span style="color:#e6db74">:os</span> <span style="color:#e6db74">:runtime</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">write-to-file</span> <span style="color:#e6db74">&#34;noob-fib.txt&#34;</span> report-result noob-fib <span style="color:#e6db74">:verbose</span> <span style="color:#e6db74">:os</span> <span style="color:#e6db74">:runtime</span>))))
+</span></span></code></pre></div><p>and its output for <code>lein test</code>:</p>
+<pre tabindex="0"><code>lein test clojure-benchmark.core-test
+
+Ran 1 tests containing 4 assertions.
+0 failures, 0 errors.
+</code></pre><p><code>lein with-profile +bench test :bench</code></p>
+<pre tabindex="0"><code>profiling started. Profiling is running for 0 seconds
+
+
+lein test clojure-benchmark.core-test
+
+Ran 1 tests containing 0 assertions.
+0 failures, 0 errors.
+profiling ended. Profiling is running for 182 seconds
+
+Profiling started
+</code></pre><p>output of tufte:</p>
+<pre tabindex="0"><code>:tufte/nil-id,
+pId                   nCalls        Min      50% ≤      90% ≤      95% ≤      99% ≤        Max       Mean   MAD      Clock  Total
+
+:pro              89,481,254   421.00ns     1.46μs     1.77μs     2.38μs     3.69μs   204.07ms     1.28μs  ±50%     1.91m     68%
+:tufte/compaction        111    34.23ms   110.15ms   147.70ms   283.73ms   325.88ms   919.43ms   103.33ms  ±54%    11.47s      7%
+
+Accounted                                                                                                           2.10m     75%
+Clock                                                                                                               2.81m    100%
+</code></pre><p>output of benchmark:</p>
+<pre tabindex="0"><code>[hdggxin@nixos:~/workspace/clojure-benchmark/profiling-result]$ cat noob-fib.txt
+amd64 Linux 6.1.51 4 cpu(s)
+OpenJDK 64-Bit Server VM 25.362-bga
+Runtime arguments: -Dfile.encoding=UTF-8 -Djdk.attach.allowAttachSelf -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -Dclojure.compile.path=/
+home/hdggxin/workspace/clojure-benchmark/target/classes -Dclojure-benchmark.version=0.1.0-SNAPSHOT -Dclojure.debug=false
+Evaluation count : 2773980 in 60 samples of 46233 calls.
+      Execution time sample mean : 21.751842 µs
+             Execution time mean : 21.807202 µs
+Execution time sample std-deviation : 2.868742 µs
+    Execution time std-deviation : 2.972753 µs
+   Execution time lower quantile : 20.927824 µs ( 2.5%)
+   Execution time upper quantile : 25.620445 µs (97.5%)
+                   Overhead used : 2.454320 ns
+
+Found 13 outliers in 60 samples (21.6667 %)
+        low-severe       4 (6.6667 %)
+        low-mild         9 (15.0000 %)
+ Variance from outliers : 80.7320 % Variance is severely inflated by outliers
+
+[hdggxin@nixos:~/workspace/clojure-benchmark/profiling-result]$ cat pro-fib.txt
+amd64 Linux 6.1.51 4 cpu(s)
+OpenJDK 64-Bit Server VM 25.362-bga
+Runtime arguments: -Dfile.encoding=UTF-8 -Djdk.attach.allowAttachSelf -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -Dclojure.compile.path=/
+home/hdggxin/workspace/clojure-benchmark/target/classes -Dclojure-benchmark.version=0.1.0-SNAPSHOT -Dclojure.debug=false
+Evaluation count : 34700400 in 60 samples of 578340 calls.
+      Execution time sample mean : 1.807223 µs
+             Execution time mean : 1.808515 µs
+Execution time sample std-deviation : 165.871690 ns
+    Execution time std-deviation : 166.917813 ns
+   Execution time lower quantile : 1.516781 µs ( 2.5%)
+   Execution time upper quantile : 2.079813 µs (97.5%)
+                   Overhead used : 2.454320 ns
+</code></pre><p>and finally the flamegraph:
+<figure class="align-center ">
+    <img loading="lazy" src="images/flamegraph.png#center"/> 
+</figure>
+</p>
+<hr>
+<p>please check full sample repo here: <a href="https://github.com/upendra1997/clojure-benchmark">https://github.com/upendra1997/clojure-benchmark</a></p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Exploring Resource Directory in Clojure</title>
       <link>https://upendra1997.github.io/posts/exploring-resource-directory-in-clojure/</link>
@@ -218,53 +410,6 @@ There are two issues here that needs to be solved:</p>
 <li>anything else</li>
 </ol>
 <p>I will be trying to stick with it.</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Rust Refactoring and function closures</title>
-      <link>https://upendra1997.github.io/posts/rust-function-closures/</link>
-      <pubDate>Sat, 15 Apr 2023 18:03:11 +0530</pubDate>
-      <guid>https://upendra1997.github.io/posts/rust-function-closures/</guid>
-      <description>Me refactoring some rust code</description>
-      <content:encoded><![CDATA[<p>I was recently watching <a href="https://www.youtube.com/watch?v=gboGyccRVXI">Jon Gjengset</a>&rsquo;s Video on solving fly.io distributed system <a href="https://fly.io/dist-sys/">challanges</a>
-and I always liked doing these kind of things, and it was a good excuse for me test my rust skills. I started doing these exercises in rust <a href="https://github.com/upendra1997/maelstorm_rust">here</a>.
-I was able to solve <a href="https://fly.io/dist-sys/1/">echo</a> and <a href="https://fly.io/dist-sys/2/">unique-id</a> generator challanges, but the decisions I took
-while doing them was becoming difficult to work with
-for the next <a href="https://fly.io/dist-sys/3a/">challange</a>.
-so below is me working on refactoring some code to support multiple handlers, I am not sure if it is a good decision, but here we go:
-  <link rel="stylesheet" type="text/css" href="../../../data/asciinema-player.css" />
-  <div id="asciicast">
-    <script src="../../../data/asciinema-player.min.js"></script>
-    <audio id="audio" controls>
-      <source src = "../../../data/rust-cast.m4a" type="audio/x-m4a"> 
-    Your browser does not support the audio element.
-    </audio> 
-    <script type="text/javascript">
-      console.log("hello world");
-      const player = AsciinemaPlayer.create("..\/..\/..\/data\/adding-request-handler.cast", document.getElementById('asciicast'));
-      const audio = document.getElementById('audio');
-      audio.addEventListener('play', () => {
-        player.play();
-      })
-      audio.addEventListener('pause', () => {
-        player.pause();
-      })
-      audio.addEventListener('seeked', () => {
-        player.seek(audio.currentTime);
-      })
-      player.addEventListener('play', (obj) => {
-        audio.play();
-      })
-    </script>
-    <style>
-      #audio {
-        width: 100%;
-      }
-      .control-bar {
-                  display: none;
-      }
-    </style>
-  </div></p>
 ]]></content:encoded>
     </item>
     <item>

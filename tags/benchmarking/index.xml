@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Clojure on Blog | Upendra Upadhyay</title>
-    <link>https://upendra1997.github.io/tags/clojure/</link>
-    <description>Recent content in Clojure on Blog | Upendra Upadhyay</description>
+    <title>Benchmarking on Blog | Upendra Upadhyay</title>
+    <link>https://upendra1997.github.io/tags/benchmarking/</link>
+    <description>Recent content in Benchmarking on Blog | Upendra Upadhyay</description>
     <image>
       <title>Blog | Upendra Upadhyay</title>
       <url>https://upendra1997.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
@@ -12,7 +12,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 03 Mar 2024 08:23:31 +0530</lastBuildDate>
-    <atom:link href="https://upendra1997.github.io/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://upendra1997.github.io/tags/benchmarking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Benchmarking Clojure Application</title>
       <link>https://upendra1997.github.io/posts/benchmarking-clojure-application/</link>
@@ -203,108 +203,6 @@ Execution time sample std-deviation : 165.871690 ns
 </p>
 <hr>
 <p>please check full sample repo here: <a href="https://github.com/upendra1997/clojure-benchmark">https://github.com/upendra1997/clojure-benchmark</a></p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Exploring Resource Directory in Clojure</title>
-      <link>https://upendra1997.github.io/posts/exploring-resource-directory-in-clojure/</link>
-      <pubDate>Sat, 02 Mar 2024 14:46:06 +0530</pubDate>
-      <guid>https://upendra1997.github.io/posts/exploring-resource-directory-in-clojure/</guid>
-      <description>looking into clojure macros, java&amp;#39;s jar quirks and fun</description>
-      <content:encoded><![CDATA[<p>I was trying to explore the files available in resource directory and read only the .txt files available.</p>
-<p>suppose that I have these files in resources:</p>
-<pre tabindex="0"><code>resources/
-└── hello
-    ├── a.txt
-    ├── b.txt
-    └── c.not-txt
-</code></pre><p>and this is the clojure code that I have to read the files:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">ns </span>jar-resource-read.core
-</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">:require</span> [clojure.java.io <span style="color:#e6db74">:refer</span> [resource file]])
-</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">:gen-class</span>))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>read-all-txt-files [] 
-</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">let </span>[txt-files (<span style="color:#a6e22e">-&gt;&gt;</span> (<span style="color:#a6e22e">resource</span> <span style="color:#e6db74">&#34;hello&#34;</span>)
-</span></span><span style="display:flex;"><span>                       (<span style="color:#a6e22e">file</span>)
-</span></span><span style="display:flex;"><span>                       (<span style="color:#a6e22e">file-seq</span>)
-</span></span><span style="display:flex;"><span>                       (<span style="color:#a6e22e">filter</span>
-</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">#</span>(-&gt; %1
-</span></span><span style="display:flex;"><span>                             (<span style="color:#a6e22e">.getName</span>)
-</span></span><span style="display:flex;"><span>                             (<span style="color:#a6e22e">.endsWith</span> <span style="color:#e6db74">&#34;.txt&#34;</span>))))]
-</span></span><span style="display:flex;"><span>    (for [f txt-files] 
-</span></span><span style="display:flex;"><span>      {<span style="color:#e6db74">:name</span> (<span style="color:#a6e22e">.getName</span> f) 
-</span></span><span style="display:flex;"><span>       <span style="color:#e6db74">:content</span> (slurp f)})))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>-main
-</span></span><span style="display:flex;"><span>  [<span style="color:#f92672">&amp;</span> args]
-</span></span><span style="display:flex;"><span>  (doseq [{file-name <span style="color:#e6db74">:name</span> content <span style="color:#e6db74">:content</span>} (<span style="color:#a6e22e">read-all-txt-files</span>)]
-</span></span><span style="display:flex;"><span>    (println (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;%s:&#34;</span> file-name))
-</span></span><span style="display:flex;"><span>    (println content)
-</span></span><span style="display:flex;"><span>    (println <span style="color:#e6db74">&#34;---------------&#34;</span>)))
-</span></span></code></pre></div><p>and running <code>lein run</code> actually returns the correct result:</p>
-<pre tabindex="0"><code>b.txt:
-hello
-
----------------
-a.txt:
-hi
-
----------------
-</code></pre><p>but when I try to creat a jar using <code>lein uberjar</code> and run the jar <code>java -jar target/uberjar/jar-resource-read-0.1.0-SNAPSHOT-standalone.jar</code>, but this is the error that I got:</p>
-<pre tabindex="0"><code>Exception in thread &#34;main&#34; java.lang.IllegalArgumentException: Not a file: jar:file:/home/hdggxin/workspace/jar-resource-read/target/uberjar/jar-resource-read-0.1.0-SNAPSHOT-standalone.jar!/hello
-        at clojure.java.io$fn__11513.invokeStatic(io.clj:61)
-        at clojure.java.io$fn__11513.invoke(io.clj:44)
-        at clojure.java.io$fn__11487$G__11469__11492.invoke(io.clj:35)
-        at clojure.java.io$file.invokeStatic(io.clj:424)
-        at jar_resource_read.core$read_all_txt_files.invokeStatic(core.clj:5)
-        at jar_resource_read.core$_main.invokeStatic(core.clj:16)
-        at jar_resource_read.core$_main.doInvoke(core.clj:16)
-        at clojure.lang.RestFn.invoke(RestFn.java:397)
-        at clojure.lang.AFn.applyToHelper(AFn.java:152)
-        at clojure.lang.RestFn.applyTo(RestFn.java:132)
-        at jar_resource_read.core.main(Unknown Source)
-</code></pre><p>further looking into it, found that there are two main reasons for these errors:</p>
-<ol>
-<li><code>jar</code> is a compressed file.</li>
-<li><code>file-seq</code> requires a file as argument.</li>
-</ol>
-<p>so basically <code>file-seq</code> cannot iterate over a location in compressed archive, i.e. <code>jar:file:/home/hdggxin/workspace/jar-resource-read/target/uberjar/jar-resource-read-0.1.0-SNAPSHOT-standalone.jar!/hello</code></p>
-<p>We can uncompress the jar during the program startup and iterate over the extracted location, but this will make program not run through <code>lein</code>, so finally decided to read the file during the compile time and put the object in <code>jar</code>.</p>
-<p>which can be done using:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">defmacro </span>all-txt-files []
-</span></span><span style="display:flex;"><span>  (into [] (<span style="color:#a6e22e">read-all-txt-files</span>)))
-</span></span></code></pre></div><p>and then using this macro we can change the main function:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>-main
-</span></span><span style="display:flex;"><span>  [<span style="color:#f92672">&amp;</span> args]
-</span></span><span style="display:flex;"><span>  (doseq [{file-name <span style="color:#e6db74">:name</span> content <span style="color:#e6db74">:content</span>} (<span style="color:#a6e22e">all-txt-files</span>)]
-</span></span><span style="display:flex;"><span>    (println (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;%s:&#34;</span> file-name))
-</span></span><span style="display:flex;"><span>    (println content)
-</span></span><span style="display:flex;"><span>    (println <span style="color:#e6db74">&#34;---------------&#34;</span>)))
-</span></span></code></pre></div><h2 id="this-obviously-solves-the-issue-and-we-get-the-same-output-using-the-jar-files-also-">This obviously solves the issue and we get the same output using the jar files also :)</h2>
-<p>Please check the full code <a href="https://github.com/upendra1997/jar-resource-read">here</a>.</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Nim Clojure Similarity</title>
-      <link>https://upendra1997.github.io/posts/nim-clojure-similarity/</link>
-      <pubDate>Sat, 26 Nov 2022 11:13:56 +0530</pubDate>
-      <guid>https://upendra1997.github.io/posts/nim-clojure-similarity/</guid>
-      <description>How Nim can help learn Systems Programming</description>
-      <content:encoded><![CDATA[<p>Hello world, I am Upendra Upadhyay. This is my first post and I have been trying to write for a long time. I think there is no better time than now.</p>
-<p>I have been trying to learn <a href="https://www.haskell.org/">Haskell</a> for past 3 years in my free time, but was never able to code anything useful; mostly did fibonacci, sieve of eratosthenes, and sudoku - which was taking lot of memory and time because of bad pruning.</p>
-<h3 id="fibonacci">Fibonacci</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">fib</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#66d9ef">:</span><span style="color:#ae81ff">1</span><span style="color:#66d9ef">:</span>zipWith (<span style="color:#f92672">+</span>) fib (tail fib)
-</span></span></code></pre></div><pre tabindex="0"><code>ghci&gt; take 10 fib
-[0,1,1,2,3,5,8,13,21,34]
-</code></pre><h3 id="sieve-of-eratosthenes">Sieve of eratosthenes</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">sieve</span> (p<span style="color:#66d9ef">:</span>ps) <span style="color:#f92672">=</span> p<span style="color:#66d9ef">:</span>sieve (filter (<span style="color:#a6e22e">\</span>x <span style="color:#f92672">-&gt;</span> x `mod` p <span style="color:#f92672">/=</span> <span style="color:#ae81ff">0</span>) ps)
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">prime</span> <span style="color:#f92672">=</span> sieve [<span style="color:#ae81ff">2</span><span style="color:#f92672">..</span>]
-</span></span></code></pre></div><pre tabindex="0"><code>ghci&gt; take 10 prime
-[2,3,5,7,11,13,17,19,23,29]
-</code></pre><hr>
-<p>All things considered, I was never able to be productive in Haskell, But I got opportunity to work in <a href="https://clojure.org/">Clojure</a>; which allowed me to write functional code and interop with Java/Javascript. It created a bridge to Haskell, which have great ideas with steep learning curve.</p>
-<p>Similar case is with <a href="https://www.rust-lang.org/">Rust</a>, I am still trying to solve <a href="https://exercism.org/tracks/rust/exercises/xorcism">Xorcism</a> , never seem to be getting closer to solution. I think Rust have great ideas but also a bit of learning curve. This where I think <a href="https://nim-lang.org/">Nim</a> can become similar bridge like Clojure for Rust. It allows system programming and interop with C, C++, Javascript.</p>
-<p>which makes me curious to learn Nim.</p>
 ]]></content:encoded>
     </item>
   </channel>

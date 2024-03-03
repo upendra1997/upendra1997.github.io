@@ -11,12 +11,19 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 02 Mar 2024 14:46:06 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2024 08:23:31 +0530</lastBuildDate>
     <atom:link href="https://upendra1997.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Benchmarking</title>
+      <link>https://upendra1997.github.io/tags/benchmarking/</link>
+      <pubDate>Sun, 03 Mar 2024 08:23:31 +0530</pubDate>
+      <guid>https://upendra1997.github.io/tags/benchmarking/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Clojure</title>
       <link>https://upendra1997.github.io/tags/clojure/</link>
-      <pubDate>Sat, 02 Mar 2024 14:46:06 +0530</pubDate>
+      <pubDate>Sun, 03 Mar 2024 08:23:31 +0530</pubDate>
       <guid>https://upendra1997.github.io/tags/clojure/</guid>
       <description></description>
     </item>
@@ -32,13 +39,6 @@
       <link>https://upendra1997.github.io/tags/daily-life/</link>
       <pubDate>Sun, 25 Feb 2024 10:34:57 +0530</pubDate>
       <guid>https://upendra1997.github.io/tags/daily-life/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Refactoring</title>
-      <link>https://upendra1997.github.io/tags/refactoring/</link>
-      <pubDate>Sat, 15 Apr 2023 18:03:11 +0530</pubDate>
-      <guid>https://upendra1997.github.io/tags/refactoring/</guid>
       <description></description>
     </item>
     <item>
