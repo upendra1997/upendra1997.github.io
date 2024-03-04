@@ -176,7 +176,6 @@ Ran 1 tests containing 4 assertions.
 ```
 profiling started. Profiling is running for 0 seconds
 
-
 lein test clojure-benchmark.core-test
 
 Ran 1 tests containing 0 assertions.
