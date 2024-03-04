@@ -9,7 +9,7 @@ author: "Upendra Upadhyay"
 # author: ["Me", "You"] # multiple authors
 showToc: true
 TocOpen: true
-draft: true
+draft: false
 hidemeta: false
 comments: true
 description: "Some nix snippets that I use"
