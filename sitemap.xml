@@ -5,7 +5,22 @@
     <loc>https://upendra1997.github.io/</loc>
     <lastmod>2024-03-04T18:01:01+05:30</lastmod>
   </url><url>
+    <loc>https://upendra1997.github.io/categories/</loc>
+    <lastmod>2024-03-04T18:01:01+05:30</lastmod>
+  </url><url>
+    <loc>https://upendra1997.github.io/tags/nix/</loc>
+    <lastmod>2024-03-04T18:01:01+05:30</lastmod>
+  </url><url>
+    <loc>https://upendra1997.github.io/categories/nix/</loc>
+    <lastmod>2024-03-04T18:01:01+05:30</lastmod>
+  </url><url>
+    <loc>https://upendra1997.github.io/posts/nix-snippets/</loc>
+    <lastmod>2024-03-04T18:01:01+05:30</lastmod>
+  </url><url>
     <loc>https://upendra1997.github.io/posts/</loc>
+    <lastmod>2024-03-04T18:01:01+05:30</lastmod>
+  </url><url>
+    <loc>https://upendra1997.github.io/tags/</loc>
     <lastmod>2024-03-04T18:01:01+05:30</lastmod>
   </url><url>
     <loc>https://upendra1997.github.io/tags/benchmarking/</loc>
@@ -14,16 +29,10 @@
     <loc>https://upendra1997.github.io/posts/benchmarking-clojure-application/</loc>
     <lastmod>2024-03-03T08:23:31+05:30</lastmod>
   </url><url>
-    <loc>https://upendra1997.github.io/categories/</loc>
-    <lastmod>2024-03-03T08:23:31+05:30</lastmod>
-  </url><url>
     <loc>https://upendra1997.github.io/tags/clojure/</loc>
     <lastmod>2024-03-03T08:23:31+05:30</lastmod>
   </url><url>
     <loc>https://upendra1997.github.io/categories/clojure/</loc>
-    <lastmod>2024-03-03T08:23:31+05:30</lastmod>
-  </url><url>
-    <loc>https://upendra1997.github.io/tags/</loc>
     <lastmod>2024-03-03T08:23:31+05:30</lastmod>
   </url><url>
     <loc>https://upendra1997.github.io/posts/exploring-resource-directory-in-clojure/</loc>
