@@ -146,7 +146,6 @@ Ran 1 tests containing 4 assertions.
 </code></pre><p><code>lein with-profile +bench test :bench</code></p>
 <pre tabindex="0"><code>profiling started. Profiling is running for 0 seconds
 
-
 lein test clojure-benchmark.core-test
 
 Ran 1 tests containing 0 assertions.

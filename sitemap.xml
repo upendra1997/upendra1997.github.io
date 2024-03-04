@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://upendra1997.github.io/</loc>
+    <lastmod>2024-03-04T18:01:01+05:30</lastmod>
+  </url><url>
+    <loc>https://upendra1997.github.io/posts/</loc>
+    <lastmod>2024-03-04T18:01:01+05:30</lastmod>
+  </url><url>
     <loc>https://upendra1997.github.io/tags/benchmarking/</loc>
     <lastmod>2024-03-03T08:23:31+05:30</lastmod>
   </url><url>
     <loc>https://upendra1997.github.io/posts/benchmarking-clojure-application/</loc>
-    <lastmod>2024-03-03T08:23:31+05:30</lastmod>
-  </url><url>
-    <loc>https://upendra1997.github.io/</loc>
     <lastmod>2024-03-03T08:23:31+05:30</lastmod>
   </url><url>
     <loc>https://upendra1997.github.io/categories/</loc>
@@ -18,9 +21,6 @@
     <lastmod>2024-03-03T08:23:31+05:30</lastmod>
   </url><url>
     <loc>https://upendra1997.github.io/categories/clojure/</loc>
-    <lastmod>2024-03-03T08:23:31+05:30</lastmod>
-  </url><url>
-    <loc>https://upendra1997.github.io/posts/</loc>
     <lastmod>2024-03-03T08:23:31+05:30</lastmod>
   </url><url>
     <loc>https://upendra1997.github.io/tags/</loc>
