@@ -11,8 +11,28 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 04 Mar 2024 18:01:01 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 05 Mar 2024 23:29:34 +0530</lastBuildDate>
     <atom:link href="https://upendra1997.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Diversifying Career</title>
+      <link>https://upendra1997.github.io/posts/diversify-career/</link>
+      <pubDate>Tue, 05 Mar 2024 23:29:34 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/diversify-career/</guid>
+      <description>A write-up about future career choices</description>
+      <content:encoded><![CDATA[<p>I want to have a high impact from my career and and more I think about trying that, I feel that it cannot be done by simply following one field.</p>
+<p>I have been in computer science field for a while and have dabled in machine-learning/data-science on the side. All the jobs that I have taken were also aligned to the either fintech or logistics. But I feel that to have better impact on my career, I require cross pollination of different fields to mix-match different ideas from different fields and add value to whatever work I do.</p>
+<p>I have been considering multiple future career/studiets that wish to pursue and there are few of the things that I have been interested in:</p>
+<ol>
+<li>Working more closely to hardware, like: battery firmware, embedded systems, GPU programming, etc.</li>
+<li>Learning more about biological world, and I feel that the way to step into it through learning it with something that I already know, like: <a href="https://github.com/ossu/bioinformatics">https://github.com/ossu/bioinformatics</a></li>
+<li>I have been dabbling in machine-learning/data-science, and also have done multiple courses and certifications, but I never got to work on it full time; so having an opportunity there might also help me.</li>
+<li>Working in civil services and seeing the issues the people and government faces and trying to help them with my experience in technology.</li>
+<li>Starting my own business and growing it, which I think will teach me about lots of things like Delegating, Negotiating, Hiring, Execution, Finance, etc.</li>
+<li>Working in Commerce and Finance to learn managing, saving and growing money and how technology can help in doing it better. For examle: <a href="https://zerodha.com/varsity/">https://zerodha.com/varsity/</a></li>
+</ol>
+<p>I still feel like I can do more, learn more, help more and hope that I get to work in all kind of fields, businesses and situtations.</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Nix Snippets</title>
       <link>https://upendra1997.github.io/posts/nix-snippets/</link>
