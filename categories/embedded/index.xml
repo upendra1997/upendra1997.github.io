@@ -44,7 +44,7 @@
 </ol>
 <h3 id="issues-that-i-still-have-with-my-keyboard">Issues that I still have with my keyboard:</h3>
 <ol>
-<li>Right side doesn&rsquo;t work individually, i.e. if I connect the keyboard to the left split it works, but If I conncet using the right split, It doesn&rsquo;t. I tried this <a href="https://docs.splitkb.com/hc/en-us/articles/360010588860-Only-one-half-of-my-keyboard-works-at-a-time-but-not-when-they-are-both-connected">blog</a>, but It didn&rsquo;t help.</li>
+<li>Right side doesn&rsquo;t work individually, i.e. if I connect the keyboard to the left split it works, but If I connect using the right split, It doesn&rsquo;t. I tried this <a href="https://docs.splitkb.com/hc/en-us/articles/360010588860-Only-one-half-of-my-keyboard-works-at-a-time-but-not-when-they-are-both-connected">blog</a> and <a href="https://www.reddit.com/r/ErgoMechKeyboards/comments/qq1o8q/how_to_best_start_debugging_this/">post</a>, but It didn&rsquo;t help.</li>
 <li>Sometime the whole keyboard hangs when I am typing and starts responding after sometime. My guess is that It is happening because of all the QMK features that I have <a href="https://github.com/qmk/qmk_firmware/compare/master...upendra1997:qmk_firmware:master">enabled</a> on the keyboard.</li>
 </ol>
 <h2 id="qmk">QMK</h2>
