@@ -11,8 +11,89 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 05 Mar 2024 23:29:34 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 06 Mar 2024 20:09:19 +0530</lastBuildDate>
     <atom:link href="https://upendra1997.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>For Science Keyboard</title>
+      <link>https://upendra1997.github.io/posts/for-science-keyboard/</link>
+      <pubDate>Wed, 06 Mar 2024 20:09:19 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/for-science-keyboard/</guid>
+      <description>My experience building for science keyboard</description>
+      <content:encoded><![CDATA[<p>I recently built the <code>for-science</code> keyboard and I followed this guide: <a href="https://github.com/peej/for-science-keyboard">https://github.com/peej/for-science-keyboard</a></p>
+<h2 id="bill-of-material">Bill of Material</h2>
+<ol>
+<li><a href="https://stackskb.com/store/for-science-split-keyboard-diy-kit/">kit</a>: 1800 INR</li>
+<li><a href="https://robocraze.com/products/pro-micro-5v-mini-leonardo-compatible-with-arduino">arudio pro micro compatible X2</a>: 908 INR</li>
+<li><a href="https://robocraze.com/products/soldron-variable-wattage-micro-soldering-station">Soldering Station</a>: 1305 INR</li>
+<li>Soldering wire from Robocraze: 21 INR</li>
+<li>Digital Multimeter from Robocraze: 199 INR</li>
+<li>Key Switches from stackskb - Gateron G Pro 2.0 Brown KS-9 Tactile Switch - 50 pieces: 1000 INR</li>
+<li>Key Caps from stackskb - Cherry Profile Pudding Keycaps - 130 caps: 1000 INR</li>
+<li>TRRS cable from a local shop in Hyderabad: 200 INR</li>
+<li>Desoldering Flux from a local shop in Hyderabad: 350 INR</li>
+<li>Desoldering Wick from a local shop in Hyderabad: 300 INR</li>
+</ol>
+<h2 id="journey">Journey</h2>
+<p>While building the keyboard, I started with following the guide mentioned above, but It was not descriptive enough so I supplemented it with other guide for <a href="https://github.com/kata0510/Lily58/blob/master/Pro/Doc/buildguide_en.md">Lily58</a>.</p>
+<p>While following the guide whenever I had doubts, I referred to the <a href="https://github.com/peej/for-science-keyboard/tree/master/gerber">gerber</a> file <a href="https://www.gerblook.org/">here</a>. It helped me to find which side was up by linking the TRRS jack and the pro micro&rsquo;s <code>D0</code> pin as mentioned <a href="https://golem.hu/article/pro-micro-pinout/">here</a>.</p>
+<h3 id="mistakes-i-made">Mistakes I made:</h3>
+<ol>
+<li>Bad Soldering; Advice that I will give if you are new to soldering is to practie and make sure you can solder as mentioned on this <a href="https://learn.adafruit.com/adafruit-guide-excellent-soldering/common-problems">blog</a>.</li>
+<li>I soldered the <code>Pro Micro</code> chip, before soldering the switches. Which caused lots of issues as I tried to fix the mistake using desoldering pumps, desoldering wicks and flux. But in the end it didn&rsquo;t help and only damaged swithes and pro micro chip. Luckily I had spares swithes and few wires, so I sorted to them to make it work somehow. Lesson is to double/triple check components you are soldering, as desoldering is very painful and can damage components.</li>
+<li>The TRRS cable that I had was faulty or I spoiled it, so had to get a new TRRS cable. Lesson would be to keep cheking connectivity of your ciruit with the gerber files using the <code>continuity mode</code> of Multimeter.</li>
+</ol>
+<h3 id="issues-that-i-still-have-with-my-keyboard">Issues that I still have with my keyboard:</h3>
+<ol>
+<li>Right side doesn&rsquo;t work individually, i.e. if I connect the keyboard to the left split it works, but If I conncet using the right split, It doesn&rsquo;t. I tried this <a href="https://docs.splitkb.com/hc/en-us/articles/360010588860-Only-one-half-of-my-keyboard-works-at-a-time-but-not-when-they-are-both-connected">blog</a>, but It didn&rsquo;t help.</li>
+<li>Sometime the whole keyboard hangs when I am typing and starts responding after sometime. My guess is that It is happening because of all the QMK features that I have <a href="https://github.com/qmk/qmk_firmware/compare/master...upendra1997:qmk_firmware:master">enabled</a> on the keyboard.</li>
+</ol>
+<h2 id="qmk">QMK</h2>
+<p>I guess the QMK layout <a href="https://config.qmk.fm/#/for_science/LAYOUT_split_4x5_3">configuration</a> that they had was outdated and was not working properly with my keyboard, as I built the keyboard and tested them using <a href="https://config.qmk.fm/#/test">test-website</a>.</p>
+<p>so I made few changes on my <a href="https://github.com/upendra1997/qmk_firmware">fork</a> to make them work, and added some extra layout and features, which suited my fancy.</p>
+<h2 id="images">Images</h2>
+<h3 id="pcb">PCB:</h3>
+<p><img loading="lazy" src="images/emty-pcb.jpg" alt="PCB"  />
+</p>
+<h3 id="pro-micro">Pro Micro:</h3>
+<p><img loading="lazy" src="images/pro-micro.jpg" alt="pro-micro"  />
+</p>
+<h3 id="diodes">Diodes:</h3>
+<p><img loading="lazy" src="images/diode-single.jpg" alt="front-diode"  />
+
+<img loading="lazy" src="images/diode-multiple.jpg" alt="back-diode"  />
+
+<img loading="lazy" src="images/inserted-diodes.jpg" alt="insterted-diodes"  />
+
+<img loading="lazy" src="images/diodes-up.jpg" alt="diodes-up"  />
+
+<img loading="lazy" src="images/diodes-pcb.jpg" alt="diodes-pcb"  />
+</p>
+<h3 id="switches">Switches:</h3>
+<p><img loading="lazy" src="images/switches.jpg" alt="switches"  />
+
+<img loading="lazy" src="images/cross-section.jpg" alt="cross-section"  />
+</p>
+<h3 id="trrs-socket">TRRS Socket:</h3>
+<p><img loading="lazy" src="images/left-board.jpg" alt="TRRS"  />
+</p>
+<h3 id="damaged">Damaged</h3>
+<p>Connection held through a metal pin:
+<img loading="lazy" src="images/hacked-right-board.jpg" alt="hacked-right"  />
+
+<img loading="lazy" src="images/hacked-screwed.JPG" alt="hacked-right-screwed"  />
+</p>
+<h3 id="final-keyboard">Final Keyboard</h3>
+<p><img loading="lazy" src="images/partial-2.JPG" alt="partial-1"  />
+
+<img loading="lazy" src="images/partial-board.JPG" alt="partial-2"  />
+
+<img loading="lazy" src="images/complete.JPG" alt="Final Keyboard"  />
+</p>
+<hr>
+<h2 id="help">HELP</h2>
+<p>Please, if you find solution for above issues, please comment or reach out to me. Thank you :)</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Diversifying Career</title>
       <link>https://upendra1997.github.io/posts/diversify-career/</link>
