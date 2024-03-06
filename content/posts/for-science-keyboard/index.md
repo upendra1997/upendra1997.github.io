@@ -61,7 +61,7 @@ While following the guide whenever I had doubts, I referred to the [gerber](http
 2. The TRRS cable that I had was faulty or I spoiled it, so had to get a new TRRS cable. Lesson would be to keep cheking connectivity of your ciruit with the gerber files using the `continuity mode` of Multimeter.
 
 ### Issues that I still have with my keyboard:
-1. Right side doesn't work individually, i.e. if I connect the keyboard to the left split it works, but If I conncet using the right split, It doesn't. I tried this [blog](https://docs.splitkb.com/hc/en-us/articles/360010588860-Only-one-half-of-my-keyboard-works-at-a-time-but-not-when-they-are-both-connected), but It didn't help.
+1. Right side doesn't work individually, i.e. if I connect the keyboard to the left split it works, but If I connect using the right split, It doesn't. I tried this [blog](https://docs.splitkb.com/hc/en-us/articles/360010588860-Only-one-half-of-my-keyboard-works-at-a-time-but-not-when-they-are-both-connected) and [post](https://www.reddit.com/r/ErgoMechKeyboards/comments/qq1o8q/how_to_best_start_debugging_this/), but It didn't help.
 2. Sometime the whole keyboard hangs when I am typing and starts responding after sometime. My guess is that It is happening because of all the QMK features that I have [enabled](https://github.com/qmk/qmk_firmware/compare/master...upendra1997:qmk_firmware:master) on the keyboard.
 
 ## QMK
