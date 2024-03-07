@@ -11,8 +11,31 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 06 Mar 2024 20:09:19 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 07 Mar 2024 21:41:38 +0530</lastBuildDate>
     <atom:link href="https://upendra1997.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Into Computer Science</title>
+      <link>https://upendra1997.github.io/posts/getting-into-cs/</link>
+      <pubDate>Thu, 07 Mar 2024 21:41:38 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/getting-into-cs/</guid>
+      <description>A little writeup about how I got into CS</description>
+      <content:encoded><![CDATA[<p>As a child, I was always interested in Computers, but maybe not the science part of it.</p>
+<p>I always wanted to play new games, and during that time(2010), we didn&rsquo;t have that good of internet. The only way to get games was from friends, who had the installations CD/DVD/Pendrive, or from internet which was very costly at that time.</p>
+<p>Most of the time CD/DVDs had scratches and there was always checksum error or some file(dll) missing, so we downloaded <code>dlls</code> from the internet, which was cheaper and made the game work.</p>
+<p>Sometime we also had games, which were too hard or we didn&rsquo;t understand the objective because of the language issue. So we used to search for cheat engine to pass the game, and there I was first introduced to <code>lua</code> through <a href="https://www.cheatengine.org/">cheat engine</a>. I tried to use that, but was never successful with that, and was only able to use features like scanning the memory of game and getting all the matching values and keep filering until we reach the location where money/health was stored, and then we were able to freeze the value.</p>
+<p>After those fun years, I started high school (2013-2015). There we were formally introduced to the concept of programming languages, like HTML, Java, etc. Which I got hooked to early on, and kept reading all the course book that I had access to. This really helped me as I scored very well in computer related subjects.</p>
+<p>Once I entered college for my bachelor (2015-2019), durinng the first year, I didn&rsquo;t do anything new and was just trying to score well in subjects. But When I stared my 2nd year, I met few friends, who introducted me to new world of courses, competitive programming, hackathons and much more. I was hooked again with learing new things and trying to be as good as possible. The things that I used to follow and that helped me were:</p>
+<ol>
+<li><a href="https://github.com/ossu/computer-science">https://github.com/ossu/computer-science</a></li>
+<li>Steven Halim&rsquo;s CP book: <a href="https://cpbook.net/">https://cpbook.net/</a></li>
+<li><a href="https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/">https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/</a></li>
+<li><a href="https://teachyourselfcs.com/">https://teachyourselfcs.com/</a></li>
+</ol>
+<p>These helped me get my first couple of jobs. Even though now I don&rsquo;t believe in country&rsquo;s college eductaion quality. I still believe going to college was the best thing, for exploring things you like, making friends and having time to dive into things you wish.</p>
+<p>Rest of the things that I leared were on the job or from my colleages, and I always try to learn new things and make it fun.</p>
+<p>And I hope to continue doing so.</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>For Science Keyboard</title>
       <link>https://upendra1997.github.io/posts/for-science-keyboard/</link>
@@ -267,7 +290,7 @@
 </span></span><span style="display:flex;"><span>        (= n <span style="color:#ae81ff">1</span>) <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#e6db74">:else</span> (+ (<span style="color:#a6e22e">fib</span> (- n <span style="color:#ae81ff">1</span>)) (<span style="color:#a6e22e">fib</span> (- n <span style="color:#ae81ff">2</span>)))))
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>noob-fib [n] (<span style="color:#a6e22e">p</span> <span style="color:#e6db74">:pro</span> (<span style="color:#a6e22e">fib</span> n)))
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>noob-fib [n] (<span style="color:#a6e22e">p</span> <span style="color:#e6db74">:noob</span> (<span style="color:#a6e22e">fib</span> n)))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">def </span>lazy-fib (lazy-cat [<span style="color:#ae81ff">0</span> <span style="color:#ae81ff">1</span>] (map + lazy-fib (rest lazy-fib))))
 </span></span><span style="display:flex;"><span>
@@ -308,11 +331,12 @@ Profiling started
 <pre tabindex="0"><code>:tufte/nil-id,
 pId                   nCalls        Min      50% ≤      90% ≤      95% ≤      99% ≤        Max       Mean   MAD      Clock  Total
 
-:pro              89,481,254   421.00ns     1.46μs     1.77μs     2.38μs     3.69μs   204.07ms     1.28μs  ±50%     1.91m     68%
-:tufte/compaction        111    34.23ms   110.15ms   147.70ms   283.73ms   325.88ms   919.43ms   103.33ms  ±54%    11.47s      7%
+:noob              2,426,660     6.13μs    28.29μs    60.32μs    78.76μs   299.16μs    25.60ms    38.21μs  ±76%     1.55m     52%
+:pro              34,272,466   396.00ns   786.00ns     1.24μs     2.29μs     3.17μs   917.90ms     1.04μs  ±59%    35.66s     20%
+:tufte/compaction         45    39.54ms   155.80ms   456.94ms   791.48ms     1.52s      1.52s    219.91ms  ±77%     9.90s      6%
 
-Accounted                                                                                                           2.10m     75%
-Clock                                                                                                               2.81m    100%
+Accounted                                                                                                           2.30m     78%
+Clock                                                                                                               2.96m    100%
 </code></pre><p>output of benchmark:</p>
 <pre tabindex="0"><code>[hdggxin@nixos:~/workspace/clojure-benchmark/profiling-result]$ cat noob-fib.txt
 amd64 Linux 6.1.51 4 cpu(s)
