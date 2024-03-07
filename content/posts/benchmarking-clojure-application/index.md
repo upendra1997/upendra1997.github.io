@@ -141,7 +141,7 @@ Please check the sample test to understand how to use write the benchmark
         (= n 1) 1
         :else (+ (fib (- n 1)) (fib (- n 2)))))
 
-(defn noob-fib [n] (p :pro (fib n)))
+(defn noob-fib [n] (p :noob (fib n)))
 
 (def lazy-fib (lazy-cat [0 1] (map + lazy-fib (rest lazy-fib))))
 
@@ -190,11 +190,12 @@ output of tufte:
 :tufte/nil-id,
 pId                   nCalls        Min      50% ≤      90% ≤      95% ≤      99% ≤        Max       Mean   MAD      Clock  Total
 
-:pro              89,481,254   421.00ns     1.46μs     1.77μs     2.38μs     3.69μs   204.07ms     1.28μs  ±50%     1.91m     68%
-:tufte/compaction        111    34.23ms   110.15ms   147.70ms   283.73ms   325.88ms   919.43ms   103.33ms  ±54%    11.47s      7%
+:noob              2,426,660     6.13μs    28.29μs    60.32μs    78.76μs   299.16μs    25.60ms    38.21μs  ±76%     1.55m     52%
+:pro              34,272,466   396.00ns   786.00ns     1.24μs     2.29μs     3.17μs   917.90ms     1.04μs  ±59%    35.66s     20%
+:tufte/compaction         45    39.54ms   155.80ms   456.94ms   791.48ms     1.52s      1.52s    219.91ms  ±77%     9.90s      6%
 
-Accounted                                                                                                           2.10m     75%
-Clock                                                                                                               2.81m    100%
+Accounted                                                                                                           2.30m     78%
+Clock                                                                                                               2.96m    100%
 ```
 output of benchmark:
 ```
