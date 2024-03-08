@@ -11,8 +11,40 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 07 Mar 2024 21:41:38 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 08 Mar 2024 22:29:23 +0530</lastBuildDate>
     <atom:link href="https://upendra1997.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Reading List</title>
+      <link>https://upendra1997.github.io/posts/my-reading-list/</link>
+      <pubDate>Fri, 08 Mar 2024 22:29:23 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/my-reading-list/</guid>
+      <description>Things that I am trying to learn</description>
+      <content:encoded><![CDATA[<p>I am currently trying to learn various things like:</p>
+<ol>
+<li>Rust</li>
+<li>Haskell</li>
+<li>Distributed Systems, &hellip;etc.</li>
+</ol>
+<p>and for this I have been readings different things:</p>
+<ol>
+<li>I have been trying to read this blog by Alexis King: <a href="https://lexi-lambda.github.io/blog/2021/03/25/an-introduction-to-typeclass-metaprogramming/">https://lexi-lambda.github.io/blog/2021/03/25/an-introduction-to-typeclass-metaprogramming/</a> to understand more about typeclass metaprogramming.</li>
+<li>Series of challenges by <a href="https://fly.io/dist-sys/">fly.io</a>. I have tried to complete few of them <a href="https://github.com/upendra1997/maelstorm_rust">here</a></li>
+<li>A list of papers mentioned on the course: <a href="https://pdos.csail.mit.edu/6.824/schedule.html">https://pdos.csail.mit.edu/6.824/schedule.html</a></li>
+<li>A Top-Down Approach: Computer Networking by Kurose &amp; Ross</li>
+<li><a href="https://marabos.nl/atomics/">Rust Atomics and Locks</a></li>
+<li><a href="https://github.com/upendra1997/fp-course">Functional Programming Course</a></li>
+<li><a href="https://zerodha.com/varsity/modules/">Zerodha Varsity</a></li>
+<li>Different build-your-own on <a href="https://codecrafters.io/">https://codecrafters.io/</a>
+<ol>
+<li><a href="https://github.com/upendra1997/code-crafters-redis-rust">Redis</a></li>
+<li><a href="https://github.com/upendra1997/codecrafters-docker-rust">Docker</a></li>
+<li>&hellip;etc.</li>
+</ol>
+</li>
+</ol>
+<p>and I have been jumping around this list depending upon my interests and I hope to complete it this year.</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Getting Into Computer Science</title>
       <link>https://upendra1997.github.io/posts/getting-into-cs/</link>
