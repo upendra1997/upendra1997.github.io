@@ -1,7 +1,7 @@
 ---
 title: "Haskell Sudoku"
 date: 2022-11-29T11:14:10+05:30
-# weight: 1
+weight: 2
 # aliases: ["/first"]
 tags: ["haskell"]
 categories: ["Haskell"]

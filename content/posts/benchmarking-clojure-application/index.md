@@ -1,7 +1,7 @@
 ---
 title: "Benchmarking Clojure Application"
 date: 2024-03-03T08:23:31+05:30
-# weight: 1
+weight: 2
 # aliases: ["/first"]
 tags: ["clojure", "benchmarking"]
 categories: ["clojure"]

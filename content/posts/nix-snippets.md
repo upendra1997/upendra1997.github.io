@@ -1,7 +1,7 @@
 ---
 title: "Nix Snippets"
 date: 2024-03-04T18:01:01+05:30
-# weight: 1
+weight: 2
 # aliases: ["/first"]
 tags: ["nix"]
 categories: ["nix"]

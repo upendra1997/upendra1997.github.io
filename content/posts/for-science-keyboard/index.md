@@ -1,7 +1,7 @@
 ---
 title: "For Science Keyboard"
 date: 2024-03-06T20:09:19+05:30
-# weight: 1
+weight: 2
 # aliases: ["/first"]
 tags: ["keyboard"]
 categories: ["embedded"]

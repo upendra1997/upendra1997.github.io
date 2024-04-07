@@ -1,7 +1,7 @@
 ---
 title: "Exploring Resource Directory in Clojure"
 date: 2024-03-02T14:46:06+05:30
-# weight: 1
+weight: 2
 # aliases: ["/first"]
 tags: ["clojure"]
 categories: ["clojure"]
