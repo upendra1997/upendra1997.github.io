@@ -25,24 +25,24 @@
 <li>Haskell</li>
 <li>Distributed Systems, &hellip;etc.</li>
 </ol>
-<p>and for this I have been readings different things:</p>
+<p>To achieve this, I have been exploring various resources:</p>
 <ol>
-<li>I have been trying to read this blog by Alexis King: <a href="https://lexi-lambda.github.io/blog/2021/03/25/an-introduction-to-typeclass-metaprogramming/">https://lexi-lambda.github.io/blog/2021/03/25/an-introduction-to-typeclass-metaprogramming/</a> to understand more about typeclass metaprogramming.</li>
-<li>Series of challenges by <a href="https://fly.io/dist-sys/">fly.io</a>. I have tried to complete few of them <a href="https://github.com/upendra1997/maelstorm_rust">here</a></li>
-<li>A list of papers mentioned on the course: <a href="https://pdos.csail.mit.edu/6.824/schedule.html">https://pdos.csail.mit.edu/6.824/schedule.html</a></li>
-<li>A Top-Down Approach: Computer Networking by Kurose &amp; Ross</li>
-<li><a href="https://marabos.nl/atomics/">Rust Atomics and Locks</a></li>
-<li><a href="https://github.com/upendra1997/fp-course">Functional Programming Course</a></li>
-<li><a href="https://zerodha.com/varsity/modules/">Zerodha Varsity</a></li>
-<li>Different build-your-own on <a href="https://codecrafters.io/">https://codecrafters.io/</a>
-<ol>
+<li>I have been delving into Alexis King&rsquo;s blog at <a href="https://lexi-lambda.github.io/blog/2021/03/25/an-introduction-to-typeclass-metaprogramming/">this link</a> to gain a deeper understanding of typeclass metaprogramming.</li>
+<li>I have attempted several challenges provided by <a href="https://fly.io/dist-sys/">fly.io</a>, some of which I have documented <a href="https://github.com/upendra1997/maelstorm_rust">here</a>.</li>
+<li>I am referencing a list of papers mentioned in the course syllabus, available <a href="https://pdos.csail.mit.edu/6.824/schedule.html">here</a>.</li>
+<li>I am studying &ldquo;A Top-Down Approach: Computer Networking&rdquo; by Kurose &amp; Ross.</li>
+<li>I am exploring resources such as <a href="https://marabos.nl/atomics/">Rust Atomics and Locks</a> to deepen my understanding.</li>
+<li>I am engaged in a <a href="https://github.com/upendra1997/fp-course">Functional Programming Course</a>.</li>
+<li>I am utilizing resources from <a href="https://zerodha.com/varsity/modules/">Zerodha Varsity</a>.</li>
+<li>I am also undertaking various &ldquo;build-your-own&rdquo; projects available at codecrafters.io, including:
+<ul>
 <li><a href="https://github.com/upendra1997/code-crafters-redis-rust">Redis</a></li>
 <li><a href="https://github.com/upendra1997/codecrafters-docker-rust">Docker</a></li>
-<li>&hellip;etc.</li>
-</ol>
+<li>and others.</li>
+</ul>
 </li>
 </ol>
-<p>and I have been jumping around this list depending upon my interests and I hope to complete it this year.</p>
+<p>I am navigating through this list based on my current interests, with the aim of completing it by the end of the year.</p>
 ]]></content:encoded>
     </item>
   </channel>

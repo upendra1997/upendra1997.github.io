@@ -25,24 +25,24 @@
 <li>Haskell</li>
 <li>Distributed Systems, &hellip;etc.</li>
 </ol>
-<p>and for this I have been readings different things:</p>
+<p>To achieve this, I have been exploring various resources:</p>
 <ol>
-<li>I have been trying to read this blog by Alexis King: <a href="https://lexi-lambda.github.io/blog/2021/03/25/an-introduction-to-typeclass-metaprogramming/">https://lexi-lambda.github.io/blog/2021/03/25/an-introduction-to-typeclass-metaprogramming/</a> to understand more about typeclass metaprogramming.</li>
-<li>Series of challenges by <a href="https://fly.io/dist-sys/">fly.io</a>. I have tried to complete few of them <a href="https://github.com/upendra1997/maelstorm_rust">here</a></li>
-<li>A list of papers mentioned on the course: <a href="https://pdos.csail.mit.edu/6.824/schedule.html">https://pdos.csail.mit.edu/6.824/schedule.html</a></li>
-<li>A Top-Down Approach: Computer Networking by Kurose &amp; Ross</li>
-<li><a href="https://marabos.nl/atomics/">Rust Atomics and Locks</a></li>
-<li><a href="https://github.com/upendra1997/fp-course">Functional Programming Course</a></li>
-<li><a href="https://zerodha.com/varsity/modules/">Zerodha Varsity</a></li>
-<li>Different build-your-own on <a href="https://codecrafters.io/">https://codecrafters.io/</a>
-<ol>
+<li>I have been delving into Alexis King&rsquo;s blog at <a href="https://lexi-lambda.github.io/blog/2021/03/25/an-introduction-to-typeclass-metaprogramming/">this link</a> to gain a deeper understanding of typeclass metaprogramming.</li>
+<li>I have attempted several challenges provided by <a href="https://fly.io/dist-sys/">fly.io</a>, some of which I have documented <a href="https://github.com/upendra1997/maelstorm_rust">here</a>.</li>
+<li>I am referencing a list of papers mentioned in the course syllabus, available <a href="https://pdos.csail.mit.edu/6.824/schedule.html">here</a>.</li>
+<li>I am studying &ldquo;A Top-Down Approach: Computer Networking&rdquo; by Kurose &amp; Ross.</li>
+<li>I am exploring resources such as <a href="https://marabos.nl/atomics/">Rust Atomics and Locks</a> to deepen my understanding.</li>
+<li>I am engaged in a <a href="https://github.com/upendra1997/fp-course">Functional Programming Course</a>.</li>
+<li>I am utilizing resources from <a href="https://zerodha.com/varsity/modules/">Zerodha Varsity</a>.</li>
+<li>I am also undertaking various &ldquo;build-your-own&rdquo; projects available at codecrafters.io, including:
+<ul>
 <li><a href="https://github.com/upendra1997/code-crafters-redis-rust">Redis</a></li>
 <li><a href="https://github.com/upendra1997/codecrafters-docker-rust">Docker</a></li>
-<li>&hellip;etc.</li>
-</ol>
+<li>and others.</li>
+</ul>
 </li>
 </ol>
-<p>and I have been jumping around this list depending upon my interests and I hope to complete it this year.</p>
+<p>I am navigating through this list based on my current interests, with the aim of completing it by the end of the year.</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -51,21 +51,21 @@
       <pubDate>Thu, 07 Mar 2024 21:41:38 +0530</pubDate>
       <guid>https://upendra1997.github.io/posts/getting-into-cs/</guid>
       <description>A little writeup about how I got into CS</description>
-      <content:encoded><![CDATA[<p>As a child, I was always interested in Computers, but maybe not the science part of it.</p>
-<p>I always wanted to play new games, and during that time(2010), we didn&rsquo;t have that good of internet. The only way to get games was from friends, who had the installations CD/DVD/Pendrive, or from internet which was very costly at that time.</p>
-<p>Most of the time CD/DVDs had scratches and there was always checksum error or some file(dll) missing, so we downloaded <code>dlls</code> from the internet, which was cheaper and made the game work.</p>
-<p>Sometime we also had games, which were too hard or we didn&rsquo;t understand the objective because of the language issue. So we used to search for cheat engine to pass the game, and there I was first introduced to <code>lua</code> through <a href="https://www.cheatengine.org/">cheat engine</a>. I tried to use that, but was never successful with that, and was only able to use features like scanning the memory of game and getting all the matching values and keep filering until we reach the location where money/health was stored, and then we were able to freeze the value.</p>
-<p>After those fun years, I started high school (2013-2015). There we were formally introduced to the concept of programming languages, like HTML, Java, etc. Which I got hooked to early on, and kept reading all the course book that I had access to. This really helped me as I scored very well in computer related subjects.</p>
-<p>Once I entered college for my bachelor (2015-2019), durinng the first year, I didn&rsquo;t do anything new and was just trying to score well in subjects. But When I stared my 2nd year, I met few friends, who introducted me to new world of courses, competitive programming, hackathons and much more. I was hooked again with learing new things and trying to be as good as possible. The things that I used to follow and that helped me were:</p>
+      <content:encoded><![CDATA[<p>Throughout my childhood, I held a keen interest in computers, particularly in gaming. However, the technical\science aspects didn&rsquo;t initially captivate me.</p>
+<p>Back in 2010, acquiring new games was a challenge due to limited internet access. We relied on friends with installation CDs, DVDs, or pendrives. Unfortunately, scratched disks often led to checksum errors or missing files, which forced us to download DLLs/files from the internet to fix issues.</p>
+<p>Encountering language barriers(English is not my first language) or difficult game levels led us to seek <a href="https://www.cheatengine.org/">cheat engine</a> for assistance. It was through this pursuit that I was introduced to Lua, although my attempts at mastery were unsuccessful. Nonetheless, I learned to utilize basic features like memory scanning to manipulate in-game values, enabling me to progress in game, by freezing my health, or getting large pool of money.</p>
+<p>My formal introduction to programming languages occurred during high school (2013-2015), where I immersed myself in HTML, Java, and other languages introducted in the syllabus. I delved into course materials fervently, which reflected positively in my academic performance in computer-related subjects.</p>
+<p>Upon entering college for my bachelor&rsquo;s degree (2015-2019), my first year was uneventful as I focused on academic excellence. However, the second year introduced me to a world of possibilities through friends who introduced me to courses, competitive programming, hackathons, and more. This reignited my passion for learning new things, and I avidly pursued knowledge.</p>
+<p>Few resources that helped me were:</p>
 <ol>
 <li><a href="https://github.com/ossu/computer-science">https://github.com/ossu/computer-science</a></li>
 <li>Steven Halim&rsquo;s CP book: <a href="https://cpbook.net/">https://cpbook.net/</a></li>
 <li><a href="https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/">https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/</a></li>
 <li><a href="https://teachyourselfcs.com/">https://teachyourselfcs.com/</a></li>
 </ol>
-<p>These helped me get my first couple of jobs. Even though now I don&rsquo;t believe in country&rsquo;s college eductaion quality. I still believe going to college was the best thing, for exploring things you like, making friends and having time to dive into things you wish.</p>
-<p>Rest of the things that I leared were on the job or from my colleages, and I always try to learn new things and make it fun.</p>
-<p>And I hope to continue doing so.</p>
+<p>These resources not only aided my learning but also paved the way for my initial job opportunities. Despite my skepticism regarding the quality of indian college education, I acknowledge its role in facilitating exploration, fostering friendships, and providing time for personal development.</p>
+<p>Subsequent learning occurred on the job and through interactions with colleagues. I remain committed to continuous learning, always seeking to expand my skill set and find joy in the process.</p>
+<p>And you know what? Its just getting started. Here&rsquo;s to a lifetime of curiosity and adventure!</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -74,11 +74,11 @@
       <pubDate>Wed, 06 Mar 2024 20:09:19 +0530</pubDate>
       <guid>https://upendra1997.github.io/posts/for-science-keyboard/</guid>
       <description>My experience building for science keyboard</description>
-      <content:encoded><![CDATA[<p>I recently built the <code>for-science</code> keyboard and I followed this guide: <a href="https://github.com/peej/for-science-keyboard">https://github.com/peej/for-science-keyboard</a></p>
-<h2 id="bill-of-material">Bill of Material</h2>
+      <content:encoded><![CDATA[<p>I recently built the &ldquo;for-science&rdquo; keyboard following this guide: <a href="https://github.com/peej/for-science-keyboard">https://github.com/peej/for-science-keyboard</a>.</p>
+<h2 id="bill-of-materials">Bill of Materials</h2>
 <ol>
-<li><a href="https://stackskb.com/store/for-science-split-keyboard-diy-kit/">kit</a>: 1800 INR</li>
-<li><a href="https://robocraze.com/products/pro-micro-5v-mini-leonardo-compatible-with-arduino">arudio pro micro compatible X2</a>: 908 INR</li>
+<li><a href="https://stackskb.com/store/for-science-split-keyboard-diy-kit/">DIY kit</a>: 1800 INR</li>
+<li><a href="https://robocraze.com/products/pro-micro-5v-mini-leonardo-compatible-with-arduino">Arduino Pro Micro compatible x2</a>: 908 INR</li>
 <li><a href="https://robocraze.com/products/soldron-variable-wattage-micro-soldering-station">Soldering Station</a>: 1305 INR</li>
 <li>Soldering wire from Robocraze: 21 INR</li>
 <li>Digital Multimeter from Robocraze: 199 INR</li>
@@ -89,64 +89,64 @@
 <li>Desoldering Wick from a local shop in Hyderabad: 300 INR</li>
 </ol>
 <h2 id="journey">Journey</h2>
-<p>While building the keyboard, I started with following the guide mentioned above, but It was not descriptive enough so I supplemented it with other guide for <a href="https://github.com/kata0510/Lily58/blob/master/Pro/Doc/buildguide_en.md">Lily58</a>.</p>
-<p>While following the guide whenever I had doubts, I referred to the <a href="https://github.com/peej/for-science-keyboard/tree/master/gerber">gerber</a> file <a href="https://www.gerblook.org/">here</a>. It helped me to find which side was up by linking the TRRS jack and the pro micro&rsquo;s <code>D0</code> pin as mentioned <a href="https://golem.hu/article/pro-micro-pinout/">here</a>.</p>
-<h3 id="mistakes-i-made">Mistakes I made:</h3>
+<p>During the keyboard assembly, I initially followed the aforementioned guide but found it lacking in detail. I supplemented it with another guide for the <a href="https://github.com/kata0510/Lily58/blob/master/Pro/Doc/buildguide_en.md">Lily58</a>.</p>
+<p>Throughout the process, whenever I encountered doubts, I referred to the gerber file <a href="https://github.com/peej/for-science-keyboard/tree/master/gerber">here</a> using <a href="https://www.gerblook.org/">gerberlook</a> and utilized the TRRS jack and the Pro Micro&rsquo;s <code>D0</code> pin as orientation guides, as described <a href="https://golem.hu/article/pro-micro-pinout/">here</a>.</p>
+<h3 id="mistakes-made">Mistakes Made:</h3>
 <ol>
-<li>Bad Soldering; Advice that I will give if you are new to soldering is to practie and make sure you can solder as mentioned on this <a href="https://learn.adafruit.com/adafruit-guide-excellent-soldering/common-problems">blog</a>.</li>
-<li>I soldered the <code>Pro Micro</code> chip, before soldering the switches. Which caused lots of issues as I tried to fix the mistake using desoldering pumps, desoldering wicks and flux. But in the end it didn&rsquo;t help and only damaged swithes and pro micro chip. Luckily I had spares swithes and few wires, so I sorted to them to make it work somehow. Lesson is to double/triple check components you are soldering, as desoldering is very painful and can damage components.</li>
-<li>The TRRS cable that I had was faulty or I spoiled it, so had to get a new TRRS cable. Lesson would be to keep cheking connectivity of your ciruit with the gerber files using the <code>continuity mode</code> of Multimeter.</li>
+<li>Poor Soldering: For novices, I recommend practicing soldering techniques, as outlined in this <a href="https://learn.adafruit.com/adafruit-guide-excellent-soldering/common-problems">blog</a>.</li>
+<li>Soldering the Pro Micro chip before the switches caused numerous issues. Despite attempts to rectify using desoldering pumps, wicks, and flux, it resulted in damage to the switches and Pro Micro chip. Fortunately, I had spare switches and wires to salvage the situation. Lesson learned: double or triple check components before soldering to avoid the arduous and potentially damaging process of desoldering.</li>
+<li>A faulty or damaged TRRS cable necessitated its replacement. Lesson: ensure circuit connectivity using the gerber files and the Multimeter&rsquo;s continuity mode.</li>
 </ol>
-<h3 id="issues-that-i-still-have-with-my-keyboard">Issues that I still have with my keyboard:</h3>
+<h3 id="ongoing-issues">Ongoing Issues:</h3>
 <ol>
-<li>Right side doesn&rsquo;t work individually, i.e. if I connect the keyboard to the left split it works, but If I connect using the right split, It doesn&rsquo;t. I tried this <a href="https://docs.splitkb.com/hc/en-us/articles/360010588860-Only-one-half-of-my-keyboard-works-at-a-time-but-not-when-they-are-both-connected">blog</a> and <a href="https://www.reddit.com/r/ErgoMechKeyboards/comments/qq1o8q/how_to_best_start_debugging_this/">post</a>, but It didn&rsquo;t help.</li>
-<li>Sometime the whole keyboard hangs when I am typing and starts responding after sometime. My guess is that It is happening because of all the QMK features that I have <a href="https://github.com/qmk/qmk_firmware/compare/master...upendra1997:qmk_firmware:master">enabled</a> on the keyboard.</li>
+<li>The right side operates only when connected to the left split; connecting via the right split yields no response. Attempted solutions from <a href="https://docs.splitkb.com/hc/en-us/articles/360010588860-Only-one-half-of-my-keyboard-works-at-a-time-but-not-when-they-are-both-connected">this blog</a> and <a href="https://www.reddit.com/r/ErgoMechKeyboards/comments/qq1o8q/how_to_best_start_debugging_this/">this post</a> were unsuccessful.</li>
+<li>Periodic keyboard freezing during typing, potentially due to enabled QMK features, as detailed <a href="https://github.com/qmk/qmk_firmware/compare/master...upendra1997:qmk_firmware:master">here</a>.</li>
 </ol>
 <h2 id="qmk">QMK</h2>
 <p>I guess the QMK layout <a href="https://config.qmk.fm/#/for_science/LAYOUT_split_4x5_3">configuration</a> that they had was outdated and was not working properly with my keyboard, as I built the keyboard and tested them using <a href="https://config.qmk.fm/#/test">test-website</a>.</p>
 <p>so I made few changes on my <a href="https://github.com/upendra1997/qmk_firmware">fork</a> to make them work, and added some extra layout and features, which suited my fancy.</p>
 <h2 id="images">Images</h2>
 <h3 id="pcb">PCB:</h3>
-<p><img loading="lazy" src="images/emty-pcb.jpg" alt="PCB"  />
+<p><img loading="lazy" src="images/empty-pcb.jpg" alt="PCB"  />
 </p>
 <h3 id="pro-micro">Pro Micro:</h3>
-<p><img loading="lazy" src="images/pro-micro.jpg" alt="pro-micro"  />
+<p><img loading="lazy" src="images/pro-micro.jpg" alt="Pro Micro"  />
 </p>
 <h3 id="diodes">Diodes:</h3>
-<p><img loading="lazy" src="images/diode-single.jpg" alt="front-diode"  />
+<p><img loading="lazy" src="images/diode-single.jpg" alt="Front Diode"  />
 
-<img loading="lazy" src="images/diode-multiple.jpg" alt="back-diode"  />
+<img loading="lazy" src="images/diode-multiple.jpg" alt="Back Diode"  />
 
-<img loading="lazy" src="images/inserted-diodes.jpg" alt="insterted-diodes"  />
+<img loading="lazy" src="images/inserted-diodes.jpg" alt="Inserted Diodes"  />
 
-<img loading="lazy" src="images/diodes-up.jpg" alt="diodes-up"  />
+<img loading="lazy" src="images/diodes-up.jpg" alt="Diodes Orientation"  />
 
-<img loading="lazy" src="images/diodes-pcb.jpg" alt="diodes-pcb"  />
+<img loading="lazy" src="images/diodes-pcb.jpg" alt="Diodes on PCB"  />
 </p>
 <h3 id="switches">Switches:</h3>
-<p><img loading="lazy" src="images/switches.jpg" alt="switches"  />
+<p><img loading="lazy" src="images/switches.jpg" alt="Switches"  />
 
-<img loading="lazy" src="images/cross-section.jpg" alt="cross-section"  />
+<img loading="lazy" src="images/cross-section.jpg" alt="Cross-section"  />
 </p>
 <h3 id="trrs-socket">TRRS Socket:</h3>
-<p><img loading="lazy" src="images/left-board.jpg" alt="TRRS"  />
+<p><img loading="lazy" src="images/left-board.jpg" alt="TRRS Socket"  />
 </p>
-<h3 id="damaged">Damaged</h3>
-<p>Connection held through a metal pin:
-<img loading="lazy" src="images/hacked-right-board.jpg" alt="hacked-right"  />
+<h3 id="damaged">Damaged:</h3>
+<p>Connection made via a metal pin:
+<img loading="lazy" src="images/hacked-right-board.jpg" alt="Hacked Right"  />
 
-<img loading="lazy" src="images/hacked-screwed.JPG" alt="hacked-right-screwed"  />
+<img loading="lazy" src="images/hacked-screwed.JPG" alt="Hacked Right Screwed"  />
 </p>
-<h3 id="final-keyboard">Final Keyboard</h3>
-<p><img loading="lazy" src="images/partial-2.JPG" alt="partial-1"  />
+<h3 id="final-keyboard">Final Keyboard:</h3>
+<p><img loading="lazy" src="images/partial-2.JPG" alt="Partial 1"  />
 
-<img loading="lazy" src="images/partial-board.JPG" alt="partial-2"  />
+<img loading="lazy" src="images/partial-board.JPG" alt="Partial 2"  />
 
 <img loading="lazy" src="images/complete.JPG" alt="Final Keyboard"  />
 </p>
 <hr>
 <h2 id="help">HELP</h2>
-<p>Please, if you find solution for above issues, please comment or reach out to me. Thank you :)</p>
+<p>If you have solutions to the aforementioned issues, please comment or reach out to me. Thank you :)</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -155,18 +155,18 @@
       <pubDate>Tue, 05 Mar 2024 23:29:34 +0530</pubDate>
       <guid>https://upendra1997.github.io/posts/diversify-career/</guid>
       <description>A write-up about future career choices</description>
-      <content:encoded><![CDATA[<p>I want to have a high impact from my career and and more I think about trying that, I feel that it cannot be done by simply following one field.</p>
-<p>I have been in computer science field for a while and have dabled in machine-learning/data-science on the side. All the jobs that I have taken were also aligned to the either fintech or logistics. But I feel that to have better impact on my career, I require cross pollination of different fields to mix-match different ideas from different fields and add value to whatever work I do.</p>
-<p>I have been considering multiple future career/studiets that wish to pursue and there are few of the things that I have been interested in:</p>
+      <content:encoded><![CDATA[<p>I aim for a high impact career, and the more I contemplate this, the more I realize it cannot be achieved by sticking to one field alone.</p>
+<p>I&rsquo;ve been entrenched in the computer science realm for some time, with a side interest in machine learning/data science. While my past roles have mainly revolved around fintech or logistics, I believe achieving greater career impact necessitates cross-pollination across different domains, blending diverse ideas to enhance my work.</p>
+<p>As I ponder various future career or study paths, several interests have caught my attention:</p>
 <ol>
-<li>Working more closely to hardware, like: battery firmware, embedded systems, GPU programming, etc.</li>
-<li>Learning more about biological world, and I feel that the way to step into it through learning it with something that I already know, like: <a href="https://github.com/ossu/bioinformatics">https://github.com/ossu/bioinformatics</a></li>
-<li>I have been dabbling in machine-learning/data-science, and also have done multiple courses and certifications, but I never got to work on it full time; so having an opportunity there might also help me.</li>
-<li>Working in civil services and seeing the issues the people and government faces and trying to help them with my experience in technology.</li>
-<li>Starting my own business and growing it, which I think will teach me about lots of things like Delegating, Negotiating, Hiring, Execution, Finance, etc.</li>
-<li>Working in Commerce and Finance to learn managing, saving and growing money and how technology can help in doing it better. For examle: <a href="https://zerodha.com/varsity/">https://zerodha.com/varsity/</a></li>
+<li>Delving into hardware intricacies, such as battery firmware, embedded systems, and GPU programming.</li>
+<li>Exploring the biological world, potentially leveraging my existing knowledge through resources like <a href="https://github.com/ossu/bioinformatics">https://github.com/ossu/bioinformatics</a>.</li>
+<li>Expanding my involvement in machine learning/data science, transitioning from occasional dabbling to full-time engagement.</li>
+<li>Venturing into civil services to address societal issues with my technological expertise.</li>
+<li>Establishing and scaling my own business, offering insights into delegation, negotiation, hiring, execution, finance, and more.</li>
+<li>Exploring commerce and finance to understand wealth management, savings, growth, and the role of technology, for instance, via platforms like <a href="https://zerodha.com/varsity/">https://zerodha.com/varsity/</a>.</li>
 </ol>
-<p>I still feel like I can do more, learn more, help more and hope that I get to work in all kind of fields, businesses and situtations.</p>
+<p>I remain eager to contribute more, learn more, and assist across various fields, industries, and scenarios.</p>
 ]]></content:encoded>
     </item>
     <item>

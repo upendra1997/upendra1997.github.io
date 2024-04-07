@@ -19,21 +19,21 @@
       <pubDate>Thu, 07 Mar 2024 21:41:38 +0530</pubDate>
       <guid>https://upendra1997.github.io/posts/getting-into-cs/</guid>
       <description>A little writeup about how I got into CS</description>
-      <content:encoded><![CDATA[<p>As a child, I was always interested in Computers, but maybe not the science part of it.</p>
-<p>I always wanted to play new games, and during that time(2010), we didn&rsquo;t have that good of internet. The only way to get games was from friends, who had the installations CD/DVD/Pendrive, or from internet which was very costly at that time.</p>
-<p>Most of the time CD/DVDs had scratches and there was always checksum error or some file(dll) missing, so we downloaded <code>dlls</code> from the internet, which was cheaper and made the game work.</p>
-<p>Sometime we also had games, which were too hard or we didn&rsquo;t understand the objective because of the language issue. So we used to search for cheat engine to pass the game, and there I was first introduced to <code>lua</code> through <a href="https://www.cheatengine.org/">cheat engine</a>. I tried to use that, but was never successful with that, and was only able to use features like scanning the memory of game and getting all the matching values and keep filering until we reach the location where money/health was stored, and then we were able to freeze the value.</p>
-<p>After those fun years, I started high school (2013-2015). There we were formally introduced to the concept of programming languages, like HTML, Java, etc. Which I got hooked to early on, and kept reading all the course book that I had access to. This really helped me as I scored very well in computer related subjects.</p>
-<p>Once I entered college for my bachelor (2015-2019), durinng the first year, I didn&rsquo;t do anything new and was just trying to score well in subjects. But When I stared my 2nd year, I met few friends, who introducted me to new world of courses, competitive programming, hackathons and much more. I was hooked again with learing new things and trying to be as good as possible. The things that I used to follow and that helped me were:</p>
+      <content:encoded><![CDATA[<p>Throughout my childhood, I held a keen interest in computers, particularly in gaming. However, the technical\science aspects didn&rsquo;t initially captivate me.</p>
+<p>Back in 2010, acquiring new games was a challenge due to limited internet access. We relied on friends with installation CDs, DVDs, or pendrives. Unfortunately, scratched disks often led to checksum errors or missing files, which forced us to download DLLs/files from the internet to fix issues.</p>
+<p>Encountering language barriers(English is not my first language) or difficult game levels led us to seek <a href="https://www.cheatengine.org/">cheat engine</a> for assistance. It was through this pursuit that I was introduced to Lua, although my attempts at mastery were unsuccessful. Nonetheless, I learned to utilize basic features like memory scanning to manipulate in-game values, enabling me to progress in game, by freezing my health, or getting large pool of money.</p>
+<p>My formal introduction to programming languages occurred during high school (2013-2015), where I immersed myself in HTML, Java, and other languages introducted in the syllabus. I delved into course materials fervently, which reflected positively in my academic performance in computer-related subjects.</p>
+<p>Upon entering college for my bachelor&rsquo;s degree (2015-2019), my first year was uneventful as I focused on academic excellence. However, the second year introduced me to a world of possibilities through friends who introduced me to courses, competitive programming, hackathons, and more. This reignited my passion for learning new things, and I avidly pursued knowledge.</p>
+<p>Few resources that helped me were:</p>
 <ol>
 <li><a href="https://github.com/ossu/computer-science">https://github.com/ossu/computer-science</a></li>
 <li>Steven Halim&rsquo;s CP book: <a href="https://cpbook.net/">https://cpbook.net/</a></li>
 <li><a href="https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/">https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/</a></li>
 <li><a href="https://teachyourselfcs.com/">https://teachyourselfcs.com/</a></li>
 </ol>
-<p>These helped me get my first couple of jobs. Even though now I don&rsquo;t believe in country&rsquo;s college eductaion quality. I still believe going to college was the best thing, for exploring things you like, making friends and having time to dive into things you wish.</p>
-<p>Rest of the things that I leared were on the job or from my colleages, and I always try to learn new things and make it fun.</p>
-<p>And I hope to continue doing so.</p>
+<p>These resources not only aided my learning but also paved the way for my initial job opportunities. Despite my skepticism regarding the quality of indian college education, I acknowledge its role in facilitating exploration, fostering friendships, and providing time for personal development.</p>
+<p>Subsequent learning occurred on the job and through interactions with colleagues. I remain committed to continuous learning, always seeking to expand my skill set and find joy in the process.</p>
+<p>And you know what? Its just getting started. Here&rsquo;s to a lifetime of curiosity and adventure!</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -42,18 +42,18 @@
       <pubDate>Tue, 05 Mar 2024 23:29:34 +0530</pubDate>
       <guid>https://upendra1997.github.io/posts/diversify-career/</guid>
       <description>A write-up about future career choices</description>
-      <content:encoded><![CDATA[<p>I want to have a high impact from my career and and more I think about trying that, I feel that it cannot be done by simply following one field.</p>
-<p>I have been in computer science field for a while and have dabled in machine-learning/data-science on the side. All the jobs that I have taken were also aligned to the either fintech or logistics. But I feel that to have better impact on my career, I require cross pollination of different fields to mix-match different ideas from different fields and add value to whatever work I do.</p>
-<p>I have been considering multiple future career/studiets that wish to pursue and there are few of the things that I have been interested in:</p>
+      <content:encoded><![CDATA[<p>I aim for a high impact career, and the more I contemplate this, the more I realize it cannot be achieved by sticking to one field alone.</p>
+<p>I&rsquo;ve been entrenched in the computer science realm for some time, with a side interest in machine learning/data science. While my past roles have mainly revolved around fintech or logistics, I believe achieving greater career impact necessitates cross-pollination across different domains, blending diverse ideas to enhance my work.</p>
+<p>As I ponder various future career or study paths, several interests have caught my attention:</p>
 <ol>
-<li>Working more closely to hardware, like: battery firmware, embedded systems, GPU programming, etc.</li>
-<li>Learning more about biological world, and I feel that the way to step into it through learning it with something that I already know, like: <a href="https://github.com/ossu/bioinformatics">https://github.com/ossu/bioinformatics</a></li>
-<li>I have been dabbling in machine-learning/data-science, and also have done multiple courses and certifications, but I never got to work on it full time; so having an opportunity there might also help me.</li>
-<li>Working in civil services and seeing the issues the people and government faces and trying to help them with my experience in technology.</li>
-<li>Starting my own business and growing it, which I think will teach me about lots of things like Delegating, Negotiating, Hiring, Execution, Finance, etc.</li>
-<li>Working in Commerce and Finance to learn managing, saving and growing money and how technology can help in doing it better. For examle: <a href="https://zerodha.com/varsity/">https://zerodha.com/varsity/</a></li>
+<li>Delving into hardware intricacies, such as battery firmware, embedded systems, and GPU programming.</li>
+<li>Exploring the biological world, potentially leveraging my existing knowledge through resources like <a href="https://github.com/ossu/bioinformatics">https://github.com/ossu/bioinformatics</a>.</li>
+<li>Expanding my involvement in machine learning/data science, transitioning from occasional dabbling to full-time engagement.</li>
+<li>Venturing into civil services to address societal issues with my technological expertise.</li>
+<li>Establishing and scaling my own business, offering insights into delegation, negotiation, hiring, execution, finance, and more.</li>
+<li>Exploring commerce and finance to understand wealth management, savings, growth, and the role of technology, for instance, via platforms like <a href="https://zerodha.com/varsity/">https://zerodha.com/varsity/</a>.</li>
 </ol>
-<p>I still feel like I can do more, learn more, help more and hope that I get to work in all kind of fields, businesses and situtations.</p>
+<p>I remain eager to contribute more, learn more, and assist across various fields, industries, and scenarios.</p>
 ]]></content:encoded>
     </item>
     <item>
