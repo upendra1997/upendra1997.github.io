@@ -14,61 +14,6 @@
     <lastBuildDate>Fri, 08 Mar 2024 22:29:23 +0530</lastBuildDate>
     <atom:link href="https://upendra1997.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My Reading List</title>
-      <link>https://upendra1997.github.io/posts/my-reading-list/</link>
-      <pubDate>Fri, 08 Mar 2024 22:29:23 +0530</pubDate>
-      <guid>https://upendra1997.github.io/posts/my-reading-list/</guid>
-      <description>Things that I am trying to learn</description>
-      <content:encoded><![CDATA[<p>I am currently trying to learn various things like:</p>
-<ol>
-<li>Rust</li>
-<li>Haskell</li>
-<li>Distributed Systems, &hellip;etc.</li>
-</ol>
-<p>To achieve this, I have been exploring various resources:</p>
-<ol>
-<li>I have been delving into Alexis King&rsquo;s blog at <a href="https://lexi-lambda.github.io/blog/2021/03/25/an-introduction-to-typeclass-metaprogramming/">this link</a> to gain a deeper understanding of typeclass metaprogramming.</li>
-<li>I have attempted several challenges provided by <a href="https://fly.io/dist-sys/">fly.io</a>, some of which I have documented <a href="https://github.com/upendra1997/maelstorm_rust">here</a>.</li>
-<li>I am referencing a list of papers mentioned in the course syllabus, available <a href="https://pdos.csail.mit.edu/6.824/schedule.html">here</a>.</li>
-<li>I am studying &ldquo;A Top-Down Approach: Computer Networking&rdquo; by Kurose &amp; Ross.</li>
-<li>I am exploring resources such as <a href="https://marabos.nl/atomics/">Rust Atomics and Locks</a> to deepen my understanding.</li>
-<li>I am engaged in a <a href="https://github.com/upendra1997/fp-course">Functional Programming Course</a>.</li>
-<li>I am utilizing resources from <a href="https://zerodha.com/varsity/modules/">Zerodha Varsity</a>.</li>
-<li>I am also undertaking various &ldquo;build-your-own&rdquo; projects available at codecrafters.io, including:
-<ul>
-<li><a href="https://github.com/upendra1997/code-crafters-redis-rust">Redis</a></li>
-<li><a href="https://github.com/upendra1997/codecrafters-docker-rust">Docker</a></li>
-<li>and others.</li>
-</ul>
-</li>
-</ol>
-<p>I am navigating through this list based on my current interests, with the aim of completing it by the end of the year.</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Getting Into Computer Science</title>
-      <link>https://upendra1997.github.io/posts/getting-into-cs/</link>
-      <pubDate>Thu, 07 Mar 2024 21:41:38 +0530</pubDate>
-      <guid>https://upendra1997.github.io/posts/getting-into-cs/</guid>
-      <description>A little writeup about how I got into CS</description>
-      <content:encoded><![CDATA[<p>Throughout my childhood, I held a keen interest in computers, particularly in gaming. However, the technical\science aspects didn&rsquo;t initially captivate me.</p>
-<p>Back in 2010, acquiring new games was a challenge due to limited internet access. We relied on friends with installation CDs, DVDs, or pendrives. Unfortunately, scratched disks often led to checksum errors or missing files, which forced us to download DLLs/files from the internet to fix issues.</p>
-<p>Encountering language barriers(English is not my first language) or difficult game levels led us to seek <a href="https://www.cheatengine.org/">cheat engine</a> for assistance. It was through this pursuit that I was introduced to Lua, although my attempts at mastery were unsuccessful. Nonetheless, I learned to utilize basic features like memory scanning to manipulate in-game values, enabling me to progress in game, by freezing my health, or getting large pool of money.</p>
-<p>My formal introduction to programming languages occurred during high school (2013-2015), where I immersed myself in HTML, Java, and other languages introducted in the syllabus. I delved into course materials fervently, which reflected positively in my academic performance in computer-related subjects.</p>
-<p>Upon entering college for my bachelor&rsquo;s degree (2015-2019), my first year was uneventful as I focused on academic excellence. However, the second year introduced me to a world of possibilities through friends who introduced me to courses, competitive programming, hackathons, and more. This reignited my passion for learning new things, and I avidly pursued knowledge.</p>
-<p>Few resources that helped me were:</p>
-<ol>
-<li><a href="https://github.com/ossu/computer-science">https://github.com/ossu/computer-science</a></li>
-<li>Steven Halim&rsquo;s CP book: <a href="https://cpbook.net/">https://cpbook.net/</a></li>
-<li><a href="https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/">https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/</a></li>
-<li><a href="https://teachyourselfcs.com/">https://teachyourselfcs.com/</a></li>
-</ol>
-<p>These resources not only aided my learning but also paved the way for my initial job opportunities. Despite my skepticism regarding the quality of indian college education, I acknowledge its role in facilitating exploration, fostering friendships, and providing time for personal development.</p>
-<p>Subsequent learning occurred on the job and through interactions with colleagues. I remain committed to continuous learning, always seeking to expand my skill set and find joy in the process.</p>
-<p>And you know what? Its just getting started. Here&rsquo;s to a lifetime of curiosity and adventure!</p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>For Science Keyboard</title>
       <link>https://upendra1997.github.io/posts/for-science-keyboard/</link>
       <pubDate>Wed, 06 Mar 2024 20:09:19 +0530</pubDate>
@@ -147,26 +92,6 @@
 <hr>
 <h2 id="help">HELP</h2>
 <p>If you have solutions to the aforementioned issues, please comment or reach out to me. Thank you :)</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Diversifying Career</title>
-      <link>https://upendra1997.github.io/posts/diversify-career/</link>
-      <pubDate>Tue, 05 Mar 2024 23:29:34 +0530</pubDate>
-      <guid>https://upendra1997.github.io/posts/diversify-career/</guid>
-      <description>A write-up about future career choices</description>
-      <content:encoded><![CDATA[<p>I aim for a high impact career, and the more I contemplate this, the more I realize it cannot be achieved by sticking to one field alone.</p>
-<p>I&rsquo;ve been entrenched in the computer science realm for some time, with a side interest in machine learning/data science. While my past roles have mainly revolved around fintech or logistics, I believe achieving greater career impact necessitates cross-pollination across different domains, blending diverse ideas to enhance my work.</p>
-<p>As I ponder various future career or study paths, several interests have caught my attention:</p>
-<ol>
-<li>Delving into hardware intricacies, such as battery firmware, embedded systems, and GPU programming.</li>
-<li>Exploring the biological world, potentially leveraging my existing knowledge through resources like <a href="https://github.com/ossu/bioinformatics">https://github.com/ossu/bioinformatics</a>.</li>
-<li>Expanding my involvement in machine learning/data science, transitioning from occasional dabbling to full-time engagement.</li>
-<li>Venturing into civil services to address societal issues with my technological expertise.</li>
-<li>Establishing and scaling my own business, offering insights into delegation, negotiation, hiring, execution, finance, and more.</li>
-<li>Exploring commerce and finance to understand wealth management, savings, growth, and the role of technology, for instance, via platforms like <a href="https://zerodha.com/varsity/">https://zerodha.com/varsity/</a>.</li>
-</ol>
-<p>I remain eager to contribute more, learn more, and assist across various fields, industries, and scenarios.</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -488,161 +413,6 @@ hi
 </span></span><span style="display:flex;"><span>    (println <span style="color:#e6db74">&#34;---------------&#34;</span>)))
 </span></span></code></pre></div><h2 id="this-obviously-solves-the-issue-and-we-get-the-same-output-using-the-jar-files-also-">This obviously solves the issue and we get the same output using the jar files also :)</h2>
 <p>Please check the full code <a href="https://github.com/upendra1997/jar-resource-read">here</a>.</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Advent of Code 2023 Day 5</title>
-      <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-5/</link>
-      <pubDate>Fri, 01 Mar 2024 09:11:31 +0530</pubDate>
-      <guid>https://upendra1997.github.io/posts/advent-of-code-2023-day-5/</guid>
-      <description>advent of code 2023 day 5</description>
-      <content:encoded><![CDATA[<h1 id="aoc-2023-5-if-you-give-a-seed-a-fertilizer">AOC-2023-5 If You Give A Seed A Fertilizer</h1>
-<p>This <a href="https://adventofcode.com/2023/day/5">problem</a> was hardest yet and took longest to solve. so the problem asks us to create a map from seed to location such as:</p>
-<pre tabindex="0"><code>seed -&gt; soil -&gt; fertilizer -&gt; water -&gt; light -&gt; temprature -&gt; humidity -&gt; location
-</code></pre><p>where we are given certain mappings from one entity to another, eg: <code>seed 1</code> corresponds to <code>soil 10</code>
-and given this mapping and intial seed list we need to find the minimum location.</p>
-<h2 id="part-1">Part 1</h2>
-<p>In this part we are given list of intial seeds, and mapping, which we use to construct the <a href="https://hackage.haskell.org/package/containers-0.7/docs/Data-Map.html">Data.Map</a> and traverse it.</p>
-<p>An interesting choice was to handle entries which were not provided in the mapping, so basically if given key is not present in the map then we look into trasition map, which map over entities to functions(which map from entity to entity). eg: if <code>soil 12</code> was not found in the map then we look for <code>soil INT_MIN</code> in transition map, which will return a function that will take <code>soil 12</code> and returns <code>fertilizer 12</code>.</p>
-<p>check <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day5/day5.hs#L169"><code>toLocation</code></a> function to understand the approach mentioned above.</p>
-<h2 id="part-2">Part 2</h2>
-<p>In this part we are givent ranges of seeds intead of just few seeds. If we go with the previous approach, our Map will become very large since it cannot contains that many elements and we will reach out of memory very soon.</p>
-<p>Other approach to solve the issue is to not fit all of them into memory and consider ranges as an entity. We will represent seed 5 to 10 as <code>Seed(5, 10)</code> and we will find all the intersecting entities and we will keep doing until we reach the location entity.</p>
-<p>suppose that we had the mapping:</p>
-<pre tabindex="0"><code>Seed(2, 7) -&gt; Soil(10, 15)
-Seed(9, 15) -&gt; Soil(20, 26)
-</code></pre><p>then the intersections and ther mapping would be:</p>
-<pre tabindex="0"><code>intersection -&gt; mapping
-Seed(5, 7) -&gt; Soil(13, 15)
-Seed(9, 10) -&gt; Soil(20, 21)
-Seed(7, 9) -&gt; Soil(7, 9)
-</code></pre><p>To speed up solution and preventing code going into infintite recursion, we will be using the State Monad from <a href="https://hackage.haskell.org/package/mtl">mtl</a> to keep track of visited nodes and use <code>Data.Tree</code> from <a href="https://hackage.haskell.org/package/containers">containers</a> library to explore the search space.</p>
-<p>check <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day5/day5.hs#L195"><code>locationsFn</code></a> for the approach mentioned above. Please use the <code>drawForest</code> in code to visualize the search space and note that the code is not that readable :(</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Advent of Code 2023 Day 4</title>
-      <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-4/</link>
-      <pubDate>Thu, 29 Feb 2024 09:41:09 +0530</pubDate>
-      <guid>https://upendra1997.github.io/posts/advent-of-code-2023-day-4/</guid>
-      <description>advent of code 2023 day 4</description>
-      <content:encoded><![CDATA[<h1 id="aoc-2023-4-scratchcards">AOC-2023-4 Scratchcards</h1>
-<p>This <a href="https://adventofcode.com/2023/day/4">problem</a> was easy in the sense that it required just required correct parsing and following the rules to get the result in the problem.</p>
-<h2 id="part-1">Part 1</h2>
-<p>Part 1 just required correct parsing and computing the solution.</p>
-<h2 id="part-2">Part 2</h2>
-<p>Part 2, says that for each winning card with n numbers, we will get extra copies of next n cards, so to maintain the number of extra cards we used a state monad, to keep track of how may extra copies each card have. We use that information to multiply our score with that.</p>
-<hr>
-<p>Solution is available at: <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day4/day4.hs">https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day4/day4.hs</a></p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Advent of Code 2023 Day 3</title>
-      <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-3/</link>
-      <pubDate>Wed, 28 Feb 2024 10:08:34 +0530</pubDate>
-      <guid>https://upendra1997.github.io/posts/advent-of-code-2023-day-3/</guid>
-      <description>advent of code 2023 day 3</description>
-      <content:encoded><![CDATA[<h1 id="aoc-2023-3-gear-ratios">AOC-2023-3 Gear Ratios</h1>
-<p>In this <a href="https://adventofcode.com/2023/day/3">problem</a>, we had to parse the input problem and find all the symbols like: <code>#</code>, <code>*</code>, <code>+</code> and <code>$</code>. All numbers that are adjacent to symbols are important for us, and we need to compute the result.</p>
-<h2 id="part-1">Part 1</h2>
-<p>In this part we had to compute the sum of numbers adjacent to the symbol decsribed above. To get the results I was going for the graph traversal algorithm, and to do that in haskell I used <a href="https://hackage.haskell.org/package/containers">containers</a> library to get <code>Data.Tree</code> and used State Monad from <a href="https://hackage.haskell.org/package/mtl">mtl</a> to keep track of visited nodes using <code>get</code> and <code>put</code>.</p>
-<p>To Debug the issue during the development, I used <code>drawForest</code> in the code using <code>Debug.Trace</code> and used the hardcoded input and running the <code>:main</code> in REPL again and again.</p>
-<h2 id="part-2">Part 2</h2>
-<p>In this part we had to find the pair of numbers around <code>*</code> and multiply them and sum all the results from that.</p>
-<hr>
-<p>So the solution is available at: <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day3/day3.hs">https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day3/day3.hs</a></p>
-<p>but please note that <code>helperFunction</code> and <code>main</code> are not that readable :(</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Advent of Code 2023 Day 2</title>
-      <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-2/</link>
-      <pubDate>Tue, 27 Feb 2024 10:12:44 +0530</pubDate>
-      <guid>https://upendra1997.github.io/posts/advent-of-code-2023-day-2/</guid>
-      <description>advent of code 2023 day 2</description>
-      <content:encoded><![CDATA[<h1 id="aoc-2023-2-cube-conundrum">AOC-2023-2 Cube Conundrum</h1>
-<p>In this <a href="https://adventofcode.com/2023/day/2">problem</a>, we have to parse the input text and compute the result; this problem was not particularly hard or tricky and just required correct parsing.</p>
-<p>code for day 2 is at: <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day2/day2.hs">https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day2/day2.hs</a></p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Advent of Code 2023 Day 1</title>
-      <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-1/</link>
-      <pubDate>Mon, 26 Feb 2024 15:12:36 +0530</pubDate>
-      <guid>https://upendra1997.github.io/posts/advent-of-code-2023-day-1/</guid>
-      <description>advent of code 2023 day 1</description>
-      <content:encoded><![CDATA[<h1 id="aoc-2023-1-trebuchet">AOC-2023-1 Trebuchet?!</h1>
-<p>I have tried solving advent of code 2023 challenges in haskell, and this was my attempt to solve day 1.
-In this problem we have to find the first and last digits in a line and sum them.</p>
-<p>problem link: <a href="https://adventofcode.com/2023/day/1">https://adventofcode.com/2023/day/1</a></p>
-<h2 id="part-1">Part 1</h2>
-<p>First part is very simple as it is just a parsing problem, and we can use my favourite library for parsing: <a href="https://hackage.haskell.org/package/parsec">parsec</a> to solve it.</p>
-<h2 id="part-2">Part 2</h2>
-<p>Second part have a variation that say the digits may be spelled out like <code>one</code> instead of <code>1</code>. which seems to be easy to solve as we can just change our parsing logic to consider both <code>1</code> and <code>one</code> as <code>1</code>. But when I treid to solve it using that approach, I was getting the wrong result.</p>
-<p>so I thought that I am missing an edge case; i.e.: <code>twone</code>, which should return <code>21</code>.
-There are two issues here that needs to be solved:</p>
-<ol>
-<li>We don&rsquo;t want to consume the input stream event though we have found the matching token.</li>
-<li>We want our parser to be greedy for searching the first digit and lazy for searching the last digit.</li>
-</ol>
-<p>To understand the issues, we need to understad how parsec works.</p>
-<p>paresc consumes the input stream and at each returns the token found and rest of the input stream, so for our example it would be:</p>
-<figure class="align-center ">
-    <img loading="lazy" src="images/parsec.svg#center"/> 
-</figure>
-
-<p>one way to solve the issue is to run the parser at every character and collect the result, like so:</p>
-<figure class="align-center ">
-    <img loading="lazy" src="images/parsec-2.svg#center"/> 
-</figure>
-
-<p>but that seemed to be very complicated, so I decided to reverse the string and run the parser with a switch to reverse the string.</p>
-<p>you can check the code at: <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day1/day1.hs">https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day1/day1.hs</a></p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Putting Yourself Out</title>
-      <link>https://upendra1997.github.io/posts/putting-yourself-out/</link>
-      <pubDate>Sun, 25 Feb 2024 10:34:57 +0530</pubDate>
-      <guid>https://upendra1997.github.io/posts/putting-yourself-out/</guid>
-      <description>putting myself out on internet</description>
-      <content:encoded><![CDATA[<p>I have never been consistent with my writing and I wish to change it to become better at writing; and Internet is a place where we can express ourself. so this is me being accountable and putting myself out.</p>
-<p>Now, I will be trying to write about:</p>
-<ol>
-<li>daily-life</li>
-<li>things I learned</li>
-<li>explaining something</li>
-<li>snippets</li>
-<li>anything else</li>
-</ol>
-<p>I will be trying to stick with it.</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Visitor Pattern</title>
-      <link>https://upendra1997.github.io/posts/visitor-pattern/</link>
-      <pubDate>Sat, 11 Feb 2023 13:36:56 +0530</pubDate>
-      <guid>https://upendra1997.github.io/posts/visitor-pattern/</guid>
-      <description>Video explaining visitor pattern.</description>
-      <content:encoded><![CDATA[<p>I created a new video and google slide explaining visitor pattern:</p>
-<h2 id="youtube-video">Youtube Video:</h2>
-<center>
-  <iframe width="960" height="569" src="https://www.youtube.com/embed/VN73h0bJC3c" title="YouTube video player" frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-  </iframe>
-</center>
-<h2 id="google-slide">Google Slide:</h2>
-<center>
-    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT9uJ7QzUJ3xoLdCSjMVFejqgauCRu7mNHJ02DOvPnwQnyH2qBIP4BS_3wiRJbdhcm-cjnezbDJTqX0/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true"
-        mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-</center>
-<h2 id="references">references:</h2>
-<ol>
-<li><a href="https://docs.google.com/presentation/d/1MIqN9BQSL_Wnsm4PmOwZEnP5Gj_07VoF7c802-pcP0E/edit?usp=sharing">Google Slide</a></li>
-<li>Gangs Of Four Book</li>
-<li>awesome blog about clojure design patterns: <a href="http://mishadoff.com/blog/clojure-design-patterns/#episode-4-visitor">http://mishadoff.com/blog/clojure-design-patterns/#episode-4-visitor</a></li>
-</ol>
 ]]></content:encoded>
     </item>
     <item>
@@ -972,6 +742,236 @@ Here cross-product is the same as the cross-product of a set in mathematics.</p>
 </code></pre><hr>
 <p>Github Repository: <a href="https://github.com/upendra1997/sudoku-haskell">https://github.com/upendra1997/sudoku-haskell</a></p>
 <hr>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>My Reading List</title>
+      <link>https://upendra1997.github.io/posts/my-reading-list/</link>
+      <pubDate>Fri, 08 Mar 2024 22:29:23 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/my-reading-list/</guid>
+      <description>Things that I am trying to learn</description>
+      <content:encoded><![CDATA[<p>I am currently trying to learn various things like:</p>
+<ol>
+<li>Rust</li>
+<li>Haskell</li>
+<li>Distributed Systems, &hellip;etc.</li>
+</ol>
+<p>To achieve this, I have been exploring various resources:</p>
+<ol>
+<li>I have been delving into Alexis King&rsquo;s blog at <a href="https://lexi-lambda.github.io/blog/2021/03/25/an-introduction-to-typeclass-metaprogramming/">this link</a> to gain a deeper understanding of typeclass metaprogramming.</li>
+<li>I have attempted several challenges provided by <a href="https://fly.io/dist-sys/">fly.io</a>, some of which I have documented <a href="https://github.com/upendra1997/maelstorm_rust">here</a>.</li>
+<li>I am referencing a list of papers mentioned in the course syllabus, available <a href="https://pdos.csail.mit.edu/6.824/schedule.html">here</a>.</li>
+<li>I am studying &ldquo;A Top-Down Approach: Computer Networking&rdquo; by Kurose &amp; Ross.</li>
+<li>I am exploring resources such as <a href="https://marabos.nl/atomics/">Rust Atomics and Locks</a> to deepen my understanding.</li>
+<li>I am engaged in a <a href="https://github.com/upendra1997/fp-course">Functional Programming Course</a>.</li>
+<li>I am utilizing resources from <a href="https://zerodha.com/varsity/modules/">Zerodha Varsity</a>.</li>
+<li>I am also undertaking various &ldquo;build-your-own&rdquo; projects available at codecrafters.io, including:
+<ul>
+<li><a href="https://github.com/upendra1997/code-crafters-redis-rust">Redis</a></li>
+<li><a href="https://github.com/upendra1997/codecrafters-docker-rust">Docker</a></li>
+<li>and others.</li>
+</ul>
+</li>
+</ol>
+<p>I am navigating through this list based on my current interests, with the aim of completing it by the end of the year.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Getting Into Computer Science</title>
+      <link>https://upendra1997.github.io/posts/getting-into-cs/</link>
+      <pubDate>Thu, 07 Mar 2024 21:41:38 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/getting-into-cs/</guid>
+      <description>A little writeup about how I got into CS</description>
+      <content:encoded><![CDATA[<p>Throughout my childhood, I held a keen interest in computers, particularly in gaming. However, the technical\science aspects didn&rsquo;t initially captivate me.</p>
+<p>Back in 2010, acquiring new games was a challenge due to limited internet access. We relied on friends with installation CDs, DVDs, or pendrives. Unfortunately, scratched disks often led to checksum errors or missing files, which forced us to download DLLs/files from the internet to fix issues.</p>
+<p>Encountering language barriers(English is not my first language) or difficult game levels led us to seek <a href="https://www.cheatengine.org/">cheat engine</a> for assistance. It was through this pursuit that I was introduced to Lua, although my attempts at mastery were unsuccessful. Nonetheless, I learned to utilize basic features like memory scanning to manipulate in-game values, enabling me to progress in game, by freezing my health, or getting large pool of money.</p>
+<p>My formal introduction to programming languages occurred during high school (2013-2015), where I immersed myself in HTML, Java, and other languages introducted in the syllabus. I delved into course materials fervently, which reflected positively in my academic performance in computer-related subjects.</p>
+<p>Upon entering college for my bachelor&rsquo;s degree (2015-2019), my first year was uneventful as I focused on academic excellence. However, the second year introduced me to a world of possibilities through friends who introduced me to courses, competitive programming, hackathons, and more. This reignited my passion for learning new things, and I avidly pursued knowledge.</p>
+<p>Few resources that helped me were:</p>
+<ol>
+<li><a href="https://github.com/ossu/computer-science">https://github.com/ossu/computer-science</a></li>
+<li>Steven Halim&rsquo;s CP book: <a href="https://cpbook.net/">https://cpbook.net/</a></li>
+<li><a href="https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/">https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/</a></li>
+<li><a href="https://teachyourselfcs.com/">https://teachyourselfcs.com/</a></li>
+</ol>
+<p>These resources not only aided my learning but also paved the way for my initial job opportunities. Despite my skepticism regarding the quality of indian college education, I acknowledge its role in facilitating exploration, fostering friendships, and providing time for personal development.</p>
+<p>Subsequent learning occurred on the job and through interactions with colleagues. I remain committed to continuous learning, always seeking to expand my skill set and find joy in the process.</p>
+<p>And you know what? Its just getting started. Here&rsquo;s to a lifetime of curiosity and adventure!</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Diversifying Career</title>
+      <link>https://upendra1997.github.io/posts/diversify-career/</link>
+      <pubDate>Tue, 05 Mar 2024 23:29:34 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/diversify-career/</guid>
+      <description>A write-up about future career choices</description>
+      <content:encoded><![CDATA[<p>I aim for a high impact career, and the more I contemplate this, the more I realize it cannot be achieved by sticking to one field alone.</p>
+<p>I&rsquo;ve been entrenched in the computer science realm for some time, with a side interest in machine learning/data science. While my past roles have mainly revolved around fintech or logistics, I believe achieving greater career impact necessitates cross-pollination across different domains, blending diverse ideas to enhance my work.</p>
+<p>As I ponder various future career or study paths, several interests have caught my attention:</p>
+<ol>
+<li>Delving into hardware intricacies, such as battery firmware, embedded systems, and GPU programming.</li>
+<li>Exploring the biological world, potentially leveraging my existing knowledge through resources like <a href="https://github.com/ossu/bioinformatics">https://github.com/ossu/bioinformatics</a>.</li>
+<li>Expanding my involvement in machine learning/data science, transitioning from occasional dabbling to full-time engagement.</li>
+<li>Venturing into civil services to address societal issues with my technological expertise.</li>
+<li>Establishing and scaling my own business, offering insights into delegation, negotiation, hiring, execution, finance, and more.</li>
+<li>Exploring commerce and finance to understand wealth management, savings, growth, and the role of technology, for instance, via platforms like <a href="https://zerodha.com/varsity/">https://zerodha.com/varsity/</a>.</li>
+</ol>
+<p>I remain eager to contribute more, learn more, and assist across various fields, industries, and scenarios.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Advent of Code 2023 Day 5</title>
+      <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-5/</link>
+      <pubDate>Fri, 01 Mar 2024 09:11:31 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/advent-of-code-2023-day-5/</guid>
+      <description>advent of code 2023 day 5</description>
+      <content:encoded><![CDATA[<h1 id="aoc-2023-5-if-you-give-a-seed-a-fertilizer">AOC-2023-5 If You Give A Seed A Fertilizer</h1>
+<p>This <a href="https://adventofcode.com/2023/day/5">problem</a> was hardest yet and took longest to solve. so the problem asks us to create a map from seed to location such as:</p>
+<pre tabindex="0"><code>seed -&gt; soil -&gt; fertilizer -&gt; water -&gt; light -&gt; temprature -&gt; humidity -&gt; location
+</code></pre><p>where we are given certain mappings from one entity to another, eg: <code>seed 1</code> corresponds to <code>soil 10</code>
+and given this mapping and intial seed list we need to find the minimum location.</p>
+<h2 id="part-1">Part 1</h2>
+<p>In this part we are given list of intial seeds, and mapping, which we use to construct the <a href="https://hackage.haskell.org/package/containers-0.7/docs/Data-Map.html">Data.Map</a> and traverse it.</p>
+<p>An interesting choice was to handle entries which were not provided in the mapping, so basically if given key is not present in the map then we look into trasition map, which map over entities to functions(which map from entity to entity). eg: if <code>soil 12</code> was not found in the map then we look for <code>soil INT_MIN</code> in transition map, which will return a function that will take <code>soil 12</code> and returns <code>fertilizer 12</code>.</p>
+<p>check <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day5/day5.hs#L169"><code>toLocation</code></a> function to understand the approach mentioned above.</p>
+<h2 id="part-2">Part 2</h2>
+<p>In this part we are givent ranges of seeds intead of just few seeds. If we go with the previous approach, our Map will become very large since it cannot contains that many elements and we will reach out of memory very soon.</p>
+<p>Other approach to solve the issue is to not fit all of them into memory and consider ranges as an entity. We will represent seed 5 to 10 as <code>Seed(5, 10)</code> and we will find all the intersecting entities and we will keep doing until we reach the location entity.</p>
+<p>suppose that we had the mapping:</p>
+<pre tabindex="0"><code>Seed(2, 7) -&gt; Soil(10, 15)
+Seed(9, 15) -&gt; Soil(20, 26)
+</code></pre><p>then the intersections and ther mapping would be:</p>
+<pre tabindex="0"><code>intersection -&gt; mapping
+Seed(5, 7) -&gt; Soil(13, 15)
+Seed(9, 10) -&gt; Soil(20, 21)
+Seed(7, 9) -&gt; Soil(7, 9)
+</code></pre><p>To speed up solution and preventing code going into infintite recursion, we will be using the State Monad from <a href="https://hackage.haskell.org/package/mtl">mtl</a> to keep track of visited nodes and use <code>Data.Tree</code> from <a href="https://hackage.haskell.org/package/containers">containers</a> library to explore the search space.</p>
+<p>check <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day5/day5.hs#L195"><code>locationsFn</code></a> for the approach mentioned above. Please use the <code>drawForest</code> in code to visualize the search space and note that the code is not that readable :(</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Advent of Code 2023 Day 4</title>
+      <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-4/</link>
+      <pubDate>Thu, 29 Feb 2024 09:41:09 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/advent-of-code-2023-day-4/</guid>
+      <description>advent of code 2023 day 4</description>
+      <content:encoded><![CDATA[<h1 id="aoc-2023-4-scratchcards">AOC-2023-4 Scratchcards</h1>
+<p>This <a href="https://adventofcode.com/2023/day/4">problem</a> was easy in the sense that it required just required correct parsing and following the rules to get the result in the problem.</p>
+<h2 id="part-1">Part 1</h2>
+<p>Part 1 just required correct parsing and computing the solution.</p>
+<h2 id="part-2">Part 2</h2>
+<p>Part 2, says that for each winning card with n numbers, we will get extra copies of next n cards, so to maintain the number of extra cards we used a state monad, to keep track of how may extra copies each card have. We use that information to multiply our score with that.</p>
+<hr>
+<p>Solution is available at: <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day4/day4.hs">https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day4/day4.hs</a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Advent of Code 2023 Day 3</title>
+      <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-3/</link>
+      <pubDate>Wed, 28 Feb 2024 10:08:34 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/advent-of-code-2023-day-3/</guid>
+      <description>advent of code 2023 day 3</description>
+      <content:encoded><![CDATA[<h1 id="aoc-2023-3-gear-ratios">AOC-2023-3 Gear Ratios</h1>
+<p>In this <a href="https://adventofcode.com/2023/day/3">problem</a>, we had to parse the input problem and find all the symbols like: <code>#</code>, <code>*</code>, <code>+</code> and <code>$</code>. All numbers that are adjacent to symbols are important for us, and we need to compute the result.</p>
+<h2 id="part-1">Part 1</h2>
+<p>In this part we had to compute the sum of numbers adjacent to the symbol decsribed above. To get the results I was going for the graph traversal algorithm, and to do that in haskell I used <a href="https://hackage.haskell.org/package/containers">containers</a> library to get <code>Data.Tree</code> and used State Monad from <a href="https://hackage.haskell.org/package/mtl">mtl</a> to keep track of visited nodes using <code>get</code> and <code>put</code>.</p>
+<p>To Debug the issue during the development, I used <code>drawForest</code> in the code using <code>Debug.Trace</code> and used the hardcoded input and running the <code>:main</code> in REPL again and again.</p>
+<h2 id="part-2">Part 2</h2>
+<p>In this part we had to find the pair of numbers around <code>*</code> and multiply them and sum all the results from that.</p>
+<hr>
+<p>So the solution is available at: <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day3/day3.hs">https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day3/day3.hs</a></p>
+<p>but please note that <code>helperFunction</code> and <code>main</code> are not that readable :(</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Advent of Code 2023 Day 2</title>
+      <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-2/</link>
+      <pubDate>Tue, 27 Feb 2024 10:12:44 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/advent-of-code-2023-day-2/</guid>
+      <description>advent of code 2023 day 2</description>
+      <content:encoded><![CDATA[<h1 id="aoc-2023-2-cube-conundrum">AOC-2023-2 Cube Conundrum</h1>
+<p>In this <a href="https://adventofcode.com/2023/day/2">problem</a>, we have to parse the input text and compute the result; this problem was not particularly hard or tricky and just required correct parsing.</p>
+<p>code for day 2 is at: <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day2/day2.hs">https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day2/day2.hs</a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Advent of Code 2023 Day 1</title>
+      <link>https://upendra1997.github.io/posts/advent-of-code-2023-day-1/</link>
+      <pubDate>Mon, 26 Feb 2024 15:12:36 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/advent-of-code-2023-day-1/</guid>
+      <description>advent of code 2023 day 1</description>
+      <content:encoded><![CDATA[<h1 id="aoc-2023-1-trebuchet">AOC-2023-1 Trebuchet?!</h1>
+<p>I have tried solving advent of code 2023 challenges in haskell, and this was my attempt to solve day 1.
+In this problem we have to find the first and last digits in a line and sum them.</p>
+<p>problem link: <a href="https://adventofcode.com/2023/day/1">https://adventofcode.com/2023/day/1</a></p>
+<h2 id="part-1">Part 1</h2>
+<p>First part is very simple as it is just a parsing problem, and we can use my favourite library for parsing: <a href="https://hackage.haskell.org/package/parsec">parsec</a> to solve it.</p>
+<h2 id="part-2">Part 2</h2>
+<p>Second part have a variation that say the digits may be spelled out like <code>one</code> instead of <code>1</code>. which seems to be easy to solve as we can just change our parsing logic to consider both <code>1</code> and <code>one</code> as <code>1</code>. But when I treid to solve it using that approach, I was getting the wrong result.</p>
+<p>so I thought that I am missing an edge case; i.e.: <code>twone</code>, which should return <code>21</code>.
+There are two issues here that needs to be solved:</p>
+<ol>
+<li>We don&rsquo;t want to consume the input stream event though we have found the matching token.</li>
+<li>We want our parser to be greedy for searching the first digit and lazy for searching the last digit.</li>
+</ol>
+<p>To understand the issues, we need to understad how parsec works.</p>
+<p>paresc consumes the input stream and at each returns the token found and rest of the input stream, so for our example it would be:</p>
+<figure class="align-center ">
+    <img loading="lazy" src="images/parsec.svg#center"/> 
+</figure>
+
+<p>one way to solve the issue is to run the parser at every character and collect the result, like so:</p>
+<figure class="align-center ">
+    <img loading="lazy" src="images/parsec-2.svg#center"/> 
+</figure>
+
+<p>but that seemed to be very complicated, so I decided to reverse the string and run the parser with a switch to reverse the string.</p>
+<p>you can check the code at: <a href="https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day1/day1.hs">https://github.com/upendra1997/advent-of-code-2023-hs/blob/main/day1/day1.hs</a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Putting Yourself Out</title>
+      <link>https://upendra1997.github.io/posts/putting-yourself-out/</link>
+      <pubDate>Sun, 25 Feb 2024 10:34:57 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/putting-yourself-out/</guid>
+      <description>putting myself out on internet</description>
+      <content:encoded><![CDATA[<p>I have never been consistent with my writing and I wish to change it to become better at writing; and Internet is a place where we can express ourself. so this is me being accountable and putting myself out.</p>
+<p>Now, I will be trying to write about:</p>
+<ol>
+<li>daily-life</li>
+<li>things I learned</li>
+<li>explaining something</li>
+<li>snippets</li>
+<li>anything else</li>
+</ol>
+<p>I will be trying to stick with it.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Visitor Pattern</title>
+      <link>https://upendra1997.github.io/posts/visitor-pattern/</link>
+      <pubDate>Sat, 11 Feb 2023 13:36:56 +0530</pubDate>
+      <guid>https://upendra1997.github.io/posts/visitor-pattern/</guid>
+      <description>Video explaining visitor pattern.</description>
+      <content:encoded><![CDATA[<p>I created a new video and google slide explaining visitor pattern:</p>
+<h2 id="youtube-video">Youtube Video:</h2>
+<center>
+  <iframe width="960" height="569" src="https://www.youtube.com/embed/VN73h0bJC3c" title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</center>
+<h2 id="google-slide">Google Slide:</h2>
+<center>
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT9uJ7QzUJ3xoLdCSjMVFejqgauCRu7mNHJ02DOvPnwQnyH2qBIP4BS_3wiRJbdhcm-cjnezbDJTqX0/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true"
+        mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</center>
+<h2 id="references">references:</h2>
+<ol>
+<li><a href="https://docs.google.com/presentation/d/1MIqN9BQSL_Wnsm4PmOwZEnP5Gj_07VoF7c802-pcP0E/edit?usp=sharing">Google Slide</a></li>
+<li>Gangs Of Four Book</li>
+<li>awesome blog about clojure design patterns: <a href="http://mishadoff.com/blog/clojure-design-patterns/#episode-4-visitor">http://mishadoff.com/blog/clojure-design-patterns/#episode-4-visitor</a></li>
+</ol>
 ]]></content:encoded>
     </item>
     <item>
