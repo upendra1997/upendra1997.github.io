@@ -34,24 +34,28 @@ editPost:
     appendFilePath: true # to append file path to Edit link
 ---
 
-As a child, I was always interested in Computers, but maybe not the science part of it.
+Throughout my childhood, I held a keen interest in computers, particularly in gaming. However, the technical\science aspects didn't initially captivate me.
 
-I always wanted to play new games, and during that time(2010), we didn't have that good of internet. The only way to get games was from friends, who had the installations CD/DVD/Pendrive, or from internet which was very costly at that time.
+Back in 2010, acquiring new games was a challenge due to limited internet access. We relied on friends with installation CDs, DVDs, or pendrives. Unfortunately, scratched disks often led to checksum errors or missing files, which forced us to download DLLs/files from the internet to fix issues.
 
-Most of the time CD/DVDs had scratches and there was always checksum error or some file(dll) missing, so we downloaded `dlls` from the internet, which was cheaper and made the game work.
 
-Sometime we also had games, which were too hard or we didn't understand the objective because of the language issue. So we used to search for cheat engine to pass the game, and there I was first introduced to `lua` through [cheat engine](https://www.cheatengine.org/). I tried to use that, but was never successful with that, and was only able to use features like scanning the memory of game and getting all the matching values and keep filering until we reach the location where money/health was stored, and then we were able to freeze the value.
+Encountering language barriers(English is not my first language) or difficult game levels led us to seek [cheat engine](https://www.cheatengine.org/) for assistance. It was through this pursuit that I was introduced to Lua, although my attempts at mastery were unsuccessful. Nonetheless, I learned to utilize basic features like memory scanning to manipulate in-game values, enabling me to progress in game, by freezing my health, or getting large pool of money.
 
-After those fun years, I started high school (2013-2015). There we were formally introduced to the concept of programming languages, like HTML, Java, etc. Which I got hooked to early on, and kept reading all the course book that I had access to. This really helped me as I scored very well in computer related subjects.
 
-Once I entered college for my bachelor (2015-2019), durinng the first year, I didn't do anything new and was just trying to score well in subjects. But When I stared my 2nd year, I met few friends, who introducted me to new world of courses, competitive programming, hackathons and much more. I was hooked again with learing new things and trying to be as good as possible. The things that I used to follow and that helped me were:
+My formal introduction to programming languages occurred during high school (2013-2015), where I immersed myself in HTML, Java, and other languages introducted in the syllabus. I delved into course materials fervently, which reflected positively in my academic performance in computer-related subjects.
+
+
+Upon entering college for my bachelor's degree (2015-2019), my first year was uneventful as I focused on academic excellence. However, the second year introduced me to a world of possibilities through friends who introduced me to courses, competitive programming, hackathons, and more. This reignited my passion for learning new things, and I avidly pursued knowledge.
+
+
+Few resources that helped me were:
 1. https://github.com/ossu/computer-science
 2. Steven Halim's CP book: https://cpbook.net/
 3. https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/
 4. https://teachyourselfcs.com/
 
-These helped me get my first couple of jobs. Even though now I don't believe in country's college eductaion quality. I still believe going to college was the best thing, for exploring things you like, making friends and having time to dive into things you wish.
+These resources not only aided my learning but also paved the way for my initial job opportunities. Despite my skepticism regarding the quality of indian college education, I acknowledge its role in facilitating exploration, fostering friendships, and providing time for personal development.
 
-Rest of the things that I leared were on the job or from my colleages, and I always try to learn new things and make it fun.
+Subsequent learning occurred on the job and through interactions with colleagues. I remain committed to continuous learning, always seeking to expand my skill set and find joy in the process.
 
-And I hope to continue doing so.
+And you know what? Its just getting started. Here's to a lifetime of curiosity and adventure!

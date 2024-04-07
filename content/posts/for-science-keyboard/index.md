@@ -34,11 +34,11 @@ editPost:
     appendFilePath: true # to append file path to Edit link
 ---
 
-I recently built the `for-science` keyboard and I followed this guide: https://github.com/peej/for-science-keyboard
+I recently built the "for-science" keyboard following this guide: [https://github.com/peej/for-science-keyboard](https://github.com/peej/for-science-keyboard).
 
-## Bill of Material
-1. [kit](https://stackskb.com/store/for-science-split-keyboard-diy-kit/): 1800 INR
-2. [arudio pro micro compatible X2](https://robocraze.com/products/pro-micro-5v-mini-leonardo-compatible-with-arduino): 908 INR
+## Bill of Materials
+1. [DIY kit](https://stackskb.com/store/for-science-split-keyboard-diy-kit/): 1800 INR
+2. [Arduino Pro Micro compatible x2](https://robocraze.com/products/pro-micro-5v-mini-leonardo-compatible-with-arduino): 908 INR
 3. [Soldering Station](https://robocraze.com/products/soldron-variable-wattage-micro-soldering-station): 1305 INR
 4. Soldering wire from Robocraze: 21 INR
 5. Digital Multimeter from Robocraze: 199 INR
@@ -50,19 +50,18 @@ I recently built the `for-science` keyboard and I followed this guide: https://g
 
 ## Journey
 
-While building the keyboard, I started with following the guide mentioned above, but It was not descriptive enough so I supplemented it with other guide for [Lily58](https://github.com/kata0510/Lily58/blob/master/Pro/Doc/buildguide_en.md).
+During the keyboard assembly, I initially followed the aforementioned guide but found it lacking in detail. I supplemented it with another guide for the [Lily58](https://github.com/kata0510/Lily58/blob/master/Pro/Doc/buildguide_en.md).
 
-While following the guide whenever I had doubts, I referred to the [gerber](https://github.com/peej/for-science-keyboard/tree/master/gerber) file [here](https://www.gerblook.org/). It helped me to find which side was up by linking the TRRS jack and the pro micro's `D0` pin as mentioned [here](https://golem.hu/article/pro-micro-pinout/).
+Throughout the process, whenever I encountered doubts, I referred to the gerber file [here](https://github.com/peej/for-science-keyboard/tree/master/gerber) using [gerberlook](https://www.gerblook.org/) and utilized the TRRS jack and the Pro Micro's `D0` pin as orientation guides, as described [here](https://golem.hu/article/pro-micro-pinout/).
 
+### Mistakes Made:
+1. Poor Soldering: For novices, I recommend practicing soldering techniques, as outlined in this [blog](https://learn.adafruit.com/adafruit-guide-excellent-soldering/common-problems).
+2. Soldering the Pro Micro chip before the switches caused numerous issues. Despite attempts to rectify using desoldering pumps, wicks, and flux, it resulted in damage to the switches and Pro Micro chip. Fortunately, I had spare switches and wires to salvage the situation. Lesson learned: double or triple check components before soldering to avoid the arduous and potentially damaging process of desoldering.
+3. A faulty or damaged TRRS cable necessitated its replacement. Lesson: ensure circuit connectivity using the gerber files and the Multimeter's continuity mode.
 
-### Mistakes I made:
-1. Bad Soldering; Advice that I will give if you are new to soldering is to practie and make sure you can solder as mentioned on this [blog](https://learn.adafruit.com/adafruit-guide-excellent-soldering/common-problems).
-2. I soldered the `Pro Micro` chip, before soldering the switches. Which caused lots of issues as I tried to fix the mistake using desoldering pumps, desoldering wicks and flux. But in the end it didn't help and only damaged swithes and pro micro chip. Luckily I had spares swithes and few wires, so I sorted to them to make it work somehow. Lesson is to double/triple check components you are soldering, as desoldering is very painful and can damage components.
-2. The TRRS cable that I had was faulty or I spoiled it, so had to get a new TRRS cable. Lesson would be to keep cheking connectivity of your ciruit with the gerber files using the `continuity mode` of Multimeter.
-
-### Issues that I still have with my keyboard:
-1. Right side doesn't work individually, i.e. if I connect the keyboard to the left split it works, but If I connect using the right split, It doesn't. I tried this [blog](https://docs.splitkb.com/hc/en-us/articles/360010588860-Only-one-half-of-my-keyboard-works-at-a-time-but-not-when-they-are-both-connected) and [post](https://www.reddit.com/r/ErgoMechKeyboards/comments/qq1o8q/how_to_best_start_debugging_this/), but It didn't help.
-2. Sometime the whole keyboard hangs when I am typing and starts responding after sometime. My guess is that It is happening because of all the QMK features that I have [enabled](https://github.com/qmk/qmk_firmware/compare/master...upendra1997:qmk_firmware:master) on the keyboard.
+### Ongoing Issues:
+1. The right side operates only when connected to the left split; connecting via the right split yields no response. Attempted solutions from [this blog](https://docs.splitkb.com/hc/en-us/articles/360010588860-Only-one-half-of-my-keyboard-works-at-a-time-but-not-when-they-are-both-connected) and [this post](https://www.reddit.com/r/ErgoMechKeyboards/comments/qq1o8q/how_to_best_start_debugging_this/) were unsuccessful.
+2. Periodic keyboard freezing during typing, potentially due to enabled QMK features, as detailed [here](https://github.com/qmk/qmk_firmware/compare/master...upendra1997:qmk_firmware:master).
 
 ## QMK
 I guess the QMK layout [configuration](https://config.qmk.fm/#/for_science/LAYOUT_split_4x5_3) that they had was outdated and was not working properly with my keyboard, as I built the keyboard and tested them using [test-website](https://config.qmk.fm/#/test).
@@ -71,30 +70,30 @@ so I made few changes on my [fork](https://github.com/upendra1997/qmk_firmware) 
 
 ## Images
 ### PCB:
-![PCB](images/emty-pcb.jpg)
+![PCB](images/empty-pcb.jpg)
 ### Pro Micro:
-![pro-micro](images/pro-micro.jpg)
+![Pro Micro](images/pro-micro.jpg)
 ### Diodes:
-![front-diode](images/diode-single.jpg)
-![back-diode](images/diode-multiple.jpg)
-![insterted-diodes](images/inserted-diodes.jpg)
-![diodes-up](images/diodes-up.jpg)
-![diodes-pcb](images/diodes-pcb.jpg)
+![Front Diode](images/diode-single.jpg)
+![Back Diode](images/diode-multiple.jpg)
+![Inserted Diodes](images/inserted-diodes.jpg)
+![Diodes Orientation](images/diodes-up.jpg)
+![Diodes on PCB](images/diodes-pcb.jpg)
 ### Switches:
-![switches](images/switches.jpg)
-![cross-section](images/cross-section.jpg)
+![Switches](images/switches.jpg)
+![Cross-section](images/cross-section.jpg)
 ### TRRS Socket:
-![TRRS](images/left-board.jpg)
-### Damaged 
-Connection held through a metal pin:
-![hacked-right](images/hacked-right-board.jpg)
-![hacked-right-screwed](images/hacked-screwed.JPG)
-### Final Keyboard
-![partial-1](images/partial-2.JPG)
-![partial-2](images/partial-board.JPG)
+![TRRS Socket](images/left-board.jpg)
+### Damaged:
+Connection made via a metal pin:
+![Hacked Right](images/hacked-right-board.jpg)
+![Hacked Right Screwed](images/hacked-screwed.JPG)
+### Final Keyboard:
+![Partial 1](images/partial-2.JPG)
+![Partial 2](images/partial-board.JPG)
 ![Final Keyboard](images/complete.JPG)
 
-------
+-------
 
 ## HELP
-Please, if you find solution for above issues, please comment or reach out to me. Thank you :)
+If you have solutions to the aforementioned issues, please comment or reach out to me. Thank you :)

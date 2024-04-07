@@ -38,17 +38,18 @@ I am currently trying to learn various things like:
 2. Haskell
 3. Distributed Systems, ...etc.
 
-and for this I have been readings different things:
-1. I have been trying to read this blog by Alexis King: https://lexi-lambda.github.io/blog/2021/03/25/an-introduction-to-typeclass-metaprogramming/ to understand more about typeclass metaprogramming.
-2. Series of challenges by [fly.io](https://fly.io/dist-sys/). I have tried to complete few of them [here](https://github.com/upendra1997/maelstorm_rust)
-3. A list of papers mentioned on the course: https://pdos.csail.mit.edu/6.824/schedule.html
-4. A Top-Down Approach: Computer Networking by Kurose & Ross
-5. [Rust Atomics and Locks](https://marabos.nl/atomics/)
-6. [Functional Programming Course](https://github.com/upendra1997/fp-course)
-7. [Zerodha Varsity](https://zerodha.com/varsity/modules/)
-8. Different build-your-own on https://codecrafters.io/
-      1. [Redis](https://github.com/upendra1997/code-crafters-redis-rust)
-      2. [Docker](https://github.com/upendra1997/codecrafters-docker-rust)
-      3. ...etc.
+To achieve this, I have been exploring various resources:
+1. I have been delving into Alexis King's blog at [this link](https://lexi-lambda.github.io/blog/2021/03/25/an-introduction-to-typeclass-metaprogramming/) to gain a deeper understanding of typeclass metaprogramming.
+2. I have attempted several challenges provided by [fly.io](https://fly.io/dist-sys/), some of which I have documented [here](https://github.com/upendra1997/maelstorm_rust).
+3. I am referencing a list of papers mentioned in the course syllabus, available [here](https://pdos.csail.mit.edu/6.824/schedule.html).
+4. I am studying "A Top-Down Approach: Computer Networking" by Kurose & Ross.
+5. I am exploring resources such as [Rust Atomics and Locks](https://marabos.nl/atomics/) to deepen my understanding.
+6. I am engaged in a [Functional Programming Course](https://github.com/upendra1997/fp-course).
+7. I am utilizing resources from [Zerodha Varsity](https://zerodha.com/varsity/modules/).
+8. I am also undertaking various "build-your-own" projects available at codecrafters.io, including:
+   - [Redis](https://github.com/upendra1997/code-crafters-redis-rust)
+   - [Docker](https://github.com/upendra1997/codecrafters-docker-rust)
+   - and others.
 
-and I have been jumping around this list depending upon my interests and I hope to complete it this year.
+I am navigating through this list based on my current interests, with the aim of completing it by the end of the year.
+

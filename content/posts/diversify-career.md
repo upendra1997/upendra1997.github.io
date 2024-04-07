@@ -34,16 +34,17 @@ editPost:
     appendFilePath: true # to append file path to Edit link
 ---
 
-I want to have a high impact from my career and and more I think about trying that, I feel that it cannot be done by simply following one field. 
+I aim for a high impact career, and the more I contemplate this, the more I realize it cannot be achieved by sticking to one field alone.
 
-I have been in computer science field for a while and have dabled in machine-learning/data-science on the side. All the jobs that I have taken were also aligned to the either fintech or logistics. But I feel that to have better impact on my career, I require cross pollination of different fields to mix-match different ideas from different fields and add value to whatever work I do.
+I've been entrenched in the computer science realm for some time, with a side interest in machine learning/data science. While my past roles have mainly revolved around fintech or logistics, I believe achieving greater career impact necessitates cross-pollination across different domains, blending diverse ideas to enhance my work.
 
-I have been considering multiple future career/studiets that wish to pursue and there are few of the things that I have been interested in:
-1. Working more closely to hardware, like: battery firmware, embedded systems, GPU programming, etc.
-2. Learning more about biological world, and I feel that the way to step into it through learning it with something that I already know, like: https://github.com/ossu/bioinformatics
-3. I have been dabbling in machine-learning/data-science, and also have done multiple courses and certifications, but I never got to work on it full time; so having an opportunity there might also help me.
-4. Working in civil services and seeing the issues the people and government faces and trying to help them with my experience in technology.
-5. Starting my own business and growing it, which I think will teach me about lots of things like Delegating, Negotiating, Hiring, Execution, Finance, etc.
-6. Working in Commerce and Finance to learn managing, saving and growing money and how technology can help in doing it better. For examle: https://zerodha.com/varsity/
+As I ponder various future career or study paths, several interests have caught my attention:
 
-I still feel like I can do more, learn more, help more and hope that I get to work in all kind of fields, businesses and situtations.
+1. Delving into hardware intricacies, such as battery firmware, embedded systems, and GPU programming.
+2. Exploring the biological world, potentially leveraging my existing knowledge through resources like https://github.com/ossu/bioinformatics.
+3. Expanding my involvement in machine learning/data science, transitioning from occasional dabbling to full-time engagement.
+4. Venturing into civil services to address societal issues with my technological expertise.
+5. Establishing and scaling my own business, offering insights into delegation, negotiation, hiring, execution, finance, and more.
+6. Exploring commerce and finance to understand wealth management, savings, growth, and the role of technology, for instance, via platforms like https://zerodha.com/varsity/.
+
+I remain eager to contribute more, learn more, and assist across various fields, industries, and scenarios.
