@@ -74,6 +74,10 @@ params:
             #   url: archives
             - name: Resume
               url: resume
+            - name: Cover Letter
+              url: https://docs.google.com/document/d/1ZoNvLILNvu79L3Hi8ol4YUqBQKwKYLqbrT7-dFfZ3ic/edit?usp=sharing
+            - name: RSS
+              url: index.xml
 
     # home-info mode
     homeInfoParams:
