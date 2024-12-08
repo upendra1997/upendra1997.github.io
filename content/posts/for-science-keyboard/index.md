@@ -97,3 +97,6 @@ Connection made via a metal pin:
 
 ## HELP
 If you have solutions to the aforementioned issues, please comment or reach out to me. Thank you :)
+
+## Updates
+Recently the right part stopped working again, and after debugging further using the mulitmeter continuity mode, found out that the issue was with the TRRS cable. This will act as note to self and any other person visiting this website that check your TRRS cable first, as it seems to be the issue most of the time.
