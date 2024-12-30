@@ -9,7 +9,7 @@
       <url>https://upendra1997.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://upendra1997.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.140.1</generator>
     <language>en</language>
     <lastBuildDate>Fri, 08 Mar 2024 22:29:23 +0530</lastBuildDate>
     <atom:link href="https://upendra1997.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -52,46 +52,33 @@
 <p>so I made few changes on my <a href="https://github.com/upendra1997/qmk_firmware">fork</a> to make them work, and added some extra layout and features, which suited my fancy.</p>
 <h2 id="images">Images</h2>
 <h3 id="pcb">PCB:</h3>
-<p><img loading="lazy" src="images/empty-pcb.jpg" alt="PCB"  />
-</p>
+<p><img alt="PCB" loading="lazy" src="/posts/for-science-keyboard/images/empty-pcb.jpg"></p>
 <h3 id="pro-micro">Pro Micro:</h3>
-<p><img loading="lazy" src="images/pro-micro.jpg" alt="Pro Micro"  />
-</p>
+<p><img alt="Pro Micro" loading="lazy" src="/posts/for-science-keyboard/images/pro-micro.jpg"></p>
 <h3 id="diodes">Diodes:</h3>
-<p><img loading="lazy" src="images/diode-single.jpg" alt="Front Diode"  />
-
-<img loading="lazy" src="images/diode-multiple.jpg" alt="Back Diode"  />
-
-<img loading="lazy" src="images/inserted-diodes.jpg" alt="Inserted Diodes"  />
-
-<img loading="lazy" src="images/diodes-up.jpg" alt="Diodes Orientation"  />
-
-<img loading="lazy" src="images/diodes-pcb.jpg" alt="Diodes on PCB"  />
-</p>
+<p><img alt="Front Diode" loading="lazy" src="/posts/for-science-keyboard/images/diode-single.jpg">
+<img alt="Back Diode" loading="lazy" src="/posts/for-science-keyboard/images/diode-multiple.jpg">
+<img alt="Inserted Diodes" loading="lazy" src="/posts/for-science-keyboard/images/inserted-diodes.jpg">
+<img alt="Diodes Orientation" loading="lazy" src="/posts/for-science-keyboard/images/diodes-up.jpg">
+<img alt="Diodes on PCB" loading="lazy" src="/posts/for-science-keyboard/images/diodes-pcb.jpg"></p>
 <h3 id="switches">Switches:</h3>
-<p><img loading="lazy" src="images/switches.jpg" alt="Switches"  />
-
-<img loading="lazy" src="images/cross-section.jpg" alt="Cross-section"  />
-</p>
+<p><img alt="Switches" loading="lazy" src="/posts/for-science-keyboard/images/switches.jpg">
+<img alt="Cross-section" loading="lazy" src="/posts/for-science-keyboard/images/cross-section.jpg"></p>
 <h3 id="trrs-socket">TRRS Socket:</h3>
-<p><img loading="lazy" src="images/left-board.jpg" alt="TRRS Socket"  />
-</p>
+<p><img alt="TRRS Socket" loading="lazy" src="/posts/for-science-keyboard/images/left-board.jpg"></p>
 <h3 id="damaged">Damaged:</h3>
 <p>Connection made via a metal pin:
-<img loading="lazy" src="images/hacked-right-board.jpg" alt="Hacked Right"  />
-
-<img loading="lazy" src="images/hacked-screwed.JPG" alt="Hacked Right Screwed"  />
-</p>
+<img alt="Hacked Right" loading="lazy" src="/posts/for-science-keyboard/images/hacked-right-board.jpg">
+<img alt="Hacked Right Screwed" loading="lazy" src="/posts/for-science-keyboard/images/hacked-screwed.JPG"></p>
 <h3 id="final-keyboard">Final Keyboard:</h3>
-<p><img loading="lazy" src="images/partial-2.JPG" alt="Partial 1"  />
-
-<img loading="lazy" src="images/partial-board.JPG" alt="Partial 2"  />
-
-<img loading="lazy" src="images/complete.JPG" alt="Final Keyboard"  />
-</p>
+<p><img alt="Partial 1" loading="lazy" src="/posts/for-science-keyboard/images/partial-2.JPG">
+<img alt="Partial 2" loading="lazy" src="/posts/for-science-keyboard/images/partial-board.JPG">
+<img alt="Final Keyboard" loading="lazy" src="/posts/for-science-keyboard/images/complete.JPG"></p>
 <hr>
 <h2 id="help">HELP</h2>
 <p>If you have solutions to the aforementioned issues, please comment or reach out to me. Thank you :)</p>
+<h2 id="updates">Updates</h2>
+<p>Recently the right part stopped working again, and after debugging further using the mulitmeter continuity mode, found out that the issue was with the TRRS cable. This will act as note to self and any other person visiting this website that check your TRRS cable first, as it seems to be the issue most of the time.</p>
 ]]></content:encoded>
     </item>
     <item>
